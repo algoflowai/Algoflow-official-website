@@ -75,9 +75,6 @@ export const metadata = {
       "AI-powered software development: mobile apps, web apps, computer vision, NLP/LLMs, and automation.",
     images: ["/images/og-image.png"],
   },
-  verification: {
-    google: "YOUR_GOOGLE_SITE_VERIFICATION_TOKEN",
-  },
   category: "technology",
 };
 

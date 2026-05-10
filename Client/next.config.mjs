@@ -3,9 +3,8 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  output: 'export',
   images: {
-    unoptimized: true,  // For GitHub Pages, disable image optimization
+    unoptimized: true,
   },
 };
 
