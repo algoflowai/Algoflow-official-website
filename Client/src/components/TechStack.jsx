@@ -45,10 +45,10 @@ export default function TechStack() {
           <div className="flex items-center justify-center mb-3">
             <div className="w-[69px] h-[5px] bg-gradient-to-r from-[#4ed35e] to-[#1b6f08]"></div>
           </div>
-          <h2 className="text-2xl sm:text-3xl font-normal text-gray-800">
+          <h2 className="text-2xl sm:text-3xl font-normal text-[var(--text-secondary)]">
             Our
           </h2>
-          <h3 className="text-3xl sm:text-4xl font-bold text-gray-800">
+          <h3 className="text-3xl sm:text-4xl font-bold text-[var(--text-primary)]">
             Tech Stack
           </h3>
         </div>
@@ -61,11 +61,10 @@ export default function TechStack() {
               className="font-inter font-semibold text-sm sm:text-base leading-6 transition-colors px-3 py-1"
             >
               <span
-                className={`block ${
-                  activeCategory === category.id
+                className={`block ${activeCategory === category.id
                     ? "text-transparent bg-gradient-to-r from-[#4ed35e] to-[#1b6f08] bg-clip-text"
-                    : "text-gray-500"
-                }`}
+                    : "text-[var(--text-secondary)]"
+                  }`}
               >
                 {category.name}
               </span>
@@ -80,14 +79,13 @@ export default function TechStack() {
           {technologies.slice(0, 5).map((tech) => (
             <div
               key={tech.name}
-              className="flex items-center justify-center p-4 sm:p-6 bg-white "
+              className="flex items-center justify-center p-4 sm:p-6 bg-[var(--card-bg)] "
             >
               <img
                 src={tech.image}
                 alt={tech.name}
-                className={`h-14 sm:h-16 object-contain ${
-                  tech.name === "Node.js" ? "sm:h-20" : ""
-                }`}
+                className={`h-14 sm:h-16 object-contain ${tech.name === "Node.js" ? "sm:h-20" : ""
+                  }`}
               />
             </div>
           ))}
@@ -97,16 +95,15 @@ export default function TechStack() {
           {technologies.slice(5).map((tech) => (
             <div
               key={tech.name}
-              className="flex items-center justify-center p-4 bg-white "
+              className="flex items-center justify-center p-4 bg-[var(--card-bg)] "
             >
               <img
                 src={tech.image}
                 alt={tech.name}
-                className={`h-14 sm:h-16 object-contain ${
-                  ["MongoDB", "Ruby on Rails"].includes(tech.name)
+                className={`h-14 sm:h-16 object-contain ${["MongoDB", "Ruby on Rails"].includes(tech.name)
                     ? "sm:h-20"
                     : ""
-                }`}
+                  }`}
               />
             </div>
           ))}

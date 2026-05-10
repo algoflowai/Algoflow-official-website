@@ -34,7 +34,7 @@ const testimonials = [
 ]
 
 export default function Testimonials() {
-    const scrollRef = useRef(null)
+  const scrollRef = useRef(null)
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -63,12 +63,12 @@ export default function Testimonials() {
   }, [])
 
   return (
-    <div className="w-full px-4 py-16 bg-white font-sans">
+    <div className="w-full px-4 py-16 bg-[var(--background)] font-sans">
       <div className="text-center mb-10">
         <div className="w-[69px] h-[5px] mx-auto mb-2 bg-gradient-to-r from-[#4ed35e] to-[#1b6f08]" />
-        <h2 className="text-2xl md:text-3xl text-gray-800 font-medium">
+        <h2 className="text-2xl md:text-3xl text-[var(--text-secondary)] font-medium">
           Why customers love <br />
-          <span className="text-black font-bold">working with us</span>
+          <span className="text-[var(--text-primary)] font-bold">working with us</span>
         </h2>
       </div>
 
@@ -79,10 +79,10 @@ export default function Testimonials() {
         {testimonials.map((t) => (
           <div
             key={t.id}
-            className="min-w-[300px] bg-gray-50 rounded-xl shadow-md p-6 flex flex-col justify-between"
+            className="min-w-[300px] bg-[var(--card-bg)] border border-[var(--card-border)] rounded-xl shadow-md p-6 flex flex-col justify-between"
           >
             <Quote className="text-green-600 w-6 h-6 mb-4" />
-            <p className="text-sm text-gray-700 mb-6">{t.quote}</p>
+            <p className="text-sm text-[var(--text-secondary)] mb-6">{t.quote}</p>
 
             <div className="flex flex-col items-center">
               <img
@@ -96,7 +96,7 @@ export default function Testimonials() {
                 ))}
               </div>
               <h3 className="font-semibold text-green-600 text-sm">{t.name}</h3>
-              <p className="text-xs text-gray-500">{t.role}</p>
+              <p className="text-xs text-[var(--text-muted)] dark:text-gray-400">{t.role}</p>
             </div>
           </div>
         ))}

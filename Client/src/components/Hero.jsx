@@ -282,33 +282,72 @@ const Hero = () => {
       </AnimatePresence>
 
       <motion.div
-        className="relative min-h-screen bg-cover bg-center bg-no-repeat mt-20"
+        className="relative min-h-screen bg-cover bg-center bg-no-repeat mt-20 overflow-hidden"
         style={{
           backgroundColor: '#000',
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), url(${backgroundImages[0]})`,
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.65)), url(${backgroundImages[0]})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
       >
-        {/* Animated Background Elements */}
-        <div className="absolute inset-0 overflow-hidden">
+        {/* Neural Grid Overlay */}
+        <div className="absolute inset-0 neural-grid opacity-60 pointer-events-none" />
+
+        {/* Gradient Orbs */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <motion.div
-            className="absolute top-20 left-10 w-2 h-2 bg-[#4ed35e] rounded-full"
-            animate={floatingAnimation}
+            className="absolute -top-40 -left-40 w-96 h-96 rounded-full"
+            style={{ background: 'radial-gradient(circle, rgba(34,197,94,0.12) 0%, transparent 70%)' }}
+            animate={{ scale: [1, 1.3, 1], opacity: [0.6, 1, 0.6] }}
+            transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
           />
           <motion.div
-            className="absolute top-40 right-20 w-1 h-1 bg-[#3D63EA] rounded-full"
-            animate={floatingAnimation2}
+            className="absolute -bottom-40 -right-40 w-[500px] h-[500px] rounded-full"
+            style={{ background: 'radial-gradient(circle, rgba(61,99,234,0.1) 0%, transparent 70%)' }}
+            animate={{ scale: [1.2, 1, 1.2], opacity: [0.5, 0.9, 0.5] }}
+            transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
           />
           <motion.div
-            className="absolute bottom-32 left-1/4 w-1.5 h-1.5 bg-[#4ed35e] rounded-full"
-            animate={floatingAnimation}
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full"
+            style={{ background: 'radial-gradient(circle, rgba(34,197,94,0.05) 0%, transparent 60%)' }}
+            animate={{ scale: [1, 1.15, 1], rotate: [0, 180, 360] }}
+            transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
+          />
+        </div>
+
+        {/* Floating Particles */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {[
+            { top: '15%', left: '8%', size: 'w-2 h-2', color: 'bg-[#4ed35e]', anim: floatingAnimation },
+            { top: '30%', right: '12%', size: 'w-1.5 h-1.5', color: 'bg-[#3D63EA]', anim: floatingAnimation2 },
+            { bottom: '25%', left: '20%', size: 'w-1.5 h-1.5', color: 'bg-[#4ed35e]', anim: floatingAnimation },
+            { bottom: '15%', right: '25%', size: 'w-1 h-1', color: 'bg-white', anim: floatingAnimation2 },
+            { top: '45%', left: '5%', size: 'w-1 h-1', color: 'bg-[#4ade80]', anim: floatingAnimation2 },
+            { top: '20%', right: '30%', size: 'w-1.5 h-1.5', color: 'bg-[#86efac]', anim: floatingAnimation },
+            { bottom: '40%', right: '8%', size: 'w-2 h-2', color: 'bg-[#22c55e]', anim: floatingAnimation },
+            { top: '65%', left: '35%', size: 'w-1 h-1', color: 'bg-blue-400', anim: floatingAnimation2 },
+          ].map((p, i) => (
+            <motion.div
+              key={i}
+              className={`absolute ${p.size} ${p.color} rounded-full opacity-70`}
+              style={{ top: p.top, left: p.left, right: p.right, bottom: p.bottom }}
+              animate={p.anim}
+            />
+          ))}
+          {/* Larger glow dots */}
+          <motion.div
+            className="absolute top-1/3 right-1/4 w-3 h-3 rounded-full"
+            style={{ background: 'radial-gradient(circle, rgba(34,197,94,0.8), transparent)', boxShadow: '0 0 10px rgba(34,197,94,0.6)' }}
+            animate={{ opacity: [0.4, 1, 0.4], scale: [1, 1.4, 1] }}
+            transition={{ duration: 3, repeat: Infinity, delay: 1 }}
           />
           <motion.div
-            className="absolute bottom-20 right-1/3 w-1 h-1 bg-white rounded-full"
-            animate={floatingAnimation2}
+            className="absolute bottom-1/3 left-1/3 w-2.5 h-2.5 rounded-full"
+            style={{ background: 'radial-gradient(circle, rgba(61,99,234,0.8), transparent)', boxShadow: '0 0 10px rgba(61,99,234,0.6)' }}
+            animate={{ opacity: [0.3, 0.9, 0.3], scale: [1, 1.5, 1] }}
+            transition={{ duration: 4, repeat: Infinity, delay: 0.5 }}
           />
         </div>
 
@@ -323,7 +362,14 @@ const Hero = () => {
               animate={controls}
             >
               {/* Hero Content */}
-              <div className="flex flex-col justify-center items-center gap-8 w-full max-w-4xl">
+              <div className="flex flex-col justify-center items-center gap-8 w-full max-w-4xl">                {/* AI Badge */}
+                <motion.div
+                  variants={fadeInUpVariants}
+                  className="ai-badge"
+                >
+                  <span className="ai-badge-dot"></span>
+                  AI-Powered Software Company
+                </motion.div>
                 {/* Main Headline */}
                 <motion.div className="space-y-6" variants={titleVariants}>
                   <h1 className="text-4xl md:text-4xl lg:text-5xl xl:text-6xl font-normal text-white leading-snug tracking-normal">
@@ -407,7 +453,7 @@ const Hero = () => {
                 {/* Button Group */}
                 <div className="flex flex-row items-center gap-3 sm:gap-4 w-full max-w-lg justify-center">
                   <motion.button
-                    className="group relative bg-gradient-to-r from-[#22c55e] to-[#16a34a] hover:from-[#16a34a] hover:to-[#15803d] text-white font-semibold text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-3 rounded-lg shadow-md hover:shadow-lg transition-all duration-200 ease-out flex-1 sm:flex-none min-w-[140px] sm:min-w-[180px]"
+                    className="group relative bg-gradient-to-r from-[#22c55e] to-[#16a34a] hover:from-[#16a34a] hover:to-[#15803d] text-white font-semibold text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-3 rounded-lg btn-glow-green transition-all duration-300 ease-out flex-1 sm:flex-none min-w-[140px] sm:min-w-[180px]"
                     onClick={() => setIsModalOpen(true)}
                     variants={buttonVariants}
                     whileHover={{
@@ -435,24 +481,24 @@ const Hero = () => {
                 </div>
 
                 {/* Trust Indicators */}
-                <div className="flex flex-row flex-wrap mt-6 justify-center items-center gap-3 sm:gap-6 lg:gap-8 text-gray-300 text-xs sm:text-sm">
+                <div className="flex flex-row flex-wrap mt-4 justify-center items-center gap-3 sm:gap-6 lg:gap-8 text-gray-300 text-xs sm:text-sm">
                   {[
                     { color: "#22c55e", text: "AI-Powered Solutions" },
                     { color: "#3D63EA", text: "Elite Development Teams" },
-                    { color: "white", text: "Scalable Software" },
+                    { color: "#86efac", text: "Scalable Software" },
                   ].map((item, index) => (
                     <motion.div
                       key={index}
-                      className="flex items-center gap-2"
+                      className="flex items-center gap-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-3 py-1.5"
                       custom={index}
                       variants={trustIndicatorVariants}
-                      whileHover={{ scale: 1.05 }}
+                      whileHover={{ scale: 1.05, borderColor: 'rgba(34,197,94,0.4)' }}
                     >
                       <motion.div
                         className="w-2 h-2 rounded-full"
-                        style={{ backgroundColor: item.color }}
+                        style={{ backgroundColor: item.color, boxShadow: `0 0 6px ${item.color}` }}
                         animate={{
-                          scale: [1, 1.2, 1],
+                          scale: [1, 1.3, 1],
                           opacity: [0.7, 1, 0.7],
                         }}
                         transition={{
@@ -465,6 +511,28 @@ const Hero = () => {
                     </motion.div>
                   ))}
                 </div>
+
+                {/* Stats Row */}
+                <motion.div
+                  className="flex flex-row flex-wrap justify-center gap-6 sm:gap-10 mt-2 border-t border-white/10 pt-6 w-full max-w-2xl"
+                  variants={fadeInUpVariants}
+                >
+                  {[
+                    { value: '50+', label: 'Projects Delivered' },
+                    { value: '5+', label: 'Years Experience' },
+                    { value: '30+', label: 'Expert Engineers' },
+                    { value: '100%', label: 'Client Satisfaction' },
+                  ].map((stat, i) => (
+                    <motion.div
+                      key={i}
+                      className="text-center"
+                      whileHover={{ scale: 1.08 }}
+                    >
+                      <div className="text-2xl sm:text-3xl font-bold shimmer-text">{stat.value}</div>
+                      <div className="text-gray-400 text-xs mt-0.5">{stat.label}</div>
+                    </motion.div>
+                  ))}
+                </motion.div>
               </motion.div>
             </motion.div>
 

@@ -2,15 +2,15 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-green-50 font-Inter">
+    <footer className="w-full bg-[var(--surface)] font-Inter border-t border-[var(--border)]">
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           {/* Brand Info */}
           <div className="space-y-4">
             <h2 className="text-3xl font-bold text-green-600 font-logo">
-              Algo<span className="text-black">Flow AI</span>
+              Algo<span className="text-[var(--text-primary)]">Flow AI</span>
             </h2>
-            <p className="text-gray-600 text-sm leading-relaxed">
+            <p className="text-[var(--text-secondary)] text-sm leading-relaxed">
               Helping forward-thinking companies harness the power of AI to
               streamline operations, unlock insights, and innovate faster.
             </p>
@@ -23,12 +23,12 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold text-black mb-4">Company</h3>
+            <h3 className="text-lg font-semibold text-[var(--text-primary)] mb-4">Company</h3>
             <ul className="space-y-3">
               <li>
                 <a
                   href="#"
-                  className="text-gray-600 hover:text-green-600 transition"
+                  className="text-[var(--text-secondary)] hover:text-green-600 transition"
                 >
                   Home
                 </a>
@@ -36,7 +36,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#services"
-                  className="text-gray-600 hover:text-green-600 transition"
+                  className="text-[var(--text-secondary)] hover:text-green-600 transition"
                 >
                   Services
                 </a>
@@ -44,7 +44,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/projects"
-                  className="text-gray-600 hover:text-green-600 transition"
+                  className="text-[var(--text-secondary)] hover:text-green-600 transition"
                 >
                   Projects
                 </Link>
@@ -52,7 +52,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#"
-                  className="text-gray-600 hover:text-green-600 transition"
+                  className="text-[var(--text-secondary)] hover:text-green-600 transition"
                 >
                   Careers
                 </a>
@@ -62,12 +62,12 @@ export default function Footer() {
 
           {/* Resources */}
           <div>
-            <h3 className="text-lg font-semibold text-black mb-4">Resources</h3>
+            <h3 className="text-lg font-semibold text-[var(--text-primary)] mb-4">Resources</h3>
             <ul className="space-y-3">
               <li>
                 <Link
                   href="/blog"
-                  className="text-gray-600 hover:text-green-600 transition"
+                  className="text-[var(--text-secondary)] hover:text-green-600 transition"
                 >
                   Blog
                 </Link>
@@ -75,7 +75,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#"
-                  className="text-gray-600 hover:text-green-600 transition"
+                  className="text-[var(--text-secondary)] hover:text-green-600 transition"
                 >
                   Help Center
                 </a>
@@ -83,7 +83,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#"
-                  className="text-gray-600 hover:text-green-600 transition"
+                  className="text-[var(--text-secondary)] hover:text-green-600 transition"
                 >
                   Privacy Policy
                 </a>
@@ -91,7 +91,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#"
-                  className="text-gray-600 hover:text-green-600 transition"
+                  className="text-[var(--text-secondary)] hover:text-green-600 transition"
                 >
                   Terms & Conditions
                 </a>
@@ -101,20 +101,20 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-lg font-semibold text-black mb-4">Contact</h3>
-            <p className="text-gray-600 text-sm mb-2">
+            <h3 className="text-lg font-semibold text-[var(--text-primary)] mb-4">Contact</h3>
+            <p className="text-[var(--text-secondary)] text-sm mb-2">
               4th main, 6th Cross Rd, GM Palya, C V Raman Nagar, Bengaluru,
               Karnataka 560075
             </p>
-            <p className="text-gray-600 text-sm mb-2">
+            <p className="text-[var(--text-secondary)] text-sm mb-2">
               Registered office Basaratpur Adalpura chunar Mirzapur, Uttar
               Pradesh 231304, India.
             </p>
-            <p className="text-gray-900 font-medium mb-1">
-              📞 +91-8960880615, +91-7452833648
+            <p className="text-[var(--text-primary)] font-medium mb-1">
+              <span className="font-semibold">Phone:</span> +91-8960880615, +91-7452833648
             </p>
-            <p className="text-gray-900 font-medium mb-1">
-              📧{" "}
+            <p className="text-[var(--text-primary)] font-medium mb-1">
+              <span className="font-semibold">Email:</span>{" "}
               <a
                 href="mailto:info@algoflow.ai"
                 className="hover:underline text-green-600"
@@ -122,8 +122,8 @@ export default function Footer() {
                 info@algoflowai.com
               </a>
             </p>
-            <p className="text-gray-900 font-medium">
-              🌐{" "}
+            <p className="text-[var(--text-primary)] font-medium">
+              <span className="font-semibold">Web:</span>{" "}
               <a
                 href="https://www.algoflowai.com"
                 target="_blank"
@@ -160,7 +160,7 @@ export default function Footer() {
                 <a
                   key={social.label}
                   href={social.href}
-                  className="text-gray-500 hover:text-green-600 transition"
+                  className="text-[var(--text-secondary)] hover:text-green-600 transition"
                   aria-label={social.label}
                   target="_blank"
                 >
@@ -172,8 +172,8 @@ export default function Footer() {
         </div>
 
         {/* Footer Bottom */}
-        <div className="mt-12 border-t border-gray-200 pt-6 text-center">
-          <p className="text-gray-500 text-sm">
+        <div className="mt-12 border-t border-[var(--border)] pt-6 text-center">
+          <p className="text-[var(--text-secondary)] text-sm">
             © {new Date().getFullYear()} AlgoFlow AI Private Limited. All rights
             reserved.
           </p>

@@ -54,7 +54,7 @@ const ContactPopup = ({ onClose }) => {
             fontSize: "16px",
             marginTop: "70px",
           },
-          icon: "✅",
+          icon: undefined,
         });
 
         // Reset form

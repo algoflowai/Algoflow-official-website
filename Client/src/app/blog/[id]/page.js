@@ -19,6 +19,33 @@ function calculateReadingTime(content) {
   return Math.ceil(wordCount / wordsPerMinute);
 }
 
+export async function generateMetadata({ params }) {
+  const blog = blogs.find((b) => b.id === Number(params.id));
+  if (!blog) return {};
+
+  const BASE_URL = "https://www.algoflowai.com";
+  return {
+    title: blog.title,
+    description: blog.excerpt,
+    alternates: { canonical: `${BASE_URL}/blog/${blog.id}` },
+    openGraph: {
+      title: blog.title,
+      description: blog.excerpt,
+      url: `${BASE_URL}/blog/${blog.id}`,
+      type: "article",
+      publishedTime: blog.date,
+      authors: [`${BASE_URL}`],
+      images: [{ url: blog.image, width: 1200, height: 630, alt: blog.title }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: blog.title,
+      description: blog.excerpt,
+      images: [blog.image],
+    },
+  };
+}
+
 export default function BlogDetail({ params }) {
   const blog = blogs.find((b) => b.id === Number(params.id));
 

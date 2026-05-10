@@ -45,14 +45,32 @@ const steps = [
 export default function Development() {
   return (
     <motion.section
-      className="py-16 px-4 max-w-7xl mx-auto"
+      className="relative py-20 px-4 max-w-7xl mx-auto bg-[var(--background)]"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
     >
-      <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800">
-        Our Development Process
-      </h2>
+      <motion.div
+        className="text-center mb-14"
+        initial={{ y: -20, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6 }}
+      >
+        <motion.div
+          className="flex items-center justify-center mb-3"
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          <div className="w-16 h-1 bg-gradient-to-r from-[#22c55e] to-[#16a34a] rounded-full" />
+        </motion.div>
+        <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-primary)]">
+          Our Development Process
+        </h2>
+        <p className="text-[var(--text-secondary)] mt-2 text-sm max-w-md mx-auto">
+          A battle-tested workflow built for speed, quality, and reliability
+        </p>
+      </motion.div>
       <motion.div
         className="relative mt-0"
         initial={{ y: 20 }}
@@ -96,11 +114,10 @@ export default function Development() {
           {steps.map((step, index) => (
             <motion.div
               key={step.number}
-              className={`relative flex flex-col items-center ${
-                index % 2 === 0
-                  ? "lg:row-start-1"
-                  : "lg:row-start-2 lg:mt-4 lg:ml-16"
-              }`}
+              className={`relative flex flex-col items-center ${index % 2 === 0
+                ? "lg:row-start-1"
+                : "lg:row-start-2 lg:mt-4 lg:ml-16"
+                }`}
               variants={{
                 hidden: { y: 50, opacity: 0 },
                 visible: { y: 0, opacity: 1 },
@@ -126,30 +143,30 @@ export default function Development() {
 
               {/* Step card */}
               <motion.div
-                className="mt-2 pl-6 pr-6 pb-12 pt-6 rounded-2xl border border-gray-200 bg-white shadow-lg w-full max-w-xs text-left flex flex-col justify-between h-52"
+                className="mt-2 pl-6 pr-6 pb-12 pt-6 rounded-2xl border border-[var(--card-border)] bg-[var(--card-bg)] shadow-sm w-full max-w-xs text-left flex flex-col justify-between h-52 card-hover-glow"
                 whileHover={{
-                  boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)",
-                  borderColor: "#4ed35e",
+                  boxShadow: "0 0 30px rgba(34,197,94,0.12), 0 10px 40px rgba(0,0,0,0.08)",
+                  borderColor: "#22c55e",
                 }}
               >
                 <div className="flex items-center mb-3">
                   <motion.div
-                    className="w-10 h-10 flex items-center justify-center mr-2"
-                    whileHover={{ scale: 1.1 }}
+                    className="w-10 h-10 rounded-xl flex items-center justify-center mr-2 bg-green-50 dark:bg-green-900/20 border border-green-100 dark:border-green-800"
+                    whileHover={{ scale: 1.1, rotate: 5 }}
                   >
-                    <span className="font-bold text-xl text-transparent bg-gradient-to-r from-[#4ed35e] to-[#1b6f08] bg-clip-text">
+                    <span className="font-bold text-lg text-green-600">
                       #{step.number}
                     </span>
                   </motion.div>
                   <motion.h4
-                    className="font-inter font-bold text-[16px] sm:text-[18px] leading-[22px] text-gray-800"
+                    className="font-inter font-bold text-[16px] sm:text-[18px] leading-[22px] text-[var(--text-primary)]"
                     whileHover={{ color: "#1b6f08" }}
                   >
                     {step.title}
                   </motion.h4>
                 </div>
                 <motion.p
-                  className="font-inter text-[14px] leading-[20px] text-gray-500"
+                  className="font-inter text-[14px] leading-[20px] text-[var(--text-secondary)]"
                   whileHover={{ opacity: 1 }}
                 >
                   {step.description}

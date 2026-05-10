@@ -51,7 +51,7 @@ const logos = [
 export default function Clients() {
   return (
     <motion.section
-      className="w-full bg-white font-Inter text-black py-20 px-6 md:px-10 overflow-hidden"
+      className="w-full bg-[var(--background)] font-Inter text-[var(--text-primary)] py-20 px-6 md:px-10 overflow-hidden"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
@@ -81,7 +81,7 @@ export default function Clients() {
             We Are Working With
           </motion.h3>
           <motion.p
-            className="text-gray-500 max-w-xl mx-auto text-sm md:text-base"
+            className="text-gray-500 max-w-xl mx-auto text-sm md:text-base text-[var(--text-secondary)]"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.6, duration: 0.6 }}
@@ -92,7 +92,7 @@ export default function Clients() {
 
         {/* Animated grid container */}
         <motion.div
-          className="max-w-6xl mx-auto bg-gradient-to-br from-[#F9FAFB] to-[#F0FDF4] border border-[#E5E7EB] rounded-3xl p-8 md:p-10 shadow-xl"
+          className="max-w-6xl mx-auto bg-[var(--surface)] border border-[var(--border)] rounded-3xl p-8 md:p-10 shadow-xl"
           initial={{ scale: 0.98, opacity: 0 }}
           whileInView={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -108,7 +108,7 @@ export default function Clients() {
               >
                 {/* Main card */}
                 <motion.div
-                  className="bg-white h-48 rounded-2xl flex flex-col items-center justify-center shadow-sm border border-gray-200 p-6 relative overflow-hidden hover:border-[#4ed35e] transition-colors"
+                  className="bg-[var(--card-bg)] h-48 rounded-2xl flex flex-col items-center justify-center shadow-sm border border-[var(--card-border)] p-6 relative overflow-hidden hover:border-[#4ed35e] transition-colors"
                   whileHover={{
                     y: -8,
                     boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1)",
@@ -117,7 +117,7 @@ export default function Clients() {
                 >
                   {/* Verified badge with handshake icon */}
                   <motion.div
-                    className="absolute top-3 right-3 bg-gray-100 p-2 rounded-full z-10 flex items-center justify-center shadow-md border border-gray-200"
+                    className="absolute top-3 right-3 bg-[var(--surface)] p-2 rounded-full z-10 flex items-center justify-center shadow-md border border-[var(--border)]"
                     initial={{ scale: 0, rotate: -30 }}
                     whileInView={{ scale: 1, rotate: 0 }}
                     transition={{ delay: index * 0.1 + 0.5, type: "spring" }}
@@ -163,7 +163,7 @@ export default function Clients() {
                   {/* Client info */}
                   <div className="mt-4 text-center">
                     <motion.p
-                      className="text-base font-bold text-gray-800 relative inline-block"
+                      className="text-base font-bold text-[var(--text-primary)] relative inline-block"
                       whileHover={{ color: "#1b6f08" }}
                     >
                       {logo.name}

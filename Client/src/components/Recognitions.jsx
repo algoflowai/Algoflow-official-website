@@ -32,7 +32,7 @@ export default function Recognitions() {
 
   return (
     <motion.section
-      className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50"
+      className="py-16 px-4 sm:px-6 lg:px-8 bg-[var(--surface)]"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
@@ -54,7 +54,7 @@ export default function Recognitions() {
             <div className="w-[69px] h-[5px] bg-gradient-to-r from-[#4ed35e] to-[#1b6f08]"></div>
           </motion.div>
           <motion.h3
-            className="text-3xl sm:text-4xl font-bold text-gray-800 mb-2"
+            className="text-3xl sm:text-4xl font-bold text-[var(--text-primary)] mb-2"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.6 }}
@@ -62,7 +62,7 @@ export default function Recognitions() {
             We’re Recognized By
           </motion.h3>
           <motion.p
-            className="text-gray-500 max-w-2xl mx-auto"
+            className="text-[var(--text-secondary)] max-w-2xl mx-auto"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.6, duration: 0.6 }}
@@ -88,7 +88,7 @@ export default function Recognitions() {
                 animate={{ rotateY: hoveredCard === index ? 180 : 0 }}
               >
                 {/* Front Side */}
-                <div className="absolute w-full h-full backface-hidden bg-white rounded-xl shadow-md flex items-center justify-center p-6">
+                <div className="absolute w-full h-full backface-hidden bg-[var(--card-bg)] border border-[var(--card-border)] rounded-xl shadow-md flex items-center justify-center p-6">
                   <div className="relative w-full h-24">
                     <Image
                       src={tech.image}

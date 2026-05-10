@@ -170,7 +170,7 @@ const Header = ({ y }) => (
     </motion.div>
 
     <motion.h2
-      className="text-2xl md:text-3xl font-bold mb-2 text-black"
+      className="text-2xl md:text-3xl font-bold mb-2 text-[var(--text-primary)]"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.4, duration: 0.6 }}
@@ -182,7 +182,7 @@ const Header = ({ y }) => (
 
 const ApproachCard = ({ approach, index }) => (
   <motion.div
-    className="bg-white/80 backdrop-blur-sm p-6 md:p-9 border border-[#E7DAED] rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+    className="bg-[var(--card-bg)] backdrop-blur-sm p-6 md:p-9 border border-[var(--card-border)] rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
     variants={itemVariants}
     whileHover="hover"
   >
@@ -201,7 +201,8 @@ const ApproachCard = ({ approach, index }) => (
 
       <div className="flex-1">
         <motion.h3
-          className="text-lg md:text-xl font-semibold mb-2 text-black"
+          className="text-lg md:text-xl font-semibold mb-2"
+          style={{ color: "var(--text-primary)" }}
           whileHover={{
             color: "#4ed35e",
             x: 5,
@@ -211,7 +212,7 @@ const ApproachCard = ({ approach, index }) => (
           {approach.title}
         </motion.h3>
         <motion.p
-          className="text-gray-600 text-sm md:text-base leading-relaxed"
+          className="text-[var(--text-secondary)] text-sm md:text-base leading-relaxed"
           initial={{ opacity: 0.8 }}
           whileHover={{ opacity: 1 }}
           transition={{ duration: 0.2 }}
@@ -261,7 +262,7 @@ export default function DevelopmentApproach() {
   return (
     <motion.div
       ref={ref}
-      className="relative w-full mx-auto px-4 py-16 md:py-24 sm:px-6 lg:px-8 bg-[#F7F7FA] flex justify-center items-center flex-col font-inter overflow-hidden min-h-screen"
+      className="relative w-full mx-auto px-4 py-16 md:py-24 sm:px-6 lg:px-8 bg-[var(--surface)] flex justify-center items-center flex-col font-inter overflow-hidden min-h-screen"
       style={{ opacity, scale }}
     >
       <ScrollIndicator />

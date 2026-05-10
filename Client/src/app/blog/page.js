@@ -3,6 +3,19 @@ import Link from "next/link";
 import { IconArrowRight, IconClock } from "@tabler/icons-react";
 import { blogs } from "../../data/blogs";
 
+export const metadata = {
+  title: "Blog — AI Insights & Software Development Articles",
+  description:
+    "Explore AlgoFlow AI's blog for expert articles on AI, machine learning, software development, computer vision, NLP, and technology trends.",
+  alternates: { canonical: "https://www.algoflowai.com/blog" },
+  openGraph: {
+    title: "Blog — AlgoFlow AI",
+    description: "Expert articles on AI, machine learning, and software development.",
+    url: "https://www.algoflowai.com/blog",
+    type: "website",
+  },
+};
+
 export default function BlogListing() {
   // Get the first blog (ID 1) for featured section
   const featuredBlog = blogs.find((blog) => blog.id === 1);

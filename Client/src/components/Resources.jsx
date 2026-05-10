@@ -69,7 +69,7 @@ export default function FeaturedResources() {
         </motion.div>
 
         <motion.h2
-          className="text-2xl md:text-3xl font-medium text-gray-800 mb-2"
+          className="text-2xl md:text-3xl font-medium text-[var(--text-secondary)] mb-2"
           initial={{ opacity: 0, y: -10 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
@@ -77,7 +77,7 @@ export default function FeaturedResources() {
           Featured
         </motion.h2>
         <motion.h1
-          className="text-3xl md:text-4xl font-bold text-gray-900"
+          className="text-3xl md:text-4xl font-bold text-[var(--text-primary)]"
           initial={{ opacity: 0, y: -10 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
@@ -98,7 +98,7 @@ export default function FeaturedResources() {
           {blogs.map((resource) => (
             <motion.div
               key={resource.id}
-              className="flex-shrink-0 w-[300px] snap-start bg-white rounded-xl shadow-sm hover:shadow-md overflow-hidden border border-gray-100 transition-all"
+              className="flex-shrink-0 w-[300px] snap-start bg-[var(--card-bg)] rounded-xl shadow-sm hover:shadow-md overflow-hidden border border-[var(--card-border)] transition-all"
               variants={item}
               whileHover={cardHover}
             >
@@ -116,10 +116,10 @@ export default function FeaturedResources() {
               </motion.div>
 
               <div className="p-6 space-y-4">
-                <h3 className="font-semibold text-lg text-gray-900 leading-tight">
+                <h3 className="font-semibold text-lg text-[var(--text-primary)] leading-tight">
                   {resource.title}
                 </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
+                <p className="text-[var(--text-secondary)] text-sm leading-relaxed">
                   {resource.excerpt}
                 </p>
                 <Link href={`/blog/${resource.id}`}>

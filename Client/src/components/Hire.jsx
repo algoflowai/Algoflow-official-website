@@ -25,7 +25,7 @@ const Hire = () => {
             isDeleting
               ? prev.slice(0, -1)
               : baseText +
-                word.slice(0, displayText.length - baseText.length + 1)
+              word.slice(0, displayText.length - baseText.length + 1)
           );
         }
       },
@@ -44,7 +44,7 @@ const Hire = () => {
       {/* Render ContactPopup conditionally */}
       {isModalOpen && <ContactPopup onClose={() => setIsModalOpen(false)} />}
 
-      <section className="w-full py-16 bg-white font-Inter text-black flex justify-center items-center relative overflow-hidden">
+      <section className="w-full py-16 bg-[var(--background)] font-Inter text-[var(--text-primary)] flex justify-center items-center relative overflow-hidden">
         {/* Background blob */}
         <motion.div
           className="absolute top-[-100px] right-[-150px] w-[300px] h-[300px] bg-gradient-to-tr from-pink-300 to-orange-200 opacity-40 blur-3xl rounded-full"
@@ -54,7 +54,7 @@ const Hire = () => {
 
         {/* Main container */}
         <motion.div
-          className="relative z-10 w-[95%] max-w-[1230px] bg-gray-100 rounded-2xl border border-[#E7DAED] p-6 md:p-10 lg:p-20 flex flex-col lg:flex-row justify-between items-center gap-8 shadow-xl"
+          className="relative z-10 w-[95%] max-w-[1230px] bg-[var(--surface)] rounded-2xl border border-[var(--card-border)] p-6 md:p-10 lg:p-20 flex flex-col lg:flex-row justify-between items-center gap-8 shadow-xl"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           animate={{ y: [0, -10, 0] }}
