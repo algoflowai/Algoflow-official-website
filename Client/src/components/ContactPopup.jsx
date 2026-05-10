@@ -2,8 +2,11 @@ import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
 import toast, { Toaster } from "react-hot-toast";
 import { Loader2 } from "lucide-react";
+import { useTheme } from "@/context/ThemeContext";
 
 const ContactPopup = ({ onClose }) => {
+  const { theme } = useTheme();
+  const dark = theme === "dark";
   const [formData, setFormData] = useState({
     name: "",
     mobile: "",
@@ -119,76 +122,119 @@ const ContactPopup = ({ onClose }) => {
         }}
       />
 
-      <div className="fixed inset-0 mt-20 bg-black bg-opacity-50 flex justify-center items-center z-50 font-Inter p-4">
-        <div className="bg-white rounded-2xl shadow-2xl p-6 max-w-lg w-full text-center border border-gray-300 relative max-h-[90vh] overflow-y-auto">
+      <div className="fixed inset-0 mt-20 flex justify-center items-center z-50 font-Inter p-4"
+        style={{ background: "rgba(0,0,0,0.6)", backdropFilter: "blur(4px)" }}>
+        <div className="rounded-2xl shadow-2xl p-6 max-w-lg w-full text-center relative max-h-[90vh] overflow-y-auto"
+          style={{
+            background: dark ? "rgba(6,13,27,0.98)" : "#ffffff",
+            border: dark ? "1px solid rgba(34,197,94,0.2)" : "1px solid #e5e7eb",
+            boxShadow: dark ? "0 24px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(34,197,94,0.1)" : "0 24px 80px rgba(0,0,0,0.15)",
+          }}>
           <button
-            className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl font-bold transition-colors"
+            className="absolute top-4 right-4 text-2xl font-bold transition-colors"
+            style={{ color: dark ? "#64748b" : "#6b7280" }}
+            onMouseEnter={e => e.currentTarget.style.color = dark ? "#94a3b8" : "#111827"}
+            onMouseLeave={e => e.currentTarget.style.color = dark ? "#64748b" : "#6b7280"}
             onClick={onClose}
           >
             &times;
           </button>
 
-          <h2 className="text-2xl font-bold mb-3 text-black">Get In Touch</h2>
-          <p className="mb-6 text-gray-600">
-            Send us a message and we will respond as soon as possible
+          <div className="w-10 h-10 rounded-xl flex items-center justify-center mx-auto mb-4"
+            style={{ background: "linear-gradient(135deg, #22c55e, #16a34a)", boxShadow: "0 0 20px rgba(34,197,94,0.3)" }}>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+            </svg>
+          </div>
+
+          <h2 className="text-2xl font-bold mb-2" style={{ color: dark ? "#f1f5f9" : "#0f172a" }}>Get In Touch</h2>
+          <p className="mb-6 text-sm" style={{ color: dark ? "#64748b" : "#6b7280" }}>
+            Send us a message and we'll respond as soon as possible.
           </p>
 
-          <form onSubmit={handleSubmit} className="space-y-4">
-            {/* Name Field */}
+          <form onSubmit={handleSubmit} className="space-y-3 text-left">
             <input
               type="text"
               name="name"
-              className="w-full p-3 border border-gray-300 rounded-lg text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full p-3 rounded-xl text-sm outline-none transition-all"
+              style={{
+                background: dark ? "rgba(255,255,255,0.05)" : "#f9fafb",
+                border: dark ? "1px solid rgba(255,255,255,0.1)" : "1px solid #e5e7eb",
+                color: dark ? "#f1f5f9" : "#0f172a",
+              }}
               placeholder="Your name *"
               value={formData.name}
               onChange={handleChange}
               required
+              onFocus={e => e.target.style.border = "1px solid rgba(34,197,94,0.6)"}
+              onBlur={e => e.target.style.border = dark ? "1px solid rgba(255,255,255,0.1)" : "1px solid #e5e7eb"}
             />
 
-            {/* Mobile Field */}
             <input
               type="tel"
               name="mobile"
-              className="w-full p-3 border border-gray-300 rounded-lg text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full p-3 rounded-xl text-sm outline-none transition-all"
+              style={{
+                background: dark ? "rgba(255,255,255,0.05)" : "#f9fafb",
+                border: dark ? "1px solid rgba(255,255,255,0.1)" : "1px solid #e5e7eb",
+                color: dark ? "#f1f5f9" : "#0f172a",
+              }}
               placeholder="Mobile number *"
               value={formData.mobile}
               onChange={handleChange}
               pattern="[0-9]{10}"
               title="Please enter a valid 10-digit mobile number"
               required
+              onFocus={e => e.target.style.border = "1px solid rgba(34,197,94,0.6)"}
+              onBlur={e => e.target.style.border = dark ? "1px solid rgba(255,255,255,0.1)" : "1px solid #e5e7eb"}
             />
 
-            {/* Email Field */}
             <input
               type="email"
               name="email"
-              className="w-full p-3 border border-gray-300 rounded-lg text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full p-3 rounded-xl text-sm outline-none transition-all"
+              style={{
+                background: dark ? "rgba(255,255,255,0.05)" : "#f9fafb",
+                border: dark ? "1px solid rgba(255,255,255,0.1)" : "1px solid #e5e7eb",
+                color: dark ? "#f1f5f9" : "#0f172a",
+              }}
               placeholder="Your email *"
               value={formData.email}
               onChange={handleChange}
               required
+              onFocus={e => e.target.style.border = "1px solid rgba(34,197,94,0.6)"}
+              onBlur={e => e.target.style.border = dark ? "1px solid rgba(255,255,255,0.1)" : "1px solid #e5e7eb"}
             />
 
-            {/* Query Field */}
             <textarea
               name="query"
-              className="w-full p-3 border border-gray-300 rounded-lg text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
+              className="w-full p-3 rounded-xl text-sm outline-none transition-all resize-none"
+              style={{
+                background: dark ? "rgba(255,255,255,0.05)" : "#f9fafb",
+                border: dark ? "1px solid rgba(255,255,255,0.1)" : "1px solid #e5e7eb",
+                color: dark ? "#f1f5f9" : "#0f172a",
+              }}
               rows="4"
               placeholder="Your query *"
               value={formData.query}
               onChange={handleChange}
               required
-            ></textarea>
+              onFocus={e => e.target.style.border = "1px solid rgba(34,197,94,0.6)"}
+              onBlur={e => e.target.style.border = dark ? "1px solid rgba(255,255,255,0.1)" : "1px solid #e5e7eb"}
+            />
 
-            {/* Submit Button */}
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-green-600 text-white px-4 py-3 rounded-lg hover:bg-green-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+              className="w-full text-white px-4 py-3 rounded-xl font-semibold text-sm transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+              style={{
+                background: "linear-gradient(135deg, #22c55e, #16a34a)",
+                boxShadow: "0 0 20px rgba(34,197,94,0.25)",
+              }}
             >
               {loading ? (
                 <>
-                  <Loader2 className="animate-spin mr-2 h-5 w-5" />
+                  <Loader2 className="animate-spin h-4 w-4" />
                   Sending...
                 </>
               ) : (

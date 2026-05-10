@@ -1,5 +1,7 @@
 import { blogs } from "../data/blogs";
 
+export const dynamic = "force-static";
+
 const BASE_URL = "https://www.algoflowai.com";
 
 export default function sitemap() {

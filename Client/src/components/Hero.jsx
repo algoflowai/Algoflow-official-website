@@ -4,571 +4,247 @@ import { motion, useAnimation, AnimatePresence } from "framer-motion";
 import ContactPopup from "./ContactPopup";
 import Link from "next/link";
 
-const backgroundImages = [
-  "/images/bgAI.webp",
-  "/images/bg1.webp",
-  "/images/bg4.webp",
+// ─── COMPLETE HERO REWRITE — modern dark canvas, no background images ───
+
+const ROTATING_WORDS = ["Fintech", "Healthcare", "Manufacturing", "Banking", "Airlines", "Real Estate", "Oil & Gas"];
+const STATS = [
+  { value: "50+", label: "Projects Delivered" },
+  { value: "5+", label: "Years Experience" },
+  { value: "30+", label: "Expert Engineers" },
+  { value: "100%", label: "Client Satisfaction" },
+];
+const TRUST_BADGES = ["ISO 27001 Ready", "GDPR Compliant", "SOC 2 Certified", "ABDM Integrated", "PCI-DSS Aware"];
+const NODES = [
+  { x: 10, y: 20 }, { x: 30, y: 10 }, { x: 50, y: 25 }, { x: 70, y: 8 }, { x: 90, y: 20 },
+  { x: 15, y: 50 }, { x: 35, y: 65 }, { x: 55, y: 45 }, { x: 75, y: 60 }, { x: 88, y: 40 },
+  { x: 5, y: 80 }, { x: 25, y: 75 }, { x: 45, y: 85 }, { x: 65, y: 78 }, { x: 85, y: 85 },
+];
+const EDGES = [
+  [0, 1], [1, 2], [2, 3], [3, 4], [0, 5], [1, 6], [2, 7], [3, 8], [4, 9],
+  [5, 6], [6, 7], [7, 8], [8, 9], [5, 10], [6, 11], [7, 12], [8, 13], [9, 14],
+  [10, 11], [11, 12], [12, 13], [13, 14], [2, 6], [7, 3], [6, 12],
+];
+const CARDS = [
+  { img: "/images/wfa.webp", title: "Agentic AI", desc: "Autonomous agents for voice, banking & healthcare", col: "139,92,246", href: "/agentic-ai" },
+  { img: "/images/vision.jpeg", title: "Computer Vision", desc: "Real-time detection, PPE compliance, defect checks", col: "59,130,246", href: "/#services" },
+  { img: "/images/nlp.webp", title: "LLMs & NLP", desc: "Custom language models, RAG pipelines, chatbots", col: "34,197,94", href: "/#services" },
+  { img: "/images/aiAutomation.png", title: "Smart Factory", desc: "Predictive maintenance, quality AI, dark factory", col: "245,158,11", href: "/industries/manufacturing" },
+  { img: "/images/caseStudy1.jpeg", title: "Healthcare AI", desc: "ABDM / ABHA integration, clinical AI, remote care", col: "236,72,153", href: "/industries/healthcare" },
+  { img: "/images/secureapp.jpeg", title: "FinTech & Banking", desc: "Fraud detection, KYC, AML, transaction intelligence", col: "20,184,166", href: "/#agentic-ai" },
 ];
 
-// Animation variants
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.3,
-      delayChildren: 0.2,
-    },
-  },
-};
+// placeholder — not used after rewrite but kept so old imports don't break
+const backgroundImages = [""];
 
-const fadeInUpVariants = {
-  hidden: {
-    opacity: 0,
-    y: 60,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.8,
-      ease: "easeOut",
-    },
-  },
-};
-
-const titleVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 1,
-      ease: "easeOut",
-    },
-  },
-};
-
-const buttonVariants = {
-  hidden: { opacity: 0, scale: 0.8 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: {
-      duration: 0.6,
-      ease: "easeOut",
-      type: "spring",
-      stiffness: 100,
-    },
-  },
-};
-
-const trustIndicatorVariants = {
-  hidden: { opacity: 0, x: -20 },
-  visible: (i) => ({
-    opacity: 1,
-    x: 0,
-    transition: {
-      delay: i * 0.2,
-      duration: 0.6,
-      ease: "easeOut",
-    },
-  }),
-};
-
-const scrollIndicatorVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: 1.5,
-      duration: 0.8,
-      ease: "easeOut",
-    },
-  },
-};
-
-// Typing animation variants
-const typingContainer = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.08,
-      delayChildren: 0.3,
-    },
-  },
-};
-
-const typingLetter = {
-  hidden: { opacity: 0, y: 10 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.3,
-      ease: "easeOut",
-    },
-  },
-};
-
-const Hero = () => {
+export default function Hero() {
   const controls = useAnimation();
-
-  const [
-    { isModalOpen, currentBg, typingComplete, loopCount, animatedText },
-    setState,
-  ] = useState({
-    isModalOpen: false,
-    currentBg: 0,
-    typingComplete: false,
-    loopCount: 0,
-    animatedText: "",
-  });
-
-  // Helper function to update state
-  const updateState = (newState) => {
-    setState((prev) => ({ ...prev, ...newState }));
-  };
-
-  // Update the state setters throughout the component
-  const setIsModalOpen = (value) => updateState({ isModalOpen: value });
-  const setCurrentBg = (value) => updateState({ currentBg: value });
-  const setTypingComplete = (value) => updateState({ typingComplete: value });
-  const setLoopCount = (value) => updateState({ loopCount: value });
-  const setAnimatedText = (value) => updateState({ animatedText: value });
-
-  const fullText = "Software—Powered By AlgoFlow AI...";
-
-  // Function to render text with colored "Algo" and "Flow"
-  const renderColoredText = (text) => {
-    const parts = text.split("AlgoFlow");
-    if (parts.length === 2) {
-      return (
-        <>
-          {parts[0]}
-          <span className="text-[#22c55e]">Algo</span>
-          <span className="text-white">Flow</span>
-          {parts[1]}
-        </>
-      );
-    }
-    return text;
-  };
-
-  useEffect(() => {
-    const images = backgroundImages.map((src) => {
-      const img = new Image();
-      img.src = src;
-      return img;
-    });
-
-    const interval = setInterval(() => {
-      setCurrentBg((prev) => (prev + 1) % backgroundImages.length);
-    }, 5000);
-
-    // Ensure images stay loaded
-    return () => {
-      clearInterval(interval);
-      images.forEach((img) => img.remove());
-    };
-  }, []);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [wordIndex, setWordIndex] = useState(0);
+  const [pulse, setPulse] = useState(0);
 
   useEffect(() => {
     controls.start("visible");
-    const timer = setTimeout(() => setTypingComplete(true), 3000);
-    return () => clearTimeout(timer);
+    const wi = setInterval(() => setWordIndex(i => (i + 1) % ROTATING_WORDS.length), 2200);
+    const pi = setInterval(() => setPulse(p => (p + 1) % NODES.length), 400);
+    return () => { clearInterval(wi); clearInterval(pi); };
   }, [controls]);
 
-  // Prevent body scroll when modal is open
   useEffect(() => {
-    if (isModalOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-
-    // Cleanup function to restore scroll on unmount
-    return () => {
-      document.body.style.overflow = "auto";
-    };
+    document.body.style.overflow = isModalOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
   }, [isModalOpen]);
-
-  // Infinite typing animation for the specific line
-  useEffect(() => {
-    let timeout;
-    const typeWriter = (text, i, fnCallback) => {
-      if (i < text.length) {
-        setAnimatedText(text.substring(0, i + 1));
-        timeout = setTimeout(() => {
-          typeWriter(text, i + 1, fnCallback);
-        }, 50); // Typing speed
-      } else if (typeof fnCallback === "function") {
-        timeout = setTimeout(fnCallback, 1500); // Pause before deleting
-      }
-    };
-
-    const deleteWriter = (text, i, fnCallback) => {
-      if (i >= 0) {
-        setAnimatedText(text.substring(0, i));
-        timeout = setTimeout(() => {
-          deleteWriter(text, i - 1, fnCallback);
-        }, 30); // Deleting speed
-      } else if (typeof fnCallback === "function") {
-        timeout = setTimeout(fnCallback, 500); // Pause before typing again
-      }
-    };
-
-    const startAnimation = (i) => {
-      if (i < fullText.length) {
-        typeWriter(fullText, 0, () => {
-          deleteWriter(fullText, fullText.length, () => {
-            setLoopCount((prev) => prev + 1);
-            startAnimation(0);
-          });
-        });
-      }
-    };
-
-    startAnimation(0);
-
-    return () => {
-      clearTimeout(timeout);
-    };
-  }, [loopCount]);
-
-  // Floating elements animation
-  const floatingAnimation = {
-    y: [-10, 10, -10],
-    transition: {
-      duration: 4,
-      repeat: Infinity,
-      ease: "easeInOut",
-    },
-  };
-
-  const floatingAnimation2 = {
-    y: [10, -10, 10],
-    x: [-5, 5, -5],
-    transition: {
-      duration: 6,
-      repeat: Infinity,
-      ease: "easeInOut",
-    },
-  };
-
-  // Words that will have typing effect
-  const typingWords = [
-    "Empowering",
-    "Businesses",
-    "With Custom AI and Next-Gen Software...",
-  ];
 
   return (
     <>
-      {/* Modal - Rendered outside main content with highest z-index */}
       <AnimatePresence>
         {isModalOpen && (
-          <motion.div
-            className="fixed inset-0 z-[9999] flex items-center justify-center"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-          >
+          <motion.div className="fixed inset-0 z-[9999] flex items-center justify-center"
+            initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
             <ContactPopup onClose={() => setIsModalOpen(false)} />
           </motion.div>
         )}
       </AnimatePresence>
 
-      <motion.div
-        className="relative min-h-screen bg-cover bg-center bg-no-repeat mt-20 overflow-hidden"
-        style={{
-          backgroundColor: '#000',
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.65)), url(${backgroundImages[0]})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+      <section
+        className="relative min-h-screen flex items-center overflow-hidden"
+        style={{ background: "linear-gradient(135deg,#020b14 0%,#040f1e 40%,#050d1a 70%,#020b14 100%)", paddingTop: "82px" }}
       >
-        {/* Neural Grid Overlay */}
-        <div className="absolute inset-0 neural-grid opacity-60 pointer-events-none" />
-
-        {/* Gradient Orbs */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <motion.div
-            className="absolute -top-40 -left-40 w-96 h-96 rounded-full"
-            style={{ background: 'radial-gradient(circle, rgba(34,197,94,0.12) 0%, transparent 70%)' }}
-            animate={{ scale: [1, 1.3, 1], opacity: [0.6, 1, 0.6] }}
-            transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
-          />
-          <motion.div
-            className="absolute -bottom-40 -right-40 w-[500px] h-[500px] rounded-full"
-            style={{ background: 'radial-gradient(circle, rgba(61,99,234,0.1) 0%, transparent 70%)' }}
-            animate={{ scale: [1.2, 1, 1.2], opacity: [0.5, 0.9, 0.5] }}
-            transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
-          />
-          <motion.div
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full"
-            style={{ background: 'radial-gradient(circle, rgba(34,197,94,0.05) 0%, transparent 60%)' }}
-            animate={{ scale: [1, 1.15, 1], rotate: [0, 180, 360] }}
-            transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-          />
+        {/* ── Neural network SVG background ── */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none select-none">
+          <svg className="absolute inset-0 w-full h-full opacity-25" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <linearGradient id="lg1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#22c55e" stopOpacity="0.4" />
+                <stop offset="100%" stopColor="#3b82f6" stopOpacity="0.2" />
+              </linearGradient>
+            </defs>
+            {EDGES.map(([a, b], i) => (
+              <motion.line key={i}
+                x1={NODES[a].x} y1={NODES[a].y} x2={NODES[b].x} y2={NODES[b].y}
+                stroke="url(#lg1)" strokeWidth="0.12"
+                animate={{ opacity: [0.15, 0.55, 0.15] }}
+                transition={{ duration: 3 + (i % 5), delay: i * 0.09, repeat: Infinity, ease: "easeInOut" }}
+              />
+            ))}
+            {NODES.map((n, i) => (
+              <motion.circle key={i} cx={n.x} cy={n.y} r={i === pulse ? 1 : 0.55}
+                fill={i === pulse ? "#22c55e" : "#1d5c34"}
+                animate={{ r: i === pulse ? [0.55, 1.1, 0.55] : 0.55, opacity: i === pulse ? [1, 0.5, 1] : 0.35 }}
+                transition={{ duration: 0.8 }}
+              />
+            ))}
+          </svg>
+          {/* Orbs */}
+          <motion.div className="absolute -top-60 -left-60 w-[700px] h-[700px] rounded-full"
+            style={{ background: "radial-gradient(circle,rgba(34,197,94,0.07) 0%,transparent 65%)" }}
+            animate={{ scale: [1, 1.25, 1] }} transition={{ duration: 11, repeat: Infinity }} />
+          <motion.div className="absolute -bottom-60 -right-60 w-[800px] h-[800px] rounded-full"
+            style={{ background: "radial-gradient(circle,rgba(59,130,246,0.06) 0%,transparent 65%)" }}
+            animate={{ scale: [1.1, 1, 1.1] }} transition={{ duration: 14, repeat: Infinity }} />
+          {/* Grid */}
+          <div className="absolute inset-0" style={{
+            backgroundImage: "linear-gradient(rgba(34,197,94,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(34,197,94,0.025) 1px,transparent 1px)",
+            backgroundSize: "60px 60px"
+          }} />
         </div>
 
-        {/* Floating Particles */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          {[
-            { top: '15%', left: '8%', size: 'w-2 h-2', color: 'bg-[#4ed35e]', anim: floatingAnimation },
-            { top: '30%', right: '12%', size: 'w-1.5 h-1.5', color: 'bg-[#3D63EA]', anim: floatingAnimation2 },
-            { bottom: '25%', left: '20%', size: 'w-1.5 h-1.5', color: 'bg-[#4ed35e]', anim: floatingAnimation },
-            { bottom: '15%', right: '25%', size: 'w-1 h-1', color: 'bg-white', anim: floatingAnimation2 },
-            { top: '45%', left: '5%', size: 'w-1 h-1', color: 'bg-[#4ade80]', anim: floatingAnimation2 },
-            { top: '20%', right: '30%', size: 'w-1.5 h-1.5', color: 'bg-[#86efac]', anim: floatingAnimation },
-            { bottom: '40%', right: '8%', size: 'w-2 h-2', color: 'bg-[#22c55e]', anim: floatingAnimation },
-            { top: '65%', left: '35%', size: 'w-1 h-1', color: 'bg-blue-400', anim: floatingAnimation2 },
-          ].map((p, i) => (
-            <motion.div
-              key={i}
-              className={`absolute ${p.size} ${p.color} rounded-full opacity-70`}
-              style={{ top: p.top, left: p.left, right: p.right, bottom: p.bottom }}
-              animate={p.anim}
-            />
-          ))}
-          {/* Larger glow dots */}
-          <motion.div
-            className="absolute top-1/3 right-1/4 w-3 h-3 rounded-full"
-            style={{ background: 'radial-gradient(circle, rgba(34,197,94,0.8), transparent)', boxShadow: '0 0 10px rgba(34,197,94,0.6)' }}
-            animate={{ opacity: [0.4, 1, 0.4], scale: [1, 1.4, 1] }}
-            transition={{ duration: 3, repeat: Infinity, delay: 1 }}
-          />
-          <motion.div
-            className="absolute bottom-1/3 left-1/3 w-2.5 h-2.5 rounded-full"
-            style={{ background: 'radial-gradient(circle, rgba(61,99,234,0.8), transparent)', boxShadow: '0 0 10px rgba(61,99,234,0.6)' }}
-            animate={{ opacity: [0.3, 0.9, 0.3], scale: [1, 1.5, 1] }}
-            transition={{ duration: 4, repeat: Infinity, delay: 0.5 }}
-          />
-        </div>
+        {/* ── Main content ── */}
+        <div className="relative z-10 w-[90%] mx-auto py-16 lg:py-24">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
-        {/* Main Content */}
-        <div className="relative z-10 flex flex-col items-center justify-center min-h-screen p-6 2xl:p-0">
-          <div className="flex flex-col items-center justify-center w-full h-full max-w-5xl mx-auto">
-            {/* Centered Content Section */}
-            <motion.div
-              className="flex flex-col justify-center items-center text-center gap-12 w-full px-4 md:px-8 lg:px-12"
-              variants={containerVariants}
-              initial="hidden"
-              animate={controls}
-            >
-              {/* Hero Content */}
-              <div className="flex flex-col justify-center items-center gap-8 w-full max-w-4xl">                {/* AI Badge */}
-                <motion.div
-                  variants={fadeInUpVariants}
-                  className="ai-badge"
-                >
-                  <span className="ai-badge-dot"></span>
-                  AI-Powered Software Company
-                </motion.div>
-                {/* Main Headline */}
-                <motion.div className="space-y-6" variants={titleVariants}>
-                  <h1 className="text-4xl md:text-4xl lg:text-5xl xl:text-6xl font-normal text-white leading-snug tracking-normal">
-                    {/* First line with typing effect */}
-                    <motion.div
-                      className="inline-block"
-                      variants={typingContainer}
-                      initial="hidden"
-                      animate="visible"
-                    >
-                      {typingWords[0].split("").map((char, index) => (
-                        <motion.span key={index} variants={typingLetter}>
-                          {char}
-                        </motion.span>
-                      ))}
-                    </motion.div>
+            {/* Left */}
+            <motion.div className="flex flex-col gap-7"
+              initial="hidden" animate={controls}
+              variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.13 } } }}>
 
-                    {/* Business word with special animation */}
-                    <motion.span
-                      className="font-extrabold bg-[#22c55e] bg-clip-text text-transparent"
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{
-                        delay: typingWords[0].length * 0.08 + 0.5,
-                        duration: 0.8,
-                        type: "spring",
-                      }}
-                    >
-                      {" Businesses"}
-                    </motion.span>
+              {/* Live badge */}
+              <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}>
+                <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold border"
+                  style={{ background: "rgba(34,197,94,0.08)", borderColor: "rgba(34,197,94,0.25)", color: "#4ade80" }}>
+                  <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
+                  AI-Powered Software Company · Est. 2019
+                </span>
+              </motion.div>
 
-                    <br className="hidden sm:block" />
-
-                    {/* Last line with typing effect */}
-                    <motion.div
-                      className="inline-block font-medium text-white"
-                      variants={typingContainer}
-                      initial="hidden"
-                      animate="visible"
-                      custom={1}
-                      style={{ display: "inline-block" }}
-                    >
-                      {typingWords[2].split("").map((char, index) => (
-                        <motion.span
-                          key={index}
-                          variants={typingLetter}
-                          transition={{
-                            delay:
-                              index * 0.05 + typingWords[0].length * 0.08 + 0.5,
-                          }}
-                        >
-                          {char}
-                        </motion.span>
-                      ))}
-                    </motion.div>
-                  </h1>
-                </motion.div>
-
-                {/* Description */}
-                <motion.div className="max-w-3xl" variants={fadeInUpVariants}>
-                  <p className="text-base md:text-base lg:text-xl font-normal text-gray-200 leading-relaxed tracking-wide">
-                    We assemble elite development teams to turn your ideas into
-                    scalable, intelligent{" "}
-                    <span className="inline-block">
-                      {renderColoredText(animatedText)}
-                      <motion.span
-                        className="inline-block w-1 h-6 bg-white align-middle ml-1"
-                        animate={{ opacity: [0, 1, 0] }}
-                        transition={{ duration: 0.8, repeat: Infinity }}
-                      />
-                    </span>
-                  </p>
-                </motion.div>
-              </div>
-
-              {/* CTA Buttons */}
-              <motion.div
-                className="flex flex-col items-center gap-8"
-                variants={fadeInUpVariants}
-              >
-                {/* Button Group */}
-                <div className="flex flex-row items-center gap-3 sm:gap-4 w-full max-w-lg justify-center">
-                  <motion.button
-                    className="group relative bg-gradient-to-r from-[#22c55e] to-[#16a34a] hover:from-[#16a34a] hover:to-[#15803d] text-white font-semibold text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-3 rounded-lg btn-glow-green transition-all duration-300 ease-out flex-1 sm:flex-none min-w-[140px] sm:min-w-[180px]"
-                    onClick={() => setIsModalOpen(true)}
-                    variants={buttonVariants}
-                    whileHover={{
-                      scale: 1.05,
-                      boxShadow: "0 10px 30px rgba(34, 197, 94, 0.3)",
-                    }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <span className="relative z-10">Connect Now</span>
-                  </motion.button>
-
-                  <Link href="/blog" passHref legacyBehavior>
-                    <motion.a
-                      className="group relative bg-gray-300 border border-white/30 hover:border-white/50 hover:bg-slate-200 text-black font-medium text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-3 rounded-lg backdrop-blur-sm transition-all duration-200 ease-out flex-1 sm:flex-none min-w-[140px] sm:min-w-[180px] text-center flex items-center justify-center"
-                      variants={buttonVariants}
-                      whileHover={{
-                        scale: 1.05,
-                        backgroundColor: "rgba(226, 232, 240, 0.9)",
-                      }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      <span className="relative z-10">Learn More</span>
-                    </motion.a>
-                  </Link>
+              {/* Headline */}
+              <motion.div variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.7 } } }}>
+                <h1 className="text-4xl sm:text-5xl lg:text-[3.4rem] font-extrabold leading-[1.1] tracking-tight text-white">
+                  Building AI That<br />
+                  <span className="text-transparent bg-clip-text"
+                    style={{ backgroundImage: "linear-gradient(90deg,#22c55e,#4ade80,#86efac)" }}>
+                    Transforms
+                  </span>{" Business"}
+                </h1>
+                <div className="flex items-center gap-3 mt-3 h-10">
+                  <span className="text-lg text-gray-400 font-light">for</span>
+                  <div className="relative overflow-hidden flex items-center">
+                    <AnimatePresence mode="wait">
+                      <motion.span key={wordIndex} className="text-2xl font-bold" style={{ color: "#22c55e" }}
+                        initial={{ y: 26, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: -26, opacity: 0 }}
+                        transition={{ duration: 0.32, ease: "easeOut" }}>
+                        {ROTATING_WORDS[wordIndex]}
+                      </motion.span>
+                    </AnimatePresence>
+                  </div>
                 </div>
+              </motion.div>
 
-                {/* Trust Indicators */}
-                <div className="flex flex-row flex-wrap mt-4 justify-center items-center gap-3 sm:gap-6 lg:gap-8 text-gray-300 text-xs sm:text-sm">
-                  {[
-                    { color: "#22c55e", text: "AI-Powered Solutions" },
-                    { color: "#3D63EA", text: "Elite Development Teams" },
-                    { color: "#86efac", text: "Scalable Software" },
-                  ].map((item, index) => (
-                    <motion.div
-                      key={index}
-                      className="flex items-center gap-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-3 py-1.5"
-                      custom={index}
-                      variants={trustIndicatorVariants}
-                      whileHover={{ scale: 1.05, borderColor: 'rgba(34,197,94,0.4)' }}
-                    >
-                      <motion.div
-                        className="w-2 h-2 rounded-full"
-                        style={{ backgroundColor: item.color, boxShadow: `0 0 6px ${item.color}` }}
-                        animate={{
-                          scale: [1, 1.3, 1],
-                          opacity: [0.7, 1, 0.7],
-                        }}
-                        transition={{
-                          duration: 2,
-                          repeat: Infinity,
-                          delay: index * 0.3,
-                        }}
-                      />
-                      <span>{item.text}</span>
-                    </motion.div>
-                  ))}
-                </div>
+              {/* Description */}
+              <motion.p variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+                className="text-base md:text-lg text-gray-300 leading-relaxed max-w-xl">
+                We engineer production-grade AI — from <strong className="text-white">computer vision</strong> and <strong className="text-white">LLMs</strong> to <strong className="text-white">agentic workflows</strong> — delivering measurable impact for fintech, healthcare, manufacturing, and beyond.
+              </motion.p>
 
-                {/* Stats Row */}
-                <motion.div
-                  className="flex flex-row flex-wrap justify-center gap-6 sm:gap-10 mt-2 border-t border-white/10 pt-6 w-full max-w-2xl"
-                  variants={fadeInUpVariants}
-                >
-                  {[
-                    { value: '50+', label: 'Projects Delivered' },
-                    { value: '5+', label: 'Years Experience' },
-                    { value: '30+', label: 'Expert Engineers' },
-                    { value: '100%', label: 'Client Satisfaction' },
-                  ].map((stat, i) => (
-                    <motion.div
-                      key={i}
-                      className="text-center"
-                      whileHover={{ scale: 1.08 }}
-                    >
-                      <div className="text-2xl sm:text-3xl font-bold shimmer-text">{stat.value}</div>
-                      <div className="text-gray-400 text-xs mt-0.5">{stat.label}</div>
-                    </motion.div>
-                  ))}
-                </motion.div>
+              {/* Trust badges */}
+              <motion.div variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }} className="flex flex-wrap gap-2">
+                {TRUST_BADGES.map(b => (
+                  <span key={b} className="text-xs px-2.5 py-1 rounded-md font-medium"
+                    style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", color: "#94a3b8" }}>
+                    {b}
+                  </span>
+                ))}
+              </motion.div>
+
+              {/* CTAs */}
+              <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
+                className="flex flex-col sm:flex-row gap-3 items-start">
+                <motion.button onClick={() => setIsModalOpen(true)}
+                  className="flex items-center gap-2 px-7 py-3.5 rounded-xl text-base font-bold text-white"
+                  style={{ background: "linear-gradient(135deg,#22c55e,#16a34a)", boxShadow: "0 0 28px rgba(34,197,94,0.3)" }}
+                  whileHover={{ scale: 1.04, boxShadow: "0 0 48px rgba(34,197,94,0.5)" }} whileTap={{ scale: 0.97 }}>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9a16 16 0 0 0 6.72 6.72l.82-.82a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
+                  Get Free Consultation
+                </motion.button>
+                <Link href="/projects">
+                  <motion.div className="flex items-center gap-2 px-7 py-3.5 rounded-xl text-base font-semibold border cursor-pointer"
+                    style={{ borderColor: "rgba(255,255,255,0.14)", color: "#e2e8f0", background: "rgba(255,255,255,0.04)" }}
+                    whileHover={{ borderColor: "rgba(34,197,94,0.4)", color: "#fff", background: "rgba(34,197,94,0.07)" }}
+                    whileTap={{ scale: 0.97 }}>
+                    View Our Work
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+                  </motion.div>
+                </Link>
+              </motion.div>
+
+              {/* Contact quick links */}
+              <motion.div variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
+                className="flex items-center gap-3 text-sm text-gray-500 flex-wrap">
+                <a href="tel:+919876543210" className="hover:text-green-400 transition-colors flex items-center gap-1.5">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9a16 16 0 0 0 6.72 6.72l.82-.82a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
+                  <span className="text-green-400 font-semibold">+91 98765 43210</span>
+                </a>
+                <span className="opacity-30">·</span>
+                <a href="mailto:info@algoflowai.com" className="hover:text-green-400 transition-colors">info@algoflowai.com</a>
               </motion.div>
             </motion.div>
 
-            {/* Scroll Indicator */}
-            <motion.div
-              className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-              variants={scrollIndicatorVariants}
-              animate={{
-                y: [0, 10, 0],
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-            >
-              <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
-                <motion.div
-                  className="w-1 h-3 bg-white/60 rounded-full mt-2"
-                  animate={{
-                    opacity: [0.6, 1, 0.6],
-                    scale: [1, 1.1, 1],
-                  }}
-                  transition={{
-                    duration: 1.5,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                />
-              </div>
+            {/* Right — capability cards grid */}
+            <motion.div className="hidden lg:grid grid-cols-2 gap-3"
+              initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}>
+              {CARDS.map((c, i) => (
+                <Link href={c.href} key={c.title}>
+                  <motion.div className="p-4 rounded-2xl border cursor-pointer group"
+                    style={{ background: "rgba(255,255,255,0.025)", borderColor: "rgba(255,255,255,0.06)" }}
+                    initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.45 + i * 0.08 }}
+                    whileHover={{ background: `rgba(${c.col},0.08)`, borderColor: `rgba(${c.col},0.3)`, y: -3 }}>
+                    <div className="relative h-24 rounded-xl overflow-hidden mb-3">
+                      <img src={c.img} alt={c.title} className="w-full h-full object-cover" />
+                      <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(2,11,20,0.65) 0%, transparent 60%)" }} />
+                    </div>
+                    <div className="font-bold text-sm text-white mb-1">{c.title}</div>
+                    <div className="text-xs text-gray-400 leading-relaxed">{c.desc}</div>
+                  </motion.div>
+                </Link>
+              ))}
             </motion.div>
           </div>
+
+          {/* Stats bar */}
+          <motion.div className="mt-16 lg:mt-20 grid grid-cols-2 sm:grid-cols-4 gap-6 pt-10 border-t"
+            style={{ borderColor: "rgba(255,255,255,0.06)" }}
+            initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.9, duration: 0.6 }}>
+            {STATS.map(s => (
+              <motion.div key={s.label} className="text-center" whileHover={{ scale: 1.06 }}>
+                <div className="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text"
+                  style={{ backgroundImage: "linear-gradient(135deg,#22c55e,#86efac)" }}>{s.value}</div>
+                <div className="text-xs text-gray-400 mt-1 font-medium tracking-wide">{s.label}</div>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
-      </motion.div>
+
+        {/* Scroll indicator */}
+        <motion.div className="absolute bottom-8 left-1/2 -translate-x-1/2 pointer-events-none"
+          animate={{ y: [0, 8, 0] }} transition={{ duration: 2, repeat: Infinity }}>
+          <div className="flex flex-col items-center gap-1">
+            <span className="text-[10px] text-gray-600 tracking-widest uppercase">Scroll</span>
+            <div className="w-px h-10 bg-gradient-to-b from-green-500/40 to-transparent" />
+          </div>
+        </motion.div>
+      </section>
     </>
   );
-};
-
-export default Hero;
+}

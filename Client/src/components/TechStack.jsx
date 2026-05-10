@@ -40,7 +40,7 @@ export default function TechStack() {
 
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto">
+      <div className="w-[90%] mx-auto">
         <div className="text-center mb-10">
           <div className="flex items-center justify-center mb-3">
             <div className="w-[69px] h-[5px] bg-gradient-to-r from-[#4ed35e] to-[#1b6f08]"></div>

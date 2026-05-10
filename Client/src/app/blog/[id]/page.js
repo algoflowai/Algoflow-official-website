@@ -4,6 +4,7 @@ import Link from "next/link";
 import { IconArrowLeft, IconClock, IconShare } from "@tabler/icons-react";
 import { blogs } from "../../../data/blogs";
 import SharePopup from "../../../components/SharePopup";
+import Navbar from "@/components/Navbar";
 
 // Required for static export with dynamic routes
 export async function generateStaticParams() {
@@ -57,13 +58,21 @@ export default function BlogDetail({ params }) {
   const relatedBlogs = blogs.filter((b) => b.id !== blog.id).slice(0, 3);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
+    <div className="min-h-screen" style={{ background: "var(--background)" }}>
+      <Navbar />
       {/* Navigation Header */}
-      <div className="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-10">
-        <div className="w-full px-4 py-4">
+      <div
+        className="sticky top-0 z-40 border-b pt-20"
+        style={{
+          background: "var(--nav-bg)",
+          backdropFilter: "blur(20px)",
+          borderColor: "var(--border)",
+        }}
+      >
+        <div className="w-[90%] mx-auto py-3">
           <Link
             href="/"
-            className="inline-flex items-center text-green-600 hover:text-green-700 font-medium transition-colors group"
+            className="inline-flex items-center text-green-500 hover:text-green-400 font-medium transition-colors group text-sm"
           >
             <IconArrowLeft className="h-4 w-4 mr-2 transition-transform group-hover:-translate-x-1" />
             Back to Home
@@ -72,53 +81,62 @@ export default function BlogDetail({ params }) {
       </div>
 
       {/* Blog content */}
-      <div className="w-full px-4 py-8">
-        {/* Hero Section */}
-        <div className="mb-12">
-          {/* Hero image */}
-          <div className="relative h-64 md:h-80 lg:h-96 w-full rounded-2xl overflow-hidden shadow-2xl mb-8">
-            <Image
-              src={blog.image}
-              alt={blog.title}
-              fill
-              className="object-cover"
-              priority
-            />
-            {/* Gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-          </div>
-
-          {/* Blog metadata - Enhanced */}
-          <div className="flex items-center justify-center gap-8 mb-8">
-            <div className="flex items-center gap-3 bg-white px-6 py-3 rounded-full shadow-lg border border-gray-100">
-              <IconClock className="h-5 w-5 text-green-600" />
-              <span className="font-semibold text-gray-800">
-                {readingTime} min read
-              </span>
-            </div>
-            <SharePopup blogId={params.id} />
-          </div>
-
-          {/* Blog title */}
-          <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight mb-6 text-center">
-            {blog.title}
-          </h1>
-
-          {/* Excerpt */}
-          <p className="text-lg md:text-xl text-gray-600 leading-relaxed mb-8 text-center max-w-4xl mx-auto">
-            {blog.excerpt}
-          </p>
-
-          {/* Divider */}
-          <div className="w-20 h-1 bg-gradient-to-r from-green-500 to-green-600 rounded-full mx-auto"></div>
+      <div className="w-[90%] mx-auto py-10">
+        {/* Hero image */}
+        <div className="relative h-64 md:h-80 lg:h-96 w-full rounded-2xl overflow-hidden shadow-2xl mb-8">
+          <Image
+            src={blog.image}
+            alt={blog.title}
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
         </div>
 
-        {/* Blog content with background/shadow */}
-        <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl p-8 md:p-12 mb-12">
+        {/* Meta */}
+        <div className="flex items-center justify-center gap-4 mb-8 flex-wrap">
+          <div
+            className="flex items-center gap-2 px-5 py-2.5 rounded-full border text-sm font-semibold"
+            style={{
+              background: "var(--surface)",
+              borderColor: "var(--border)",
+              color: "var(--text-primary)",
+            }}
+          >
+            <IconClock className="h-4 w-4 text-green-500" />
+            {readingTime} min read
+          </div>
+          <SharePopup blogId={params.id} />
+        </div>
+
+        {/* Title */}
+        <h1
+          className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6 text-center"
+          style={{ color: "var(--text-primary)" }}
+        >
+          {blog.title}
+        </h1>
+
+        {/* Excerpt */}
+        <p
+          className="text-lg md:text-xl leading-relaxed mb-8 text-center max-w-3xl mx-auto"
+          style={{ color: "var(--text-secondary)" }}
+        >
+          {blog.excerpt}
+        </p>
+
+        <div className="w-20 h-1 bg-gradient-to-r from-green-500 to-green-400 rounded-full mx-auto mb-12" />
+
+        {/* Content */}
+        <div
+          className="rounded-2xl shadow-xl p-8 md:p-12 mb-12 border"
+          style={{ background: "var(--card-bg)", borderColor: "var(--card-border)" }}
+        >
           <div className="prose prose-lg max-w-none">
             {blog.content.split("\n\n").map((paragraph, index) => (
               <div key={index} className="mb-8">
-                <p className="text-gray-700 leading-relaxed text-base md:text-lg lg:text-xl">
+                <p className="leading-relaxed text-base md:text-lg" style={{ color: "var(--text-secondary)" }}>
                   {paragraph}
                 </p>
               </div>
@@ -126,66 +144,75 @@ export default function BlogDetail({ params }) {
           </div>
         </div>
 
-        {/* Call to action section */}
-        <div className="max-w-4xl mx-auto mt-16 p-6 md:p-8 bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl border border-green-100 shadow-lg">
-          <div className="text-center">
-            <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">
-              Ready to Transform Your Business?
-            </h3>
-            <p className="text-gray-600 mb-6 text-sm md:text-base">
-              Let's discuss how our AI and software development expertise can
-              help you achieve your goals.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/"
-                className="inline-flex items-center justify-center px-6 md:px-8 py-3 bg-green-600 text-white font-medium rounded-lg hover:bg-green-700 transition-colors text-sm md:text-base"
-              >
-                Get Started
-              </Link>
-              <Link
-                href="/"
-                className="inline-flex items-center justify-center px-6 md:px-8 py-3 border border-green-600 text-green-600 font-medium rounded-lg hover:bg-green-50 transition-colors text-sm md:text-base"
-              >
-                Learn More
-              </Link>
-            </div>
+        {/* CTA */}
+        <div
+          className="p-6 md:p-10 rounded-2xl border mb-16 text-center"
+          style={{
+            background: "rgba(34,197,94,0.05)",
+            borderColor: "rgba(34,197,94,0.2)",
+          }}
+        >
+          <h3 className="text-xl md:text-2xl font-bold mb-3" style={{ color: "var(--text-primary)" }}>
+            Ready to Transform Your Business?
+          </h3>
+          <p className="mb-6 text-sm md:text-base" style={{ color: "var(--text-secondary)" }}>
+            Let's discuss how our AI and software development expertise can help you achieve your goals.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <Link
+              href="/"
+              className="inline-flex items-center justify-center px-7 py-3 rounded-xl text-white font-semibold text-sm transition-all hover:scale-105"
+              style={{ background: "linear-gradient(135deg, #22c55e, #16a34a)", boxShadow: "0 0 20px rgba(34,197,94,0.3)" }}
+            >
+              Get Started
+            </Link>
+            <Link
+              href="/"
+              className="inline-flex items-center justify-center px-7 py-3 rounded-xl font-semibold text-sm border transition-all hover:scale-105"
+              style={{ borderColor: "rgba(34,197,94,0.4)", color: "#22c55e" }}
+            >
+              Learn More
+            </Link>
           </div>
         </div>
 
         {/* Related Articles */}
         {relatedBlogs.length > 0 && (
-          <div className="max-w-6xl mx-auto mt-16">
-            <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">
+          <div className="mb-16">
+            <h2 className="text-2xl font-bold mb-8 text-center" style={{ color: "var(--text-primary)" }}>
               Related Articles
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {relatedBlogs.map((relatedBlog) => (
                 <Link
                   key={relatedBlog.id}
                   href={`/blog/${relatedBlog.id}`}
-                  className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 group"
+                  className="rounded-xl overflow-hidden hover:-translate-y-1 hover:shadow-xl transition-all duration-300 group border"
+                  style={{ background: "var(--card-bg)", borderColor: "var(--card-border)" }}
                 >
-                  <div className="relative h-48 overflow-hidden">
+                  <div className="relative h-44 overflow-hidden">
                     <Image
                       src={relatedBlog.image}
                       alt={relatedBlog.title}
                       fill
                       className="object-cover transition-transform duration-300 group-hover:scale-105"
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
                   </div>
-                  <div className="p-6">
-                    <div className="flex items-center gap-2 mb-3">
-                      <IconClock className="h-4 w-4 text-green-600" />
-                      <span className="text-sm text-gray-600">
-                        {Math.ceil(relatedBlog.content.split(" ").length / 200)}{" "}
-                        min read
+                  <div className="p-5">
+                    <div className="flex items-center gap-2 mb-2">
+                      <IconClock className="h-3.5 w-3.5 text-green-500" />
+                      <span className="text-xs" style={{ color: "var(--text-secondary)" }}>
+                        {Math.ceil(relatedBlog.content.split(" ").length / 200)} min read
                       </span>
                     </div>
-                    <h3 className="font-bold text-lg text-gray-900 mb-3 leading-tight group-hover:text-green-600 transition-colors">
+                    <h3
+                      className="font-bold text-base mb-2 leading-tight transition-colors group-hover:text-green-500"
+                      style={{ color: "var(--text-primary)" }}
+                    >
                       {relatedBlog.title}
                     </h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">
+                    <p className="text-sm leading-relaxed line-clamp-2" style={{ color: "var(--text-secondary)" }}>
                       {relatedBlog.excerpt}
                     </p>
                   </div>
@@ -195,24 +222,22 @@ export default function BlogDetail({ params }) {
           </div>
         )}
 
-        {/* Navigation footer */}
-        <div className="max-w-4xl mx-auto mt-12 pt-8 border-t border-gray-200">
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-            <Link
-              href="/"
-              className="inline-flex items-center text-green-600 hover:text-green-700 font-medium transition-colors group"
-            >
-              <IconArrowLeft className="h-4 w-4 mr-2 transition-transform group-hover:-translate-x-1" />
-              Back to Resources
-            </Link>
-            <Link
-              href="/blog"
-              className="inline-flex items-center text-green-600 hover:text-green-700 font-medium transition-colors group"
-            >
-              View All Articles
-              <IconArrowLeft className="h-4 w-4 ml-2 rotate-180 transition-transform group-hover:-translate-x-1" />
-            </Link>
-          </div>
+        {/* Footer nav */}
+        <div className="pt-8 border-t flex flex-col sm:flex-row justify-between items-center gap-4" style={{ borderColor: "var(--border)" }}>
+          <Link
+            href="/"
+            className="inline-flex items-center text-green-500 hover:text-green-400 font-medium transition-colors group text-sm"
+          >
+            <IconArrowLeft className="h-4 w-4 mr-2 transition-transform group-hover:-translate-x-1" />
+            Back to Resources
+          </Link>
+          <Link
+            href="/blog"
+            className="inline-flex items-center text-green-500 hover:text-green-400 font-medium transition-colors group text-sm"
+          >
+            View All Articles
+            <IconArrowLeft className="h-4 w-4 ml-2 rotate-180 transition-transform group-hover:translate-x-1" />
+          </Link>
         </div>
       </div>
     </div>

@@ -133,7 +133,7 @@ export default function AboutUs() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
             >
-                <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div className="w-[90%] mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
                     {stats.map((stat, i) => (
                         <motion.div
                             key={i}

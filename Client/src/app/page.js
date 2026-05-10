@@ -1,12 +1,12 @@
 import Image from "next/image";
-import { Navbar } from "@/components/Navbar";
+import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Clients from "@/components/Clients";
 import Testimonials from "@/components/Testimonials";
 import Services from "@/components/Services";
 import AgenticAI from "@/components/AgenticAI";
 import TeamSection from "@/components/Team-Section";
-import DevelopmentApproach from "@/components/Devapproach";
+import GlobalPresence from "@/components/GlobalPresence";
 import Footer from "@/components/Footer";
 import Hire from "@/components/Hire";
 import FeaturedResources from "@/components/Resources";
@@ -71,8 +71,8 @@ export default function Home() {
           <Recognitions />
         </section>
 
-        <section id="development-approach">
-          <DevelopmentApproach />
+        <section id="global-presence">
+          <GlobalPresence />
         </section>
         <section id="resources">
           <FeaturedResources />

@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { IconArrowRight, IconClock } from "@tabler/icons-react";
 import { blogs } from "../../data/blogs";
+import Navbar from "@/components/Navbar";
 
 export const metadata = {
   title: "Blog — AI Insights & Software Development Articles",
@@ -17,48 +18,51 @@ export const metadata = {
 };
 
 export default function BlogListing() {
-  // Get the first blog (ID 1) for featured section
   const featuredBlog = blogs.find((blog) => blog.id === 1);
-  // Get remaining blogs (excluding ID 1)
   const remainingBlogs = blogs.filter((blog) => blog.id !== 1);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
-      {/* Header */}
-      <div className="bg-white shadow-sm border-b border-gray-100">
-        <div className="w-full px-4 py-4">
+    <div className="min-h-screen" style={{ background: "var(--background)" }}>
+      <Navbar />
+
+      {/* Header bar */}
+      <div className="pt-24 border-b" style={{ borderColor: "var(--border)", background: "var(--surface)" }}>
+        <div className="w-[90%] mx-auto py-4">
           <Link
             href="/"
-            className="inline-flex items-center text-green-600 hover:text-green-700 font-medium transition-colors group"
+            className="inline-flex items-center text-green-500 hover:text-green-400 font-medium transition-colors group text-sm"
           >
-            <IconArrowRight className="h-4 w-4 mr-2 rotate-180 transition-transform group-hover:translate-x-1" />
+            <IconArrowRight className="h-4 w-4 mr-2 rotate-180 transition-transform group-hover:-translate-x-1" />
             Back to Home
           </Link>
         </div>
       </div>
 
-      <div className="w-full px-4 py-8 pb-16">
+      <div className="w-[90%] mx-auto py-12 pb-20">
         {/* Page Title */}
-        <div className="text-center mb-12">
-          <div className="w-24 h-1.5 bg-gradient-to-r from-[#4ed35e] to-[#1b6f08] rounded-full mx-auto mb-4" />
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+        <div className="text-center mb-14">
+          <div className="w-20 h-1.5 bg-gradient-to-r from-[#4ed35e] to-[#1b6f08] rounded-full mx-auto mb-5" />
+          <h1 className="text-4xl md:text-5xl font-extrabold mb-4" style={{ color: "var(--text-primary)" }}>
             Our Blogs
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Explore our latest insights on AI, software development, and
-            technology trends
+          <p className="text-lg max-w-2xl mx-auto" style={{ color: "var(--text-secondary)" }}>
+            Explore our latest insights on AI, software development, and technology trends
           </p>
         </div>
+
         {/* Featured Blog */}
         {featuredBlog && (
-          <div className="max-w-6xl mx-auto mb-16">
-            <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">
+          <div className="mb-16">
+            <h2 className="text-xl font-bold mb-6 text-center" style={{ color: "var(--text-primary)" }}>
               Featured Article
             </h2>
-            <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+            <div
+              className="rounded-2xl shadow-xl overflow-hidden border"
+              style={{ background: "var(--card-bg)", borderColor: "var(--card-border)" }}
+            >
               <div className="md:flex">
                 <div className="md:w-1/2">
-                  <div className="relative h-64 md:h-full">
+                  <div className="relative h-64 md:h-full min-h-[260px]">
                     <Image
                       src={featuredBlog.image}
                       alt={featuredBlog.title}
@@ -66,25 +70,25 @@ export default function BlogListing() {
                       className="object-cover"
                       priority
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
                   </div>
                 </div>
                 <div className="md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
                   <div className="flex items-center gap-2 mb-4">
-                    <IconClock className="h-4 w-4 text-green-600" />
-                    <span className="text-sm text-gray-600">
-                      {Math.ceil(featuredBlog.content.split(" ").length / 200)}{" "}
-                      min read
+                    <IconClock className="h-4 w-4 text-green-500" />
+                    <span className="text-sm" style={{ color: "var(--text-secondary)" }}>
+                      {Math.ceil(featuredBlog.content.split(" ").length / 200)} min read
                     </span>
                   </div>
-                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
+                  <h3 className="text-2xl md:text-3xl font-bold mb-4 leading-tight" style={{ color: "var(--text-primary)" }}>
                     {featuredBlog.title}
                   </h3>
-                  <p className="text-gray-600 mb-6 leading-relaxed">
+                  <p className="mb-6 leading-relaxed" style={{ color: "var(--text-secondary)" }}>
                     {featuredBlog.excerpt}
                   </p>
                   <Link
                     href={`/blog/${featuredBlog.id}`}
-                    className="inline-flex items-center text-green-600 hover:text-green-700 font-medium transition-colors group"
+                    className="inline-flex items-center text-green-500 hover:text-green-400 font-semibold transition-colors group"
                   >
                     Read Full Article
                     <IconArrowRight className="h-4 w-4 ml-2 transition-transform group-hover:translate-x-1" />
@@ -94,18 +98,20 @@ export default function BlogListing() {
             </div>
           </div>
         )}
-        {/* Remaining Blogs - Horizontal Scroll */}
-        <div className="max-w-6xl mx-auto mb-16">
-          <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">
+
+        {/* More Articles */}
+        <div>
+          <h2 className="text-xl font-bold mb-8 text-center" style={{ color: "var(--text-primary)" }}>
             More Articles
           </h2>
-          <div className="overflow-x-auto scrollbar-hide pb-6">
-            <div className="flex gap-6 min-w-max px-2">
+          <div className="overflow-x-auto scrollbar-hide pb-4">
+            <div className="flex gap-6 min-w-max px-1">
               {remainingBlogs.map((blog) => (
                 <Link
                   key={blog.id}
                   href={`/blog/${blog.id}`}
-                  className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 group flex-shrink-0 w-80"
+                  className="rounded-2xl overflow-hidden hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 group flex-shrink-0 w-80 flex flex-col border"
+                  style={{ background: "var(--card-bg)", borderColor: "var(--card-border)" }}
                 >
                   <div className="relative h-48 overflow-hidden">
                     <Image
@@ -114,19 +120,22 @@ export default function BlogListing() {
                       fill
                       className="object-cover transition-transform duration-300 group-hover:scale-105"
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
                   </div>
-                  <div className="p-6">
+                  <div className="p-6 flex flex-col flex-1">
                     <div className="flex items-center gap-2 mb-3">
-                      <IconClock className="h-4 w-4 text-green-600" />
-                      <span className="text-sm text-gray-600">
-                        {Math.ceil(blog.content.split(" ").length / 200)} min
-                        read
+                      <IconClock className="h-4 w-4 text-green-500" />
+                      <span className="text-sm" style={{ color: "var(--text-secondary)" }}>
+                        {Math.ceil(blog.content.split(" ").length / 200)} min read
                       </span>
                     </div>
-                    <h3 className="font-bold text-lg text-gray-900 mb-3 leading-tight group-hover:text-green-600 transition-colors">
+                    <h3
+                      className="font-bold text-lg mb-3 leading-tight transition-colors group-hover:text-green-500"
+                      style={{ color: "var(--text-primary)" }}
+                    >
                       {blog.title}
                     </h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">
+                    <p className="text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
                       {blog.excerpt}
                     </p>
                   </div>

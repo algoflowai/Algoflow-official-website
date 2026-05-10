@@ -1,6 +1,6 @@
 import CaseStudies from "@/components/CaseStudies";
 import React from "react";
-import { Navbar } from "@/components/Navbar";
+import Navbar from "@/components/Navbar";
 
 export const metadata = {
   title: "Projects & Case Studies — AI & Software Solutions",
@@ -17,9 +17,9 @@ export const metadata = {
 
 export default function CaseStudiesPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen" style={{ background: "var(--background)" }}>
       <Navbar />
-      <main>
+      <main className="pt-24">
         <CaseStudies />
       </main>
     </div>

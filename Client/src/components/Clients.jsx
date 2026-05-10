@@ -56,7 +56,7 @@ export default function Clients() {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
     >
-      <div className="max-w-6xl mx-auto">
+      <div className="w-[90%] mx-auto">
         {/* Header with animation */}
         <motion.div
           className="text-center mb-14"
@@ -92,7 +92,7 @@ export default function Clients() {
 
         {/* Animated grid container */}
         <motion.div
-          className="max-w-6xl mx-auto bg-[var(--surface)] border border-[var(--border)] rounded-3xl p-8 md:p-10 shadow-xl"
+          className="w-[90%] mx-auto bg-[var(--surface)] border border-[var(--border)] rounded-3xl p-8 md:p-10 shadow-xl"
           initial={{ scale: 0.98, opacity: 0 }}
           whileInView={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}

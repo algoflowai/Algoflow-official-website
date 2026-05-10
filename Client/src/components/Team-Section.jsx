@@ -2,7 +2,7 @@ export default function TeamSection() {
   return (
     <div className="w-full font-Inter">
       {/* First Section */}
-      <div className="max-w-7xl mx-auto px-4 py-16 relative">
+      <div className="w-[90%] mx-auto py-16 relative">
         {/* Purple decorative line */}
         {/* <div className="absolute left-1/2 top-0 w-px h-24 bg-purple-500"></div> */}
 
@@ -80,7 +80,7 @@ export default function TeamSection() {
 
       {/* Second Section */}
       <div className="bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 py-16">
+        <div className="w-[90%] mx-auto py-16">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             {/* Left image section */}
             <div className="relative order-2 md:order-1">
@@ -140,7 +140,7 @@ export default function TeamSection() {
       </div>
 
       {/* third section */}
-      <div className="max-w-7xl mx-auto px-4 py-16 relative">
+      <div className="w-[90%] mx-auto py-16 relative">
         {/* Main content section */}
         <div className="grid md:grid-cols-2 gap-8 items-center">
           {/* Left content */}

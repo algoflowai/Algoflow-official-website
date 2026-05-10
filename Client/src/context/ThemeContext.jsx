@@ -5,7 +5,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 const ThemeContext = createContext({ theme: "light", toggleTheme: () => { } });
 
 export function ThemeProvider({ children }) {
-    const [theme, setTheme] = useState("light");
+    const [theme, setTheme] = useState("dark");
     const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
@@ -14,7 +14,7 @@ export function ThemeProvider({ children }) {
         const stored = localStorage.getItem("theme");
         if (stored === "dark" || stored === "light") {
             setTheme(stored);
-        } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        } else {
             setTheme("dark");
         }
     }, []);

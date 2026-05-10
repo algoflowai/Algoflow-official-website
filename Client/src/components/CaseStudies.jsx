@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 
@@ -48,20 +50,20 @@ const caseStudies = [
 
 export default function CaseStudies() {
   return (
-    <section className="py-20 px-4 md:py-28 bg-gradient-to-b from-gray-50 to-white">
-      <div className="max-w-6xl mx-auto">
+    <section className="py-20 px-4 md:py-28" style={{ background: "var(--background)" }}>
+      <div className="w-[90%] mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="flex items-center justify-center mb-4">
             <div className="w-24 h-1.5 bg-gradient-to-r from-[#4ed35e] to-[#1b6f08] rounded-full" />
           </div>
-          <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-gray-900 mb-2">
+          <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-2" style={{ color: "var(--text-primary)" }}>
             Our Recent{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4ed35e] to-[#1b6f08]">
               Projects
             </span>
           </h2>
-          <p className="text-gray-500 max-w-xl mx-auto text-base mt-2">
+          <p className="max-w-xl mx-auto text-base mt-2" style={{ color: "var(--text-secondary)" }}>
             Real-world success stories powered by AlgoFlow AI.
           </p>
         </div>
@@ -71,7 +73,11 @@ export default function CaseStudies() {
           {caseStudies.map((study) => (
             <div
               key={study.id}
-              className="flex flex-col bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group"
+              className="flex flex-col rounded-3xl shadow-xl overflow-hidden hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group"
+              style={{
+                background: "var(--card-bg)",
+                border: "1px solid var(--card-border)",
+              }}
             >
               <div className="relative w-full aspect-[16/9] overflow-hidden">
                 <Image
@@ -81,13 +87,13 @@ export default function CaseStudies() {
                   className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300 rounded-t-3xl"
                   priority={study.id === 1}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
               </div>
               <div className="flex flex-col flex-1 p-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2 line-clamp-2">
+                <h3 className="text-lg font-semibold mb-2 line-clamp-2" style={{ color: "var(--text-primary)" }}>
                   {study.title}
                 </h3>
-                <p className="text-gray-600 text-sm mb-6 line-clamp-4">
+                <p className="text-sm mb-6 line-clamp-4" style={{ color: "var(--text-secondary)" }}>
                   {study.description}
                 </p>
                 <div className="mt-auto flex justify-start">
@@ -108,7 +114,22 @@ export default function CaseStudies() {
         <div className="mt-14">
           <a
             href="#"
-            className="inline-flex items-center px-5 py-2 rounded-full border border-black bg-white text-black text-base font-medium shadow-sm hover:bg-black hover:text-white transition-colors duration-200"
+            className="inline-flex items-center px-5 py-2 rounded-full text-base font-medium shadow-sm transition-all duration-200 border"
+            style={{
+              borderColor: "var(--border)",
+              color: "var(--text-primary)",
+              background: "var(--surface)",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = "#22c55e";
+              e.currentTarget.style.color = "#fff";
+              e.currentTarget.style.borderColor = "#22c55e";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = "var(--surface)";
+              e.currentTarget.style.color = "var(--text-primary)";
+              e.currentTarget.style.borderColor = "var(--border)";
+            }}
           >
             Read more case studies
             <ArrowRight className="ml-2 h-5 w-5" />

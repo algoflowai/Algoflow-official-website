@@ -6,46 +6,52 @@ import Image from "next/image";
 const steps = [
   {
     number: 1,
-    title: "Assemble The Right Team",
+    title: "Discovery & Compliance Audit",
     description:
-      "We handle all aspects of vetting and choosing the right team that you don't have the time, expertise, or desire to do.",
+      "We map your regulatory landscape upfront — GDPR, PCI-DSS, SOC 2, RBI/SEBI guidelines, HIPAA — before writing a single line of code. Risk is identified and mitigated at the source.",
+    tag: "Regulatory",
   },
   {
     number: 2,
-    title: "Sprint Planning",
+    title: "Security-First Architecture",
     description:
-      "Sprint roadmap is a collective planning effort. Team members collaborate to clarify items and ensure shared understanding.",
+      "Zero-trust design, end-to-end AES-256 encryption, multi-factor authentication, and strict data isolation. Every system boundary is hardened against OWASP Top 10 vulnerabilities.",
+    tag: "Infosec",
   },
   {
     number: 3,
-    title: "Tech Architecture",
+    title: "Agile Sprint Delivery",
     description:
-      "We break monolithic apps into microservices. Decoupling the code allows teams to move faster and more independently.",
+      "Two-week sprints with live demos, transparent backlogs, and daily standups. Stakeholders get full visibility — no surprises, no scope creep, no missed deadlines.",
+    tag: "Agile",
   },
   {
     number: 4,
-    title: "Standups & Weekly Demos",
+    title: "Data Privacy & Protection",
     description:
-      "Standups, weekly demos, and weekly releases make sure everyone is on the same page and can raise their concerns.",
+      "User data is encrypted at rest and in transit, anonymized where applicable, and governed by consent management. Every data operation generates a tamper-proof audit trail.",
+    tag: "Data",
   },
   {
     number: 5,
-    title: "Code Reviews",
+    title: "Pen Testing & Quality Assurance",
     description:
-      "Code reviews before release help detect issues like memory leaks, file leaks, performance signs, and general bad smells.",
+      "Mandatory penetration testing, OWASP audits, performance load testing, and full UAT cycles before every release. No code ships without passing our security gates.",
+    tag: "QA",
   },
   {
     number: 6,
-    title: "Iterative Delivery",
+    title: "24/7 Monitoring & SLA Support",
     description:
-      "We divide the implementation process into several checkpoints rather than a single deadline.",
+      "Real-time anomaly detection, automated incident response, 99.9% uptime SLAs, and a dedicated support team for mission-critical fintech, banking, and healthcare systems.",
+    tag: "DevOps",
   },
 ];
 
 export default function Development() {
   return (
     <motion.section
-      className="relative py-20 px-4 max-w-7xl mx-auto bg-[var(--background)]"
+      className="relative py-20 px-4 w-[90%] mx-auto bg-[var(--background)]"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
@@ -57,7 +63,7 @@ export default function Development() {
         transition={{ duration: 0.6 }}
       >
         <motion.div
-          className="flex items-center justify-center mb-3"
+          className="flex items-center mb-3"
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -68,7 +74,7 @@ export default function Development() {
           Our Development Process
         </h2>
         <p className="text-[var(--text-secondary)] mt-2 text-sm max-w-md mx-auto">
-          A battle-tested workflow built for speed, quality, and reliability
+          Enterprise-grade security and compliance baked into every stage — built for fintech, banking, healthcare, and high-stakes industries.
         </p>
       </motion.div>
       <motion.div
@@ -143,34 +149,39 @@ export default function Development() {
 
               {/* Step card */}
               <motion.div
-                className="mt-2 pl-6 pr-6 pb-12 pt-6 rounded-2xl border border-[var(--card-border)] bg-[var(--card-bg)] shadow-sm w-full max-w-xs text-left flex flex-col justify-between h-52 card-hover-glow"
+                className="mt-2 pl-6 pr-6 pb-8 pt-6 rounded-2xl border border-[var(--card-border)] bg-[var(--card-bg)] shadow-sm w-full max-w-xs text-left flex flex-col justify-between card-hover-glow"
                 whileHover={{
                   boxShadow: "0 0 30px rgba(34,197,94,0.12), 0 10px 40px rgba(0,0,0,0.08)",
                   borderColor: "#22c55e",
                 }}
               >
-                <div className="flex items-center mb-3">
-                  <motion.div
-                    className="w-10 h-10 rounded-xl flex items-center justify-center mr-2 bg-green-50 dark:bg-green-900/20 border border-green-100 dark:border-green-800"
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                  >
-                    <span className="font-bold text-lg text-green-600">
-                      #{step.number}
+                <div>
+                  <div className="flex items-center justify-between mb-3">
+                    <motion.div
+                      className="w-9 h-9 rounded-xl flex items-center justify-center bg-green-50 dark:bg-green-900/20 border border-green-100 dark:border-green-800"
+                      whileHover={{ scale: 1.1, rotate: 5 }}
+                    >
+                      <span className="font-bold text-base text-green-600">
+                        {step.number < 10 ? `0${step.number}` : step.number}
+                      </span>
+                    </motion.div>
+                    <span className="text-[10px] font-bold tracking-widest uppercase px-2 py-0.5 rounded-full" style={{ background: "rgba(34,197,94,0.1)", color: "#22c55e" }}>
+                      {step.tag}
                     </span>
-                  </motion.div>
+                  </div>
                   <motion.h4
-                    className="font-inter font-bold text-[16px] sm:text-[18px] leading-[22px] text-[var(--text-primary)]"
+                    className="font-inter font-bold text-[15px] sm:text-[16px] leading-[22px] text-[var(--text-primary)] mb-2"
                     whileHover={{ color: "#1b6f08" }}
                   >
                     {step.title}
                   </motion.h4>
+                  <motion.p
+                    className="font-inter text-[13px] leading-[20px] text-[var(--text-secondary)]"
+                    whileHover={{ opacity: 1 }}
+                  >
+                    {step.description}
+                  </motion.p>
                 </div>
-                <motion.p
-                  className="font-inter text-[14px] leading-[20px] text-[var(--text-secondary)]"
-                  whileHover={{ opacity: 1 }}
-                >
-                  {step.description}
-                </motion.p>
               </motion.div>
             </motion.div>
           ))}

@@ -213,7 +213,7 @@ export default function AgenticAI() {
             <div className="absolute top-0 left-1/4 w-[500px] h-[500px] rounded-full opacity-10 blur-[120px] pointer-events-none" style={{ background: "radial-gradient(circle, #22c55e, transparent 70%)" }} />
             <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] rounded-full opacity-10 blur-[100px] pointer-events-none" style={{ background: "radial-gradient(circle, #6366f1, transparent 70%)" }} />
 
-            <div className="relative z-10 max-w-7xl mx-auto">
+            <div className="relative z-10 w-[90%] mx-auto">
 
                 {/* Header */}
                 <motion.div

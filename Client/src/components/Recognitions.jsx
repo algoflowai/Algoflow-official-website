@@ -37,7 +37,7 @@ export default function Recognitions() {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
     >
-      <div className="max-w-6xl mx-auto relative">
+      <div className="w-[90%] mx-auto relative">
         {/* Header */}
         <motion.div
           className="text-center mb-12"
