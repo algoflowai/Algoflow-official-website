@@ -1,6 +1,8 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/context/ThemeContext";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -57,14 +59,6 @@ export const metadata = {
     title: "AlgoFlow AI — Custom AI & Software Development Company",
     description:
       "We build AI-powered software — mobile apps, web platforms, computer vision, NLP/LLMs, and automation — for businesses that want to lead.",
-    images: [
-      {
-        url: "/images/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "AlgoFlow AI — Custom AI & Software Development",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
@@ -73,7 +67,6 @@ export const metadata = {
     title: "AlgoFlow AI — Custom AI & Software Development Company",
     description:
       "AI-powered software development: mobile apps, web apps, computer vision, NLP/LLMs, and automation.",
-    images: ["/images/og-image.png"],
   },
   category: "technology",
 };
@@ -132,7 +125,6 @@ export default function RootLayout({ children }) {
     <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="theme-color" content="#22c55e" />
@@ -147,6 +139,8 @@ export default function RootLayout({ children }) {
       </head>
       <body className={`${inter.variable} font-Inter antialiased`}>
         <ThemeProvider>{children}</ThemeProvider>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
