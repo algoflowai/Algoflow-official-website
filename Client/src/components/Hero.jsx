@@ -13,7 +13,7 @@ const STATS = [
   { value: "30+", label: "Expert Engineers" },
   { value: "100%", label: "Client Satisfaction" },
 ];
-const TRUST_BADGES = ["ISO 27001 Ready", "GDPR Compliant", "SOC 2 Certified", "ABDM Integrated", "PCI-DSS Aware"];
+const TRUST_BADGES = ["GDPR Compliant", "SOC 2 Certified", "ABDM Integrated", "PCI-DSS Aware"];
 const NODES = [
   { x: 10, y: 20 }, { x: 30, y: 10 }, { x: 50, y: 25 }, { x: 70, y: 8 }, { x: 90, y: 20 },
   { x: 15, y: 50 }, { x: 35, y: 65 }, { x: 55, y: 45 }, { x: 75, y: 60 }, { x: 88, y: 40 },
@@ -189,9 +189,9 @@ export default function Hero() {
               {/* Contact quick links */}
               <motion.div variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}
                 className="flex items-center gap-3 text-sm text-gray-500 flex-wrap">
-                <a href="tel:+919876543210" className="hover:text-green-400 transition-colors flex items-center gap-1.5">
+                <a href="tel:+917452833648" className="hover:text-green-400 transition-colors flex items-center gap-1.5">
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9a16 16 0 0 0 6.72 6.72l.82-.82a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
-                  <span className="text-green-400 font-semibold">+91 98765 43210</span>
+                  <span className="text-green-400 font-semibold">+91-7452833648</span>
                 </a>
                 <span className="opacity-30">·</span>
                 <a href="mailto:info@algoflowai.com" className="hover:text-green-400 transition-colors">info@algoflowai.com</a>

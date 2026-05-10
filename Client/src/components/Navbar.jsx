@@ -41,12 +41,12 @@ function TopBar({ hidden }) {
       {/* Right: contact links */}
       <div className="flex items-center gap-4 ml-auto">
         <a
-          href="tel:+919876543210"
+          href="tel:+917452833648"
           className="flex items-center gap-1.5 hover:text-green-500 transition-colors"
           style={{ color: "var(--text-secondary)" }}
         >
           <IconPhone size={12} />
-          <span className="hidden sm:inline">+91 98765 43210</span>
+          <span className="hidden sm:inline">+91-7452833648</span>
           <span className="sm:hidden font-semibold text-green-500">Call Now</span>
         </a>
         <span className="opacity-20 hidden sm:inline">|</span>
