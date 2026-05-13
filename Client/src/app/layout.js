@@ -3,6 +3,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/context/ThemeContext";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import ChatbotWidget from "@/components/ChatbotWidget";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -141,6 +142,7 @@ export default function RootLayout({ children }) {
         <ThemeProvider>{children}</ThemeProvider>
         <Analytics />
         <SpeedInsights />
+        <ChatbotWidget />
       </body>
     </html>
   );
