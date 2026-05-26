@@ -84,7 +84,7 @@ const PHR_FEATURES = [
 
 const CLINICAL_AI = [
     {
-        img: "/images/Ai technology and human interaction _ AI-generated image_files/human-interact-with-ai-artificial-intelligence-brain-processor-generative-ai-nlp_31965-295901.jpg",
+        img: "/images/Ai technology and human interaction _ AI-generated image_files/4668bea7c0754d729d77b1160017e67d.webp",
         title: "Symptom-Based Patient Routing",
         desc: "NLP models analyze patient-reported symptoms and route to appropriate specialists, departments, or urgency levels — reducing triage time from 15 min to under 2 min.",
         result: "75% faster triage",
@@ -105,7 +105,7 @@ const CLINICAL_AI = [
         color: "#22c55e",
     },
     {
-        img: "/images/bg3.webp",
+        img: "/images/Ai technology and human interaction _ AI-generated image_files/doctors-medical-technology-conducting-research-260nw-2653644677.webp",
         title: "Clinical Analytics Dashboard",
         desc: "Real-time hospital KPIs: bed occupancy, average LOS, readmission rates, revenue per specialty — with AI-driven alerts and anomaly detection.",
         result: "Live insights 24/7",
