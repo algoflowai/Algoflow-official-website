@@ -25,12 +25,18 @@ const EDGES = [
   [10, 11], [11, 12], [12, 13], [13, 14], [2, 6], [7, 3], [6, 12],
 ];
 const CARDS = [
-  { img: "/images/wfa.webp", title: "Agentic AI", desc: "Autonomous agents for voice, banking & healthcare", col: "139,92,246", href: "/agentic-ai" },
+  {
+    img: "/images/bgAI.webp",
+    title: "Agentic AI",
+    desc: "Autonomous agents for voice, banking & healthcare",
+    col: "139,92,246",
+    href: "/agentic-ai"
+  },
   { img: "/images/vision.jpeg", title: "Computer Vision", desc: "Real-time detection, PPE compliance, defect checks", col: "59,130,246", href: "/#services" },
-  { img: "/images/nlp.webp", title: "LLMs & NLP", desc: "Custom language models, RAG pipelines, chatbots", col: "34,197,94", href: "/#services" },
-  { img: "/images/aiAutomation.png", title: "Smart Factory", desc: "Predictive maintenance, quality AI, dark factory", col: "245,158,11", href: "/industries/manufacturing" },
-  { img: "/images/caseStudy1.jpeg", title: "Healthcare AI", desc: "ABDM / ABHA integration, clinical AI, remote care", col: "236,72,153", href: "/industries/healthcare" },
-  { img: "/images/secureapp.jpeg", title: "FinTech & Banking", desc: "Fraud detection, KYC, AML, transaction intelligence", col: "20,184,166", href: "/#agentic-ai" },
+  { img: "/images/Ai technology and human interaction _ AI-generated image_files/nlp.jpg", title: "LLMs & NLP", desc: "Custom language models, RAG pipelines, chatbots", col: "34,197,94", href: "/#services" },
+  { img: "/images/bg4.webp", title: "Smart Factory", desc: "Predictive maintenance, quality AI, dark factory", col: "245,158,11", href: "/industries/manufacturing" },
+  { img: "/images/resources3.png", title: "Healthcare AI", desc: "ABDM / ABHA integration, clinical AI, remote care", col: "236,72,153", href: "/industries/healthcare" },
+  { img: "/images/Ai technology and human interaction _ AI-generated image_files/ai-data-analysis-team_23-2151977855.jpg", title: "FinTech & Banking", desc: "Fraud detection, KYC, AML, transaction intelligence", col: "20,184,166", href: "/#agentic-ai" },
 ];
 
 // placeholder — not used after rewrite but kept so old imports don't break

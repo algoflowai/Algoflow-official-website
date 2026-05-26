@@ -15,7 +15,7 @@ const ABDM_MODULES = [
         id: "M1",
         title: "M1 — Health ID & ABHA",
         subtitle: "Ayushman Bharat Health Account",
-        img: "/images/resources1.png",
+        img: "/images/Ai technology and human interaction _ AI-generated image_files/female-programmer-scanning-her-face-with-biometric-security-technology-virtual-screen-digital-remix_53876-104936.jpg",
         color: "#22c55e",
         points: [
             "14-digit unique health identifier for every Indian citizen",
@@ -30,7 +30,7 @@ const ABDM_MODULES = [
         id: "M2",
         title: "M2 — HIU / HIP Integration",
         subtitle: "Health Information Exchange",
-        img: "/images/resources2.png",
+        img: "/images/Ai technology and human interaction _ AI-generated image_files/ai-technology-human-interaction_23-2151977843(1).jpg",
         color: "#3b82f6",
         points: [
             "HIP (Health Information Provider): Hospitals, labs, pharmacies that generate records",
@@ -46,7 +46,7 @@ const ABDM_MODULES = [
         id: "M3",
         title: "M3 — HPR & HFR",
         subtitle: "Healthcare Professionals & Facility Registry",
-        img: "/images/resources3.png",
+        img: "/images/Ai technology and human interaction _ AI-generated image_files/computer-scientist-updating-ai-systems_482257-91183.jpg",
         color: "#8b5cf6",
         points: [
             "HPRID: Unique ID for every doctor, nurse, allied health professional in India",
@@ -66,17 +66,17 @@ const PHR_FEATURES = [
         desc: "Lifetime health record owned by the patient — aggregating discharge summaries, prescriptions, lab reports, and imaging from all providers.",
     },
     {
-        img: "/images/secureapp.jpeg",
+        img: "/images/bg1.webp",
         title: "Patient-Controlled Consent",
         desc: "Fine-grained consent framework: patients grant purpose-specific, time-bound access. Full audit trail of every access event.",
     },
     {
-        img: "/images/nlp.webp",
+        img: "/images/Ai technology and human interaction _ AI-generated image_files/human-interact-with-ai-artificial-intelligence-brain-process-generative-ai-faas_31965-645391.jpg",
         title: "FHIR-Based Interoperability",
         desc: "HL7 FHIR R4 resources for structured data. Supports MedicationRequest, DiagnosticReport, Observation, AllergyIntolerance, and Encounter resources.",
     },
     {
-        img: "/images/appdev.jpg",
+        img: "/images/Ai technology and human interaction _ AI-generated image_files/businessman-use-ai-technology-customer-target-management-streamlines-enhances-customer-segmentation-improving-marketing-precisio.jpg",
         title: "PHR App Integration",
         desc: "Integration with ABDM-certified PHR apps (Eka Care, Bajaj Health, ABHA app). Patients manage their records from mobile.",
     },
@@ -84,42 +84,42 @@ const PHR_FEATURES = [
 
 const CLINICAL_AI = [
     {
-        img: "/images/caseStudy1.jpeg",
+        img: "/images/Ai technology and human interaction _ AI-generated image_files/human-interact-with-ai-artificial-intelligence-brain-processor-generative-ai-nlp_31965-295901.jpg",
         title: "Symptom-Based Patient Routing",
         desc: "NLP models analyze patient-reported symptoms and route to appropriate specialists, departments, or urgency levels — reducing triage time from 15 min to under 2 min.",
         result: "75% faster triage",
         color: "#ec4899",
     },
     {
-        img: "/images/resources5.png",
+        img: "/images/Ai technology and human interaction _ AI-generated image_files/human-interact-with-ai-artificial-intelligence-brain-processor-generative-ai-nlp_31965-312784.jpg",
         title: "AI-Assisted Prescriptions",
         desc: "Clinical AI suggests evidence-based treatments, flags drug interactions, checks allergy contraindications, and auto-populates ABDM-compliant prescription formats.",
         result: "60% reduction in errors",
         color: "#3b82f6",
     },
     {
-        img: "/images/caseStudy2.jpeg",
+        img: "/images/Ai technology and human interaction _ AI-generated image_files/businesswoman-interacting-with-ai-hologram-office_23-2151977876.jpg",
         title: "OPD / IPD Management",
         desc: "Intelligent appointment scheduling, bed allocation, discharge prediction, and waitlist optimization for outpatient and inpatient services.",
         result: "40% OPD reduction",
         color: "#22c55e",
     },
     {
-        img: "/images/nlp.webp",
+        img: "/images/bg3.webp",
         title: "Clinical Analytics Dashboard",
         desc: "Real-time hospital KPIs: bed occupancy, average LOS, readmission rates, revenue per specialty — with AI-driven alerts and anomaly detection.",
         result: "Live insights 24/7",
         color: "#f59e0b",
     },
     {
-        img: "/images/vision.jpeg",
+        img: "/images/resources1.png",
         title: "Radiology & Pathology AI",
         desc: "Computer vision models for X-ray, CT, MRI interpretation — screening for pneumonia, fractures, tumor markers. Auto-generates preliminary radiologist reports.",
         result: "15× faster reads",
         color: "#8b5cf6",
     },
     {
-        img: "/images/caseStudy3.jpeg",
+        img: "/images/remote_vital_monitoring.png",
         title: "Remote Patient Monitoring",
         desc: "IoT health device integration (oximeters, glucometers, BP monitors, ECG patches) with AI-driven alerts for abnormal readings and automated care escalation.",
         result: "30% fewer readmissions",
@@ -326,7 +326,7 @@ export default function HealthcarePage() {
                         </div>
                         <h2 className="text-3xl sm:text-4xl font-extrabold text-white">PHR — Patient Health Records</h2>
                         <p className="text-gray-400 mt-3 max-w-2xl">
-                            Longitudinal, patient-owned health records built on FHIR R4 — the standard powering interoperability between India's 500,000+ health facilities.
+                            Longitudinal, patient-owned health records built on FHIR R4 — the standard powering interoperability between Indias 500,000+ health facilities.
                         </p>
                     </motion.div>
                     <div className="grid sm:grid-cols-2 gap-5">
@@ -405,10 +405,10 @@ export default function HealthcarePage() {
                         <motion.div className="grid grid-cols-2 gap-4"
                             initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
                             {[
-                                { img: "/images/resources1.png", title: "Health Ring", desc: "Continuous SpO2, HR, HRV, temperature monitoring" },
-                                { img: "/images/aiAutomation.png", title: "AI Inference", desc: "On-device + cloud ML for anomaly detection" },
-                                { img: "/images/nlp.webp", title: "ABDM Sync", desc: "FHIR-based PHR record sync with ABHA consent" },
-                                { img: "/images/appdev.jpg", title: "Care App", desc: "Patient + physician dashboard with real-time alerts" },
+                                { img: "/images/Ai technology and human interaction _ AI-generated image_files/ai-technology-human-interaction_23-2151977843.jpg", title: "Health Ring", desc: "Continuous SpO2, HR, HRV, temperature monitoring" },
+                                { img: "/images/Ai technology and human interaction _ AI-generated image_files/3d-rendering-biorobots-concept_23-2149524396.jpg", title: "AI Inference", desc: "On-device + cloud ML for anomaly detection" },
+                                { img: "/images/Ai technology and human interaction _ AI-generated image_files/ai-cloud-with-robot-head_23-2149739759.jpg", title: "ABDM Sync", desc: "FHIR-based PHR record sync with ABHA consent" },
+                                { img: "/images/Ai technology and human interaction _ AI-generated image_files/businessman-working-futuristic-office_23-2151003702.jpg", title: "Care App", desc: "Patient + physician dashboard with real-time alerts" },
                             ].map((c, i) => (
                                 <motion.div key={c.title}
                                     className="p-4 rounded-2xl border"

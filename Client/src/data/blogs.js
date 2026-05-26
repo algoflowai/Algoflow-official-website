@@ -47,7 +47,7 @@ At AlgoFlow AI, we help organizations navigate these architectural decisions by 
   {
     id: 1,
     title: "AI-Powered Automation: Transforming Industries",
-    image: "/images/aiAutomation.png",
+    image: "/images/resources2.png",
     excerpt:
       "Discover how AlgoFlow AI's intelligent workflow automation solutions are revolutionizing businesses",
     content: `At AlgoFlow AI, we've witnessed firsthand how Artificial Intelligence has become the cornerstone of modern business transformation, particularly in workflow automation solutions. Companies across various industries are leveraging our AI-powered automation services to streamline operations, reduce costs, and enhance productivity through intelligent system integration.
@@ -133,7 +133,7 @@ As applications grow, AlgoFlow AI continuously monitors and optimizes the archit
   {
     id: 5,
     title: "Computer Vision in Retail Analytics",
-    image: "/images/vision.jpeg",
+    image: "/images/resources5.png",
     excerpt:
       "Revolutionize your retail operations with AlgoFlow AI's advanced computer vision solutions",
     content: `Computer vision technology is revolutionizing the retail industry by providing unprecedented insights into customer behavior, store operations, and inventory management. At AlgoFlow AI, we develop AI-powered video analysis solutions that help retailers understand their customers better than ever before and make data-driven decisions to improve their business performance.

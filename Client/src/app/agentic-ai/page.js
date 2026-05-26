@@ -8,17 +8,17 @@ import Link from "next/link";
 
 
 const WORKFLOW = [
-    { step: "01", label: "Perceive", img: "/images/vision.jpeg", desc: "Agents ingest data from voice, text, APIs, IoT sensors, and databases in real time — building a live model of their environment.", color: "#3b82f6" },
-    { step: "02", label: "Reason", img: "/images/nlp.webp", desc: "LLM-based reasoning chains (CoT, ReAct, Tree-of-Thought) evaluate context, goals, and constraints to choose optimal actions.", color: "#8b5cf6" },
-    { step: "03", label: "Plan", img: "/images/aiAutomation.png", desc: "Multi-step task planning breaks complex goals into sub-tasks, handles dependency graphs, and orchestrates tool calls.", color: "#f59e0b" },
-    { step: "04", label: "Act", img: "/images/wfa.webp", desc: "Agents call APIs, write code, execute SQL, send communications, or control RPA bots — fully autonomously.", color: "#22c55e" },
-    { step: "05", label: "Observe", img: "/images/resources2.png", desc: "Outcomes and feedback are captured, errors detected, and loops corrected — closing the continuous improvement cycle.", color: "#14b8a6" },
-    { step: "06", label: "Respond", img: "/images/resources1.png", desc: "Structured outputs, reports, alerts, or natural language responses are delivered to humans or downstream systems.", color: "#ec4899" },
+    { step: "01", label: "Perceive", img: "/images/Ai technology and human interaction _ AI-generated image_files/agentic-ai-future-intelligent-automation_173387-9326.jpg", desc: "Agents ingest data from voice, text, APIs, IoT sensors, and databases in real time — building a live model of their environment.", color: "#3b82f6" },
+    { step: "02", label: "Reason", img: "/images/Ai technology and human interaction _ AI-generated image_files/reason.jpg", desc: "LLM-based reasoning chains (CoT, ReAct, Tree-of-Thought) evaluate context, goals, and constraints to choose optimal actions.", color: "#8b5cf6" },
+    { step: "03", label: "Plan", img: "/images/Ai technology and human interaction _ AI-generated image_files/human-interact-with-ai-artificial-intelligence-brain-process-generative-ai-uuid_31965-661745.jpg", desc: "Multi-step task planning breaks complex goals into sub-tasks, handles dependency graphs, and orchestrates tool calls.", color: "#f59e0b" },
+    { step: "04", label: "Act", img: "/images/Ai technology and human interaction _ AI-generated image_files/startup-employee-looking-business-charts-using-ai-software_482257-100453.jpg", desc: "Agents call APIs, write code, execute SQL, send communications, or control RPA bots — fully autonomously.", color: "#22c55e" },
+    { step: "05", label: "Observe", img: "/images/Ai technology and human interaction _ AI-generated image_files/observe.jpg", desc: "Outcomes and feedback are captured, errors detected, and loops corrected — closing the continuous improvement cycle.", color: "#14b8a6" },
+    { step: "06", label: "Respond", img: "/images/Ai technology and human interaction _ AI-generated image_files/business-professional-interacting-with-agentic-ai-technology_1101054-93678.jpg", desc: "Structured outputs, reports, alerts, or natural language responses are delivered to humans or downstream systems.", color: "#ec4899" },
 ];
 
 const DOMAINS = [
     {
-        img: "/images/wfa.webp",
+        img: "/images/Ai technology and human interaction _ AI-generated image_files/ai-chatbot-concept-ai-artificial-intelligence-concept-businessman-using-ai-chatbot-computer-smart-intelligence-futuristic-techno.jpg",
         title: "Voice AI & IVR",
         highlight: "1,000+ simultaneous queries",
         desc: "Intelligent voice agents for customer service, banking helpdesks, and healthcare triage. Built for Svarn AI — handling 1,000+ concurrent calls with human-quality responses.",
@@ -26,7 +26,7 @@ const DOMAINS = [
         color: "#8b5cf6",
     },
     {
-        img: "/images/secureapp.jpeg",
+        img: "/images/Ai technology and human interaction _ AI-generated image_files/banking.avif",
         title: "Banking & FinTech",
         highlight: "Fraud detection in <200ms",
         desc: "Autonomous agents for KYC onboarding, AML monitoring, transaction anomaly detection, credit scoring, and regulatory reporting — PCI-DSS compliant.",
@@ -34,7 +34,7 @@ const DOMAINS = [
         color: "#3b82f6",
     },
     {
-        img: "/images/caseStudy1.jpeg",
+        img: "/images/idylll.webp",
         title: "Healthcare & Hospitals",
         highlight: "40% OPD reduction",
         desc: "Clinical AI agents for patient routing, symptom triage, prescription assistance, OPD/IPD management, and ABDM/ABHA integration — deployed at Sahai hospitals.",
@@ -50,7 +50,7 @@ const DOMAINS = [
         color: "#f59e0b",
     },
     {
-        img: "/images/resources3.png",
+        img: "/images/Ai technology and human interaction _ AI-generated image_files/businessman-futuristic-office-with-ai-hologram-interface-robot-assistant_1297251-23314.jpg",
         title: "Real Estate",
         highlight: "Lead-to-close automation",
         desc: "Property recommendation agents, document processing, legal due-diligence summarization, and buyer/seller matching via conversational AI.",
@@ -58,7 +58,7 @@ const DOMAINS = [
         color: "#22c55e",
     },
     {
-        img: "/images/aiAutomation.png",
+        img: "/images/caseStudy3.jpeg",
         title: "Manufacturing",
         highlight: "40% less downtime",
         desc: "Factory agents monitoring production lines, triggering predictive maintenance, managing inventory reorders, and coordinating supply chain — proven with Smarter Energies.",
