@@ -364,7 +364,7 @@ export default function HealthcarePage() {
                             initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
                             transition={{ delay: i * 0.07 }}
                             whileHover={{ borderColor: `${c.color}40`, y: -3 }}>
-                            <div className="relative h-24 rounded-xl overflow-hidden mb-3">
+                            <div className="relative h-40 rounded-xl overflow-hidden mb-3">
                                 <img src={c.img} alt={c.title} className="w-full h-full object-cover" />
                                 <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(2,11,20,0.6) 0%, transparent 60%)" }} />
                                 <span className="absolute top-2 right-2 text-xs font-bold px-2 py-0.5 rounded-full" style={{ background: `${c.color}20`, color: c.color, border: `1px solid ${c.color}30`, backdropFilter: "blur(4px)" }}>{c.result}</span>
