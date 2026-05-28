@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, useAnimation, AnimatePresence } from 'framer-motion';
 import ContactPopup from './ContactPopup';
 import Link from 'next/link';
+import Image from 'next/image';
 
 // ─── COMPLETE HERO REWRITE — modern dark canvas, no background images ───
 
@@ -472,8 +473,9 @@ export default function Hero() {
 											y: -3,
 										}}
 									>
-										<div className="relative h-24 rounded-xl overflow-hidden mb-3">
-											<img
+										<div className="relative h-36 rounded-xl overflow-hidden mb-3">
+											<Image
+												fill
 												src={c.img}
 												alt={c.title}
 												className="w-full h-full object-cover"
