@@ -117,7 +117,7 @@ export default function Clients() {
 								>
 									{/* Verified badge with handshake icon */}
 									<motion.div
-										className="absolute top-3 right-3 bg-[var(--surface)] p-2 rounded-full z-10 flex items-center justify-center shadow-md border border-[var(--border)]"
+										className="absolute top-3 right-3 bg-[var(--surface)] p-2 rounded-full z-10 flex items-center justify-center shadow-md border border-[var(--border)] bg-white"
 										initial={{ scale: 0, rotate: -30 }}
 										whileInView={{ scale: 1, rotate: 0 }}
 										transition={{ delay: index * 0.1 + 0.5, type: 'spring' }}
