@@ -5,6 +5,7 @@ import Navbar from '../../../components/Navbar';
 import Footer from '../../../components/Footer';
 import ContactPopup from '../../../components/ContactPopup';
 import Link from 'next/link';
+import Image from 'next/Image';
 
 const fade = { hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0 } };
 
@@ -415,8 +416,9 @@ export default function ManufacturingPage() {
 								transition={{ delay: i * 0.08 }}
 								whileHover={{ borderColor: `${d.color}40`, y: -4 }}
 							>
-								<div className="relative h-24 rounded-xl overflow-hidden mb-3">
-									<img
+								<div className="relative h-40 rounded-xl overflow-hidden mb-3">
+									<Image
+										fill
 										src={d.img}
 										alt={d.title}
 										className="w-full h-full object-cover"

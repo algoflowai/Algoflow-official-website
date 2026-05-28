@@ -5,6 +5,7 @@ import Navbar from '../../../components/Navbar';
 import Footer from '../../../components/Footer';
 import ContactPopup from '../../../components/ContactPopup';
 import Link from 'next/link';
+import Image from 'next/Image';
 
 const fade = { hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0 } };
 
@@ -181,6 +182,29 @@ const COMPLIANCE = [
 	{
 		name: 'Telemedicine Guidelines',
 		desc: 'MCI telemedicine practice guidelines compliance for remote consultation platforms',
+	},
+];
+
+const ASWARWA_DUBAI = [
+	{
+		img: '/images/Ai technology and human interaction _ AI-generated image_files/ai-technology-human-interaction_23-2151977843.jpg',
+		title: 'Health Ring',
+		desc: 'Continuous SpO2, HR, HRV, temperature monitoring',
+	},
+	{
+		img: '/images/Ai technology and human interaction _ AI-generated image_files/3d-rendering-biorobots-concept_23-2149524396.jpg',
+		title: 'AI Inference',
+		desc: 'On-device + cloud ML for anomaly detection',
+	},
+	{
+		img: '/images/Ai technology and human interaction _ AI-generated image_files/ai-cloud-with-robot-head_23-2149739759.jpg',
+		title: 'ABDM Sync',
+		desc: 'FHIR-based PHR record sync with ABHA consent',
+	},
+	{
+		img: '/images/Ai technology and human interaction _ AI-generated image_files/businessman-working-futuristic-office_23-2151003702.jpg',
+		title: 'Care App',
+		desc: 'Patient + physician dashboard with real-time alerts',
 	},
 ];
 
@@ -649,28 +673,7 @@ export default function HealthcarePage() {
 							whileInView={{ opacity: 1, x: 0 }}
 							viewport={{ once: true }}
 						>
-							{[
-								{
-									img: '/images/Ai technology and human interaction _ AI-generated image_files/ai-technology-human-interaction_23-2151977843.jpg',
-									title: 'Health Ring',
-									desc: 'Continuous SpO2, HR, HRV, temperature monitoring',
-								},
-								{
-									img: '/images/Ai technology and human interaction _ AI-generated image_files/3d-rendering-biorobots-concept_23-2149524396.jpg',
-									title: 'AI Inference',
-									desc: 'On-device + cloud ML for anomaly detection',
-								},
-								{
-									img: '/images/Ai technology and human interaction _ AI-generated image_files/ai-cloud-with-robot-head_23-2149739759.jpg',
-									title: 'ABDM Sync',
-									desc: 'FHIR-based PHR record sync with ABHA consent',
-								},
-								{
-									img: '/images/Ai technology and human interaction _ AI-generated image_files/businessman-working-futuristic-office_23-2151003702.jpg',
-									title: 'Care App',
-									desc: 'Patient + physician dashboard with real-time alerts',
-								},
-							].map((c, i) => (
+							{ASWARWA_DUBAI.map((c, i) => (
 								<motion.div
 									key={c.title}
 									className="p-4 rounded-2xl border"
@@ -683,8 +686,9 @@ export default function HealthcarePage() {
 									viewport={{ once: true }}
 									transition={{ delay: i * 0.08 }}
 								>
-									<div className="relative h-16 rounded-xl overflow-hidden mb-2">
-										<img
+									<div className="relative h-24 rounded-xl overflow-hidden mb-2">
+										<Image
+											fill
 											src={c.img}
 											alt={c.title}
 											className="w-full h-full object-cover"
