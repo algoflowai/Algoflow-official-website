@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from "next/image"
 
 const services = [
 	{
@@ -8,6 +9,7 @@ const services = [
 		title: 'Mobile App Development',
 		description:
 			'We create intuitive, user-friendly mobile apps that engage your audience and drive results, leveraging the latest technologies.',
+		alt: 'Custom mobile app development services for scalable business applications and enterprise software solutions',
 		icon: null,
 	},
 	{
@@ -15,6 +17,7 @@ const services = [
 		title: 'Web Design & Development',
 		description:
 			"Your website is your number one marketing asset. We design and develop responsive websites that express your brand's identity.",
+		alt: 'Web application development and full stack software development services for modern businesses',
 		icon: null,
 	},
 	{
@@ -22,6 +25,7 @@ const services = [
 		title: 'Research & Development',
 		description:
 			'We push the boundaries of innovation with cutting-edge R&D, transforming ideas into reality through strategic and technical expertise.',
+		alt: 'AI research and development team building innovative machine learning and enterprise AI solutions',
 		icon: null,
 	},
 	{
@@ -29,6 +33,7 @@ const services = [
 		title: 'Video Analysis with AI & Computer Vision',
 		description:
 			'Unlock insights from video data using AI and computer vision, enhancing decision-making, security, and customer experience.',
+		alt: 'Computer vision development services for video analytics, AI-powered monitoring, and intelligent automation',
 		icon: null,
 	},
 	{
@@ -36,6 +41,7 @@ const services = [
 		title: 'Workflow Automation & AI in Industries',
 		description:
 			'Streamline business operations and increase efficiency with AI-powered automation solutions tailored for your industry.',
+		alt: 'Enterprise AI automation solutions and AI-powered workflow automation for businesses',
 		icon: null,
 	},
 	{
@@ -43,6 +49,7 @@ const services = [
 		title: 'Natural Language Processing & LLMs',
 		description:
 			'Transform how you interact with data through advanced NLP and large language models (LLMs), enabling smarter decision-making and automation.',
+		alt: 'Custom LLM development services, natural language processing solutions, and AI chatbot development',
 		icon: null,
 	},
 ];
@@ -173,9 +180,11 @@ export default function Services() {
 									whileHover={{ scale: 1.02 }}
 									transition={{ duration: 0.4 }}
 								>
-									<img
+									<Image
+										fill
+										title={service.title}
 										src={service.image}
-										alt={service.title}
+										alt={service.alt}
 										className="w-full h-full object-cover"
 									/>
 									{/* Dark gradient overlay on image */}

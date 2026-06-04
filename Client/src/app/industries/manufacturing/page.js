@@ -142,6 +142,23 @@ const TECH_STACK = [
 	{ category: 'MLOps', items: ['MLflow', 'Kubeflow', 'Evidently AI', 'Weights & Biases'] },
 ];
 
+export const metadata = {
+	title: 'AlgoFlow AI — Custom AI Solutions & Software Development Company',
+	description:
+		'AlgoFlow AI builds AI-powered software for businesses — mobile apps, web platforms, computer vision, NLP/LLMs, and intelligent workflow automation.',
+	alternates: {
+		canonical: 'https://www.algoflowai.com',
+	},
+	applicationName: 'AlgoFlow AI',
+	keywords: [
+		'Workflow Automation',
+		'Business Process Automation',
+		'AI Workflow Automation',
+		'Robotic Process, Automation',
+		'Enterprise Automation Solution',
+	],
+};
+
 export default function ManufacturingPage() {
 	const [isModalOpen, setIsModalOpen] = useState(false);
 

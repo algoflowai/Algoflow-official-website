@@ -208,6 +208,23 @@ const ASWARWA_DUBAI = [
 	},
 ];
 
+export const metadata = {
+	title: 'AlgoFlow AI — Custom AI Solutions & Software Development Company',
+	description:
+		'AlgoFlow AI builds AI-powered software for businesses — mobile apps, web platforms, computer vision, NLP/LLMs, and intelligent workflow automation.',
+	alternates: {
+		canonical: 'https://www.algoflowai.com',
+	},
+	applicationName: 'AlgoFlow AI',
+	keywords: [
+		'Healthcare AI Solutions',
+		'Medical AI Development',
+		'Clinic AI Platform',
+		'Healthcare Automation',
+		'Remote  Patient Monitoring',
+	],
+};
+
 export default function HealthcarePage() {
 	const [isModalOpen, setIsModalOpen] = useState(false);
 	const [activeModule, setActiveModule] = useState('M1');

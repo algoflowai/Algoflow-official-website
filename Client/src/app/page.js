@@ -16,12 +16,30 @@ import AboutUs from '@/components/AboutUs';
 import Recognitions from '@/components/Recognitions';
 
 export const metadata = {
-	title: 'AlgoFlow AI — Custom AI & Software Development Company',
+	title: 'AlgoFlow AI — Custom AI Solutions & Software Development Company',
 	description:
 		'AlgoFlow AI builds AI-powered software for businesses — mobile apps, web platforms, computer vision, NLP/LLMs, and intelligent workflow automation.',
 	alternates: {
 		canonical: 'https://www.algoflowai.com',
 	},
+	applicationName: 'AlgoFlow AI',
+	keywords: [
+		'AI Development Company',
+		'AI Software Development Company',
+		'Custom AI Solutions',
+		'Artificial Intelligence Services',
+		'AI Consulting Services',
+		'AI Automation Company',
+		'Enterprise AI Solutions',
+		'AI Application Development',
+		'Generative AI Development',
+		'AI Product Development',
+		'Machine Learning Development',
+		'AI Integration Services',
+		'AI Agent Development',
+		'Agentic AI Solutions',
+		'Intelligent Automation Solutions',
+	],
 };
 
 const serviceListSchema = {

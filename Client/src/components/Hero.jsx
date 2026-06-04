@@ -72,6 +72,7 @@ const CARDS = [
 		img: '/images/bgAI.webp',
 		title: 'Agentic AI',
 		desc: 'Autonomous agents for voice, banking & healthcare',
+		alt: 'Agentic AI development services and AI workflow automation solutions',
 		col: '139,92,246',
 		href: '/agentic-ai',
 	},
@@ -79,6 +80,7 @@ const CARDS = [
 		img: '/images/vision.jpeg',
 		title: 'Computer Vision',
 		desc: 'Real-time detection, PPE compliance, defect checks',
+		alt: 'Computer vision development, object detection AI and real-time video analytics solutions',
 		col: '59,130,246',
 		href: '/#services',
 	},
@@ -86,6 +88,7 @@ const CARDS = [
 		img: '/images/Ai technology and human interaction _ AI-generated image_files/nlp.jpg',
 		title: 'LLMs & NLP',
 		desc: 'Custom language models, RAG pipelines, chatbots',
+		alt: 'Large language model development, NLP development services, RAG development and AI chatbot solutions',
 		col: '34,197,94',
 		href: '/#services',
 	},
@@ -93,6 +96,7 @@ const CARDS = [
 		img: '/images/bg4.webp',
 		title: 'Smart Factory',
 		desc: 'Predictive maintenance, quality AI, dark factory',
+		alt: 'Industrial AI automation, intelligent process automation and smart manufacturing solutions',
 		col: '245,158,11',
 		href: '/industries/manufacturing',
 	},
@@ -100,6 +104,7 @@ const CARDS = [
 		img: '/images/resources3.png',
 		title: 'Healthcare AI',
 		desc: 'ABDM / ABHA integration, clinical AI, remote care',
+		alt: 'Healthcare AI solutions, ABDM integration services, ABHA integration and clinical AI platform',
 		col: '236,72,153',
 		href: '/industries/healthcare',
 	},
@@ -107,11 +112,11 @@ const CARDS = [
 		img: '/images/Ai technology and human interaction _ AI-generated image_files/ai-data-analysis-team_23-2151977855.jpg',
 		title: 'FinTech & Banking',
 		desc: 'Fraud detection, KYC, AML, transaction intelligence',
+		alt: 'FinTech AI solutions, banking AI software, AI fraud detection, KYC automation and AML monitoring system',
 		col: '20,184,166',
 		href: '/#agentic-ai',
 	},
 ];
-
 // placeholder — not used after rewrite but kept so old imports don't break
 const backgroundImages = [''];
 
@@ -477,7 +482,7 @@ export default function Hero() {
 											<Image
 												fill
 												src={c.img}
-												alt={c.title}
+												alt={c.alt}
 												className="w-full h-full object-cover"
 											/>
 											<div

@@ -52,6 +52,37 @@ const WORKFLOW = [
 	},
 ];
 
+const WORKFLOW_ALT = {
+	Perceive: 'AI agent perceiving data from APIs, IoT sensors and real-time systems',
+	Reason: 'Large language model reasoning process using chain-of-thought and decision making',
+	Plan: 'AI agent planning multi-step tasks and workflow orchestration system',
+	Act: 'Autonomous AI agent executing API calls, automation and system actions',
+	Observe: 'AI system monitoring outcomes and learning from feedback loops',
+	Respond: 'AI generating structured outputs, reports and business responses',
+};
+
+export const metadata = {
+	title: 'AlgoFlow AI — Custom AI Solutions & Software Development Company',
+	description:
+		'AlgoFlow AI builds AI-powered software for businesses — mobile apps, web platforms, computer vision, NLP/LLMs, and intelligent workflow automation.',
+	alternates: {
+		canonical: 'https://www.algoflowai.com',
+	},
+	applicationName: 'AlgoFlow AI',
+	keywords: [
+		'FinTech AI Solutions',
+		'Banking AI Solutions',
+		'AI Fraud detection',
+		'AML Monitoring System',
+		'KYC Automation',
+
+		"Software Development Company",
+		"Custom Software Development",
+		"Web Application Development",
+		"Mobile Application Development",
+	],
+};
+
 const DOMAINS = [
 	{
 		img: 'images/Ai technology and human interaction _ AI-generated image_files/ai-voice-projects-header.webp',
@@ -102,6 +133,16 @@ const DOMAINS = [
 		color: '#14b8a6',
 	},
 ];
+const DOMAIN_ALT = {
+	'Voice AI & IVR': 'Voice AI chatbot and IVR automation system handling customer support calls',
+	'Banking & FinTech': 'AI fraud detection and banking automation system for fintech companies',
+	'Healthcare & Hospitals': 'Healthcare AI system for patient triage and hospital automation',
+	'Airlines & Travel':
+		'AI automation system for airline booking and travel disruption management',
+	'Real Estate': 'AI-powered real estate lead generation and property recommendation system',
+	Manufacturing:
+		'Industrial AI monitoring system for predictive maintenance and manufacturing automation',
+};
 
 const CAPABILITIES = [
 	{
@@ -152,6 +193,24 @@ const CASE_STUDIES = [
 ];
 
 const fade = { hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0 } };
+
+export const metadata = {
+	title: 'Agentic AI Development Company | Custom AI Agents & Enterprise AI Solutions',
+	description:
+		'AlgoFlow AI delivers Agentic AI Solutions, AI Development Services, Generative AI Development, LLM Development, AI Workflow Automation, and Enterprise AI Solutions for healthcare, banking, manufacturing, and enterprises.',
+	keywords: [
+		'AI Development Company',
+		'AI Software Development Company',
+		'Agentic AI Solutions',
+		'AI Agent Development',
+		'Enterprise AI Solutions',
+		'Generative AI Development',
+		'LLM Development Company',
+		'AI Consulting Services',
+		'Custom AI Solutions',
+		'AI Workflow Automation',
+	],
+};
 
 export default function AgenticAIPage() {
 	const [isModalOpen, setIsModalOpen] = useState(false);
@@ -292,7 +351,7 @@ export default function AgenticAIPage() {
 							<div className="relative h-40 rounded-xl overflow-hidden mb-4">
 								<Image
 									src={w.img}
-									alt={w.label}
+									alt={WORKFLOW_ALT[w.label]}
 									fill
 									className="w-full h-full object-cover"
 								/>
@@ -364,7 +423,7 @@ export default function AgenticAIPage() {
 									<Image
 										fill
 										src={d.img}
-										alt={d.title}
+										alt={DOMAIN_ALT[d.title]}
 										className="w-full h-full object-cover"
 									/>
 									<div
