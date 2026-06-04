@@ -24,7 +24,7 @@ export const metadata = {
 		url: 'https://www.algoflowai.com/industries/healthcare',
 		images: [
 			{
-				url: '/images/caseStudy1.jpeg',
+				url: '/images/caseStudy1.webp',
 				width: 1200,
 				height: 630,
 				alt: 'Healthcare AI Solutions',
@@ -35,7 +35,7 @@ export const metadata = {
 		card: 'summary_large_image',
 		title: 'Healthcare AI & ABDM Integration | AlgoFlow AI',
 		description: 'Clinical AI, ABDM-compliant PHR systems, and hospital management AI.',
-		images: ['/images/caseStudy1.jpeg'],
+		images: ['/images/caseStudy1.webp'],
 	},
 };
 

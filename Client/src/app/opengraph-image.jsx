@@ -2,7 +2,7 @@ import { ImageResponse } from 'next/og';
 
 export const alt = 'AlgoFlow AI — Custom AI & Software Development Company';
 export const size = { width: 1200, height: 630 };
-export const contentType = 'image/png';
+export const contentType = 'image/webp';
 
 export default function Image() {
 	return new ImageResponse(

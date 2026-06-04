@@ -88,7 +88,7 @@ export default function AboutUs() {
 				>
 					<div className="md:w-[601px] md:h-[460px] flex items-center justify-center relative">
 						<Image
-							src="/images/Abou-us-Video.png"
+							src="/images/Abou-us-Video.webp"
 							alt="About Algoflow AI Company Video"
 							width={601}
 							height={460}

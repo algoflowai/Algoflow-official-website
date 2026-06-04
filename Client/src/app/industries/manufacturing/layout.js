@@ -23,7 +23,7 @@ export const metadata = {
 		url: 'https://www.algoflowai.com/industries/manufacturing',
 		images: [
 			{
-				url: '/images/aiAutomation.png',
+				url: '/images/aiAutomation.webp',
 				width: 1200,
 				height: 630,
 				alt: 'Manufacturing AI Solutions',
@@ -34,7 +34,7 @@ export const metadata = {
 		card: 'summary_large_image',
 		title: 'Manufacturing & Industry 4.0 AI | AlgoFlow AI',
 		description: 'AI-powered smart factory, predictive maintenance, and oil & gas solutions.',
-		images: ['/images/aiAutomation.png'],
+		images: ['/images/aiAutomation.webp'],
 	},
 };
 

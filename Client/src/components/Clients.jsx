@@ -20,7 +20,7 @@ const logos = [
 	},
 	{
 		id: 3,
-		src: '/images/parkey.png',
+		src: '/images/parkey.webp',
 		alt: 'Parkkey Logo',
 		name: 'Parkkey India',
 		since: '2021',
@@ -34,14 +34,14 @@ const logos = [
 	},
 	{
 		id: 5,
-		src: '/images/turbo.png',
+		src: '/images/turbo.webp',
 		alt: 'TurboTreats Logo',
 		name: 'TurboTreats RMS',
 		since: '2022',
 	},
 	{
 		id: 6,
-		src: '/images/bishop.png',
+		src: '/images/bishop.webp',
 		alt: 'Bishops Logo',
 		name: 'Bishops Waltham',
 		since: '2021',
@@ -124,7 +124,7 @@ export default function Clients() {
 										title={`Partner since ${logo.since}`}
 									>
 										<Image
-											src="/icons/handshake.png"
+											src="/icons/handshake.webp"
 											alt="Handshake"
 											width={24}
 											height={24}

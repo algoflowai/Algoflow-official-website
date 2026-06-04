@@ -20,14 +20,14 @@ const technologies = [
 	},
 	{
 		name: 'MySQL',
-		image: 'https://www.mysql.com/common/logos/logo-mysql-170x115.png',
+		image: 'https://www.mysql.com/common/logos/logo-mysql-170x115.webp',
 		category: 'backend',
 	},
 	{ name: 'Java', image: '/icons/java.svg', category: 'backend' },
 	{ name: '.NET', image: '/icons/dotnet.svg', category: 'backend' },
 	{
 		name: 'Python',
-		image: 'https://www.python.org/static/community_logos/python-logo.png',
+		image: 'https://www.python.org/static/community_logos/python-logo.webp',
 		category: 'backend',
 	},
 	{ name: 'Ruby on Rails', image: '/icons/rails.svg', category: 'backend' },
@@ -61,11 +61,10 @@ export default function TechStack() {
 							className="font-inter font-semibold text-sm sm:text-base leading-6 transition-colors px-3 py-1"
 						>
 							<span
-								className={`block ${
-									activeCategory === category.id
+								className={`block ${activeCategory === category.id
 										? 'text-transparent bg-gradient-to-r from-[#4ed35e] to-[#1b6f08] bg-clip-text'
 										: 'text-[var(--text-secondary)]'
-								}`}
+									}`}
 							>
 								{category.name}
 							</span>
@@ -85,9 +84,8 @@ export default function TechStack() {
 							<img
 								src={tech.image}
 								alt={tech.name}
-								className={`h-14 sm:h-16 object-contain ${
-									tech.name === 'Node.js' ? 'sm:h-20' : ''
-								}`}
+								className={`h-14 sm:h-16 object-contain ${tech.name === 'Node.js' ? 'sm:h-20' : ''
+									}`}
 							/>
 						</div>
 					))}
@@ -102,11 +100,10 @@ export default function TechStack() {
 							<img
 								src={tech.image}
 								alt={tech.name}
-								className={`h-14 sm:h-16 object-contain ${
-									['MongoDB', 'Ruby on Rails'].includes(tech.name)
+								className={`h-14 sm:h-16 object-contain ${['MongoDB', 'Ruby on Rails'].includes(tech.name)
 										? 'sm:h-20'
 										: ''
-								}`}
+									}`}
 							/>
 						</div>
 					))}

@@ -160,7 +160,7 @@ const organizationSchema = {
 	'@type': 'Organization',
 	name: 'AlgoFlow AI Private Limited',
 	url: BASE_URL,
-	logo: `${BASE_URL}/icons/logo.png`,
+	logo: `${BASE_URL}/icons/logo.webp`,
 	description:
 		'AlgoFlow AI builds custom AI solutions, mobile apps, web platforms, and automation systems for businesses worldwide.',
 	foundingDate: '2019',
@@ -209,7 +209,7 @@ export default function RootLayout({ children }) {
 		<html lang="en" suppressHydrationWarning>
 			<head>
 				<link rel="icon" href="/favicon.ico" sizes="any" />
-				<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+				<link rel="apple-touch-icon" href="/apple-touch-icon.webp" />
 				<link rel="manifest" href="/site.webmanifest" />
 				<meta name="theme-color" content="#22c55e" />
 				<script

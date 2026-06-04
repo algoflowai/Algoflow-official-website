@@ -2,7 +2,7 @@ export const blogs = [
 	{
 		id: 7,
 		title: 'United By Vision: The Journey of AlgoFlow AI',
-		image: '/images/vison.jpg',
+		image: '/images/vison.webp',
 		excerpt:
 			'Discover how three friends turned a moment of inspiration into AlgoFlow AI, building a thriving business...',
 		content: `In the world of entrepreneurship, stories of individual brilliance often shine bright—but when college friendship becomes the foundation of business, something even more powerful emerges.
@@ -26,7 +26,7 @@ With the constant discipline and far-sighted vision of three friends, it will al
 	{
 		id: 6,
 		title: 'Microservices vs Monolith: What’s Winning in 2025?',
-		image: '/images/microvsmono.jpeg',
+		image: '/images/microvsmono.webp',
 		excerpt:
 			'Explore the evolving debate between monolithic and microservices architectures in 2025...',
 		content: `Microservices vs Monolith: What’s Winning in 2025?
@@ -47,7 +47,7 @@ At AlgoFlow AI, we help organizations navigate these architectural decisions by 
 	{
 		id: 1,
 		title: 'AI-Powered Automation: Transforming Industries',
-		image: '/images/resources2.png',
+		image: '/images/resources2.webp',
 		excerpt:
 			"Discover how AlgoFlow AI's intelligent workflow automation solutions are revolutionizing businesses",
 		content: `At AlgoFlow AI, we've witnessed firsthand how Artificial Intelligence has become the cornerstone of modern business transformation, particularly in workflow automation solutions. Companies across various industries are leveraging our AI-powered automation services to streamline operations, reduce costs, and enhance productivity through intelligent system integration.
@@ -65,7 +65,7 @@ The future of AI-powered automation looks promising, with advancements in machin
 	{
 		id: 2,
 		title: 'The Future of NLP & LLMs in Business',
-		image: '/images/nlp.jpeg',
+		image: '/images/nlp.webp',
 		excerpt: "Transform your business communication with AlgoFlow AI's advanced NLP",
 		content: `Large Language Models (LLMs) and Natural Language Processing (NLP) technologies are revolutionizing how businesses interact with customers and process information. At AlgoFlow AI, we specialize in implementing these advanced AI systems that understand, generate, and manipulate human language with unprecedented accuracy and context awareness.
 
@@ -84,7 +84,7 @@ The future of LLMs and NLP in business continues to evolve rapidly. As technolog
 	{
 		id: 3,
 		title: 'Secure Software Development Practices',
-		image: '/images/secureapp.jpeg',
+		image: '/images/secureapp.webp',
 		excerpt:
 			"Protect your digital assets with AlgoFlow AI's comprehensive secure software development services",
 		content: `In today's digital landscape, secure software development is not just a best practice—it's a critical necessity. At AlgoFlow AI, we understand that with cyber threats becoming increasingly sophisticated and the cost of security breaches rising, organizations must implement comprehensive security measures throughout the entire software development lifecycle.
@@ -106,7 +106,7 @@ As the threat landscape continues to evolve, AlgoFlow AI stays informed about em
 	{
 		id: 4,
 		title: 'Cloud Architecture for Million-User Apps',
-		image: '/images/cloudblog.jpeg',
+		image: '/images/cloudblog.webp',
 		excerpt:
 			"Scale your applications to millions of users with AlgoFlow AI's expert cloud architecture services",
 		content: `Building applications that can serve millions of users requires expert cloud architecture and scalability engineering. At AlgoFlow AI, we leverage modern cloud platforms like AWS to create highly scalable, reliable, and performant applications that grow seamlessly with your business needs.
@@ -132,7 +132,7 @@ As applications grow, AlgoFlow AI continuously monitors and optimizes the archit
 	{
 		id: 5,
 		title: 'Computer Vision in Retail Analytics',
-		image: '/images/resources5.png',
+		image: '/images/resources5.webp',
 		excerpt:
 			"Revolutionize your retail operations with AlgoFlow AI's advanced computer vision solutions",
 		content: `Computer vision technology is revolutionizing the retail industry by providing unprecedented insights into customer behavior, store operations, and inventory management. At AlgoFlow AI, we develop AI-powered video analysis solutions that help retailers understand their customers better than ever before and make data-driven decisions to improve their business performance.
@@ -154,7 +154,7 @@ The future of computer vision in retail looks promising, with advancements in AI
 	{
 		id: 8,
 		title: 'AI Trends 2026: The Rise of Agentic AI Solutions & Enterprise Automation',
-		image: '/images/secureapp.jpeg',
+		image: '/images/secureapp.webp',
 		excerpt: 'Explore the key AI trends for 2026, centering on Agentic AI Applications, Custom AI Solutions, and Generative AI Solutions for Enterprises.',
 		content: `AI Trends 2026: The Rise of Agentic AI Solutions & Enterprise Automation
 
@@ -172,7 +172,7 @@ Generative AI Development has matured beyond simple content generation. Today, i
 	{
 		id: 9,
 		title: 'AI in Healthcare: Medical AI Development & Clinical AI Platforms',
-		image: '/images/resources2.png',
+		image: '/images/resources2.webp',
 		excerpt: 'How Healthcare AI Solutions, ABDM Integration Services, and remote patient monitoring are reshaping the healthcare industry.',
 		content: `AI in Healthcare: Medical AI Development & Clinical AI Platforms
 
@@ -190,7 +190,7 @@ Using state-of-the-art IoT and Machine Learning, our Remote Patient Monitoring s
 	{
 		id: 10,
 		title: 'AI in Banking: AI Fraud Detection Systems & Transaction Intelligence',
-		image: '/images/vison.jpg',
+		image: '/images/vison.webp',
 		excerpt: 'Explore how FinTech AI Solutions and Banking AI Solutions are securing financial networks using AI Risk Management.',
 		content: `AI in Banking: AI Fraud Detection Systems & Transaction Intelligence
 
@@ -205,7 +205,7 @@ From automated lending approvals to automated risk scoring, our Banking Automati
 	{
 		id: 11,
 		title: 'RAG Architecture Guide: Custom LLM Development Services for Enterprises',
-		image: '/images/nlp.jpeg',
+		image: '/images/nlp.webp',
 		excerpt: 'Learn how Retrieval-Augmented Generation (RAG) and Custom LLM Development Services prevent AI hallucinations.',
 		content: `RAG Architecture Guide: Custom LLM Development Services for Enterprises
 
@@ -223,7 +223,7 @@ By combining RAG with Conversational AI Development, we create Enterprise Chatbo
 	{
 		id: 12,
 		title: 'Computer Vision Use Cases: Defect Detection & Real-Time Video Analytics',
-		image: '/images/resources5.png',
+		image: '/images/resources5.webp',
 		excerpt: 'Discover industrial and retail Computer Vision Use Cases, from PPE Detection to Real-Time Video Analytics.',
 		content: `Computer Vision Use Cases: Defect Detection & Real-Time Video Analytics
 

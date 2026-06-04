@@ -11,42 +11,42 @@ const WORKFLOW = [
 	{
 		step: '01',
 		label: 'Perceive',
-		img: '/images/Ai technology and human interaction _ AI-generated image_files/agentic-ai-future-intelligent-automation_173387-9326.jpg',
+		img: '/images/Ai technology and human interaction _ AI-generated image_files/agentic-ai-future-intelligent-automation_173387-9326.webp',
 		desc: 'Agents ingest data from voice, text, APIs, IoT sensors, and databases in real time — building a live model of their environment.',
 		color: '#8b5cf6',
 	},
 	{
 		step: '02',
 		label: 'Reason',
-		img: '/images/Ai technology and human interaction _ AI-generated image_files/reason.jpg',
+		img: '/images/Ai technology and human interaction _ AI-generated image_files/reason.webp',
 		desc: 'LLM-based reasoning chains (CoT, ReAct, Tree-of-Thought) evaluate context, goals, and constraints to choose optimal actions.',
 		color: '#8b5cf6',
 	},
 	{
 		step: '03',
 		label: 'Plan',
-		img: '/images/Ai technology and human interaction _ AI-generated image_files/human-interact-with-ai-artificial-intelligence-brain-process-generative-ai-uuid_31965-661745.jpg',
+		img: '/images/Ai technology and human interaction _ AI-generated image_files/human-interact-with-ai-artificial-intelligence-brain-process-generative-ai-uuid_31965-661745.webp',
 		desc: 'Multi-step task planning breaks complex goals into sub-tasks, handles dependency graphs, and orchestrates tool calls.',
 		color: '#f59e0b',
 	},
 	{
 		step: '04',
 		label: 'Act',
-		img: '/images/Ai technology and human interaction _ AI-generated image_files/startup-employee-looking-business-charts-using-ai-software_482257-100453.jpg',
+		img: '/images/Ai technology and human interaction _ AI-generated image_files/startup-employee-looking-business-charts-using-ai-software_482257-100453.webp',
 		desc: 'Agents call APIs, write code, execute SQL, send communications, or control RPA bots — fully autonomously.',
 		color: '#22c55e',
 	},
 	{
 		step: '05',
 		label: 'Observe',
-		img: '/images/Ai technology and human interaction _ AI-generated image_files/observe.jpg',
+		img: '/images/Ai technology and human interaction _ AI-generated image_files/observe.webp',
 		desc: 'Outcomes and feedback are captured, errors detected, and loops corrected — closing the continuous improvement cycle.',
 		color: '#14b8a6',
 	},
 	{
 		step: '06',
 		label: 'Respond',
-		img: '/images/Ai technology and human interaction _ AI-generated image_files/business-professional-interacting-with-agentic-ai-technology_1101054-93678.jpg',
+		img: '/images/Ai technology and human interaction _ AI-generated image_files/business-professional-interacting-with-agentic-ai-technology_1101054-93678.webp',
 		desc: 'Structured outputs, reports, alerts, or natural language responses are delivered to humans or downstream systems.',
 		color: '#ec4899',
 	},
@@ -61,27 +61,6 @@ const WORKFLOW_ALT = {
 	Respond: 'AI generating structured outputs, reports and business responses',
 };
 
-export const metadata = {
-	title: 'AlgoFlow AI — Custom AI Solutions & Software Development Company',
-	description:
-		'AlgoFlow AI builds AI-powered software for businesses — mobile apps, web platforms, computer vision, NLP/LLMs, and intelligent workflow automation.',
-	alternates: {
-		canonical: 'https://www.algoflowai.com',
-	},
-	applicationName: 'AlgoFlow AI',
-	keywords: [
-		'FinTech AI Solutions',
-		'Banking AI Solutions',
-		'AI Fraud detection',
-		'AML Monitoring System',
-		'KYC Automation',
-
-		"Software Development Company",
-		"Custom Software Development",
-		"Web Application Development",
-		"Mobile Application Development",
-	],
-};
 
 const DOMAINS = [
 	{
@@ -101,7 +80,7 @@ const DOMAINS = [
 		color: '#3b82f6',
 	},
 	{
-		img: '/images/caseStudy3.jpeg',
+		img: '/images/caseStudy3.webp',
 		title: 'Healthcare & Hospitals',
 		highlight: '40% OPD reduction',
 		desc: 'Clinical AI agents for patient routing, symptom triage, prescription assistance, OPD/IPD management, and ABDM/ABHA integration — deployed at Sahai hospitals.',
@@ -109,7 +88,7 @@ const DOMAINS = [
 		color: '#ec4899',
 	},
 	{
-		img: 'images/Ai technology and human interaction _ AI-generated image_files/The-New-Era-of-Air-Travel-How-Digital-Transformation-Is-Reshaping-the-Industry.jpeg',
+		img: 'images/Ai technology and human interaction _ AI-generated image_files/The-New-Era-of-Air-Travel-How-Digital-Transformation-Is-Reshaping-the-Industry.webp',
 		title: 'Airlines & Travel',
 		highlight: 'Automated disruption handling',
 		desc: 'Passenger re-booking agents, flight disruption automation, dynamic pricing assistants, and loyalty program management without human intervention.',
@@ -117,7 +96,7 @@ const DOMAINS = [
 		color: '#f59e0b',
 	},
 	{
-		img: '/images/Ai technology and human interaction _ AI-generated image_files/businessman-futuristic-office-with-ai-hologram-interface-robot-assistant_1297251-23314.jpg',
+		img: '/images/Ai technology and human interaction _ AI-generated image_files/businessman-futuristic-office-with-ai-hologram-interface-robot-assistant_1297251-23314.webp',
 		title: 'Real Estate',
 		highlight: 'Lead-to-close automation',
 		desc: 'Property recommendation agents, document processing, legal due-diligence summarization, and buyer/seller matching via conversational AI.',
@@ -125,7 +104,7 @@ const DOMAINS = [
 		color: '#22c55e',
 	},
 	{
-		img: '/images/bg3.jpg',
+		img: '/images/bg3.webp',
 		title: 'Manufacturing',
 		highlight: '40% less downtime',
 		desc: 'Factory agents monitoring production lines, triggering predictive maintenance, managing inventory reorders, and coordinating supply chain — proven with Smarter Energies.',
@@ -192,25 +171,7 @@ const CASE_STUDIES = [
 	},
 ];
 
-const fade = { hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0 } };
-
-export const metadata = {
-	title: 'Agentic AI Development Company | Custom AI Agents & Enterprise AI Solutions',
-	description:
-		'AlgoFlow AI delivers Agentic AI Solutions, AI Development Services, Generative AI Development, LLM Development, AI Workflow Automation, and Enterprise AI Solutions for healthcare, banking, manufacturing, and enterprises.',
-	keywords: [
-		'AI Development Company',
-		'AI Software Development Company',
-		'Agentic AI Solutions',
-		'AI Agent Development',
-		'Enterprise AI Solutions',
-		'Generative AI Development',
-		'LLM Development Company',
-		'AI Consulting Services',
-		'Custom AI Solutions',
-		'AI Workflow Automation',
-	],
-};
+const fade = { hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0 } }; 
 
 export default function AgenticAIPage() {
 	const [isModalOpen, setIsModalOpen] = useState(false);

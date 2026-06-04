@@ -12,7 +12,7 @@ const technologies = [
 	},
 	{
 		name: 'DPIIT',
-		image: '/images/dpiit.png',
+		image: '/images/dpiit.webp',
 		description: 'Department for Promotion of Industry and Internal Trade',
 	},
 	{
@@ -22,7 +22,7 @@ const technologies = [
 	},
 	{
 		name: 'MSME',
-		image: '/images/mame2.png',
+		image: '/images/mame2.webp',
 		description: 'Micro, Small & Medium Enterprises Registered',
 	},
 ];

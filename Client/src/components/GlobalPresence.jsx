@@ -169,7 +169,7 @@ export default function GlobalPresence() {
 								{/* Logo badge */}
 								<circle r={11} fill="#0d1829" stroke="#22c55e" strokeWidth={1.5} />
 								<image
-									href="/images/algoflow_logo.png"
+									href="/images/algoflow_logo.webp"
 									x={-8}
 									y={-8}
 									width={16}
@@ -205,7 +205,7 @@ export default function GlobalPresence() {
 							style={{ background: '#0d1829', border: '1.5px solid #22c55e' }}
 						>
 							<img
-								src="/images/algoflow_logo.png"
+								src="/images/algoflow_logo.webp"
 								alt="AlgoFlow AI"
 								className="w-full h-full object-contain"
 							/>
@@ -242,7 +242,7 @@ export default function GlobalPresence() {
 								style={{ background: '#0d1829', border: '1px solid #22c55e' }}
 							>
 								<img
-									src="/images/algoflow_logo.png"
+									src="/images/algoflow_logo.webp"
 									alt="AlgoFlow AI"
 									className="w-full h-full object-contain"
 								/>

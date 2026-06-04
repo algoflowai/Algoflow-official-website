@@ -101,7 +101,7 @@ export default function Development() {
 				>
 					<div className="w-10 h-10 bg-white flex items-center justify-center">
 						<Image
-							src="/icons/Trophy.png"
+							src="/icons/Trophy.webp"
 							alt="Trophy Icon"
 							width={40}
 							height={40}
@@ -121,11 +121,10 @@ export default function Development() {
 					{steps.map((step, index) => (
 						<motion.div
 							key={step.number}
-							className={`relative flex flex-col items-center ${
-								index % 2 === 0
+							className={`relative flex flex-col items-center ${index % 2 === 0
 									? 'lg:row-start-1'
 									: 'lg:row-start-2 lg:mt-4 lg:ml-16'
-							}`}
+								}`}
 							variants={{
 								hidden: { y: 50, opacity: 0 },
 								visible: { y: 0, opacity: 1 },

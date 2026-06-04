@@ -5,34 +5,34 @@ import Navbar from '../../../components/Navbar';
 import Footer from '../../../components/Footer';
 import ContactPopup from '../../../components/ContactPopup';
 import Link from 'next/link';
-import Image from 'next/Image';
+import Image from "next/image"
 
 const fade = { hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0 } };
 
 const SMART_FACTORY = [
 	{
-		img: '/images/Ai technology and human interaction _ AI-generated image_files/smart_factory.png',
+		img: '/images/Ai technology and human interaction _ AI-generated image_files/smart_factory.webp',
 		title: 'Autonomous Production',
 		desc: 'AI-guided robotic systems manage assembly lines autonomously — adjusting speed, rerouting defective units, and coordinating multi-arm workflows without human intervention.',
 		stats: '35% throughput increase',
 		color: '#3b82f6',
 	},
 	{
-		img: '/images/image.png',
+		img: '/images/image.webp',
 		title: 'Vision-Based Quality Control',
 		desc: 'Computer vision cameras inspect 100% of production output in real time — detecting surface defects, dimensional deviations, and assembly errors at line speed.',
 		stats: '99.2% defect detection rate',
 		color: '#22c55e',
 	},
 	{
-		img: '/images/Ai technology and human interaction _ AI-generated image_files/ai-cloud-concept-with-robot-arms_23-2149739749.jpg',
+		img: '/images/Ai technology and human interaction _ AI-generated image_files/ai-cloud-concept-with-robot-arms_23-2149739749.webp',
 		title: 'Smart Inventory & Warehouse',
 		desc: 'AI-driven demand forecasting, automated reorder triggers, and robotic picking systems. Integration with ERP/WMS for zero-stockout warehouse management.',
 		stats: '30% inventory cost reduction',
 		color: '#f59e0b',
 	},
 	{
-		img: '/images/bg2.jpeg',
+		img: '/images/bg2.webp',
 		title: 'Predictive Maintenance',
 		desc: 'IoT sensor fusion and ML models predict equipment failures 72+ hours in advance. Digital twins simulate degradation patterns, cutting unplanned downtime dramatically.',
 		stats: '40% less downtime',
@@ -42,25 +42,25 @@ const SMART_FACTORY = [
 
 const DARK_FACTORY = [
 	{
-		img: '/images/Ai technology and human interaction _ AI-generated image_files/3d-rendering-biorobots-concept_23-2149524395.jpg',
+		img: '/images/Ai technology and human interaction _ AI-generated image_files/3d-rendering-biorobots-concept_23-2149524395.webp',
 		title: 'Self-Operating Production',
 		desc: 'Lights-off manufacturing where AI orchestrates every step — raw material intake, processing, assembly, and packaging — without human operators on the floor.',
 		color: '#22c55e',
 	},
 	{
-		img: '/images/bg4.jpg',
+		img: '/images/bg4.webp',
 		title: 'Intelligent Quality Control',
 		desc: 'Multi-spectral vision and AI models perform 100% inline inspection. Feedback loops auto-adjust process parameters when drift is detected.',
 		color: '#3b82f6',
 	},
 	{
-		img: '/images/Ai technology and human interaction _ AI-generated image_files/ai-cloud-with-robot-face_23-2149739758.jpg',
+		img: '/images/Ai technology and human interaction _ AI-generated image_files/ai-cloud-with-robot-face_23-2149739758.webp',
 		title: 'Autonomous Supply Flow',
 		desc: 'AGVs, conveyor AI, and supply chain agents coordinate material flow end-to-end — from supplier API triggers to finished goods dispatch.',
 		color: '#f59e0b',
 	},
 	{
-		img: '/images/Ai technology and human interaction _ AI-generated image_files/3d-rendering-biorobots-concept_23-2149524399.jpg',
+		img: '/images/Ai technology and human interaction _ AI-generated image_files/3d-rendering-biorobots-concept_23-2149524399.webp',
 		title: 'Predictive & Self-Healing Systems',
 		desc: 'Equipment self-diagnoses, orders spare parts, schedules maintenance windows, and reroutes production tasks autonomously when a line goes down.',
 		color: '#8b5cf6',
@@ -69,37 +69,37 @@ const DARK_FACTORY = [
 
 const OIL_GAS = [
 	{
-		img: '/images/caseStudy2.jpeg',
+		img: '/images/caseStudy2.webp',
 		title: 'Pipeline Integrity Monitoring',
 		desc: 'Continuous sensor data fusion across thousands of pipeline kilometers — detecting leaks, pressure anomalies, and corrosion before they become incidents.',
 		tag: 'IIoT + Edge AI',
 	},
 	{
-		img: '/images/Ai technology and human interaction _ AI-generated image_files/engineer-spamming-keyboard-keys-after-rogue-sentient-ai-blocking-access-pc_482257-83331.jpg',
+		img: '/images/Ai technology and human interaction _ AI-generated image_files/engineer-spamming-keyboard-keys-after-rogue-sentient-ai-blocking-access-pc_482257-83331.webp',
 		title: 'Predictive Equipment Maintenance',
 		desc: 'ML models on compressor, pump, and turbine data predict component failure with 48–72 hour lead time, enabling planned maintenance over emergency shutdowns.',
 		tag: 'Predictive AI',
 	},
 	{
-		img: '/images/Ai technology and human interaction _ AI-generated image_files/portrait-person-ai-robot_23-2151015337.jpg',
+		img: '/images/Ai technology and human interaction _ AI-generated image_files/portrait-person-ai-robot_23-2151015337.webp',
 		title: 'HSE & Safety Compliance',
 		desc: 'Computer vision for PPE detection, confined-space monitoring, and permit-to-work validation. AI-driven incident reporting and OSHA/ISO 45001 compliance dashboards.',
 		tag: 'Computer Vision',
 	},
 	{
-		img: '/images/Ai technology and human interaction _ AI-generated image_files/businessman-working-futuristic-office_23-2151003701.jpg',
+		img: '/images/Ai technology and human interaction _ AI-generated image_files/businessman-working-futuristic-office_23-2151003701.webp',
 		title: 'Digital Twin Operations',
 		desc: 'Virtual replicas of wells, refineries, or offshore platforms. Simulate operational scenarios, test process changes, and optimize production without physical risk.',
 		tag: 'Digital Twin',
 	},
 	{
-		img: '/images/Ai technology and human interaction _ AI-generated image_files/exploring-artificial-intelligence-business-technology_1101054-89606.jpg',
+		img: '/images/Ai technology and human interaction _ AI-generated image_files/exploring-artificial-intelligence-business-technology_1101054-89606.webp',
 		title: 'Production Optimization',
 		desc: 'AI models for reservoir simulation, well performance forecasting, and production scheduling — maximizing yield while minimizing energy and operating costs.',
 		tag: 'Optimization AI',
 	},
 	{
-		img: '/images/bgAI.jpg',
+		img: '/images/bgAI.webp',
 		title: 'Cloud-Edge SCADA Integration',
 		desc: 'Hybrid cloud-edge architectures integrating with existing SCADA, DCS, and historian systems (OSIsoft PI, Ignition, Wonderware) — no rip-and-replace required.',
 		tag: 'SCADA / OT',
@@ -141,23 +141,6 @@ const TECH_STACK = [
 	{ category: 'Integration', items: ['SCADA', 'SAP PM', 'OSIsoft PI', 'Ignition'] },
 	{ category: 'MLOps', items: ['MLflow', 'Kubeflow', 'Evidently AI', 'Weights & Biases'] },
 ];
-
-export const metadata = {
-	title: 'AlgoFlow AI — Custom AI Solutions & Software Development Company',
-	description:
-		'AlgoFlow AI builds AI-powered software for businesses — mobile apps, web platforms, computer vision, NLP/LLMs, and intelligent workflow automation.',
-	alternates: {
-		canonical: 'https://www.algoflowai.com',
-	},
-	applicationName: 'AlgoFlow AI',
-	keywords: [
-		'Workflow Automation',
-		'Business Process Automation',
-		'AI Workflow Automation',
-		'Robotic Process, Automation',
-		'Enterprise Automation Solution',
-	],
-};
 
 export default function ManufacturingPage() {
 	const [isModalOpen, setIsModalOpen] = useState(false);

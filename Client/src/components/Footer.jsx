@@ -15,7 +15,7 @@ export default function Footer() {
 							operations, unlock insights, and innovate faster.
 						</p>
 						{/* <img
-              src="/icons/google-page-speed 1.png"
+              src="/icons/google-page-speed 1.webp"
               alt="Google Page Speed"
               className="w-48 h-auto"
             /> */}

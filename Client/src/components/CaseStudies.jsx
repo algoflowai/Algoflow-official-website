@@ -9,42 +9,42 @@ const caseStudies = [
 		title: 'Bishops Pharmacy Portal (UK)',
 		description:
 			'Developed a comprehensive digital healthcare system with integrated Customer and Admin portals. The platform enables vaccine scheduling, service bookings, and automated reminders for patients, while providing staff with robust tools for inventory management, scheduling, and patient records. This digital transformation reduced manual tasks by 60% and significantly improved service accessibility through self-service features.',
-		image: '/images/bishops.png',
+		image: '/images/bishops.webp',
 	},
 	{
 		id: 2,
 		title: 'TurboTreats - Restaurant MS',
 		description:
 			'An AI-powered restaurant management system that revolutionizes dining operations. Features include seamless online ordering, real-time table tracking, smart inventory management, and AI-driven food prep timing. The system reduced food waste by 32% and increased customer satisfaction by 28% through improved service efficiency and digital experience.',
-		image: '/images/turbotreats.png',
+		image: '/images/turbotreats.webp',
 	},
 	{
 		id: 3,
 		title: 'Oil India - Analytics Dashboard',
 		description:
 			'A comprehensive real-time analytics platform built for Oil India. The system provides advanced project tracking, inventory monitoring with smart alerts, and township maintenance oversight. This centralized data platform enables leadership to track KPIs, analyze trends, and make data-driven decisions across multiple departments and sites.',
-		image: '/images/iocl.png',
+		image: '/images/iocl.webp',
 	},
 	{
 		id: 4,
 		title: 'Parkey - Smart Parking Solution',
 		description:
 			'Revolutionizing parking management with AI-driven automation. Our comprehensive solution features Automated Number Plate Recognition (ANPR) for seamless entry/exit, secure OTP/QR authentication, live parking availability mapping, and detailed employee monitoring. The system includes an advanced Admin Web Panel for real-time analytics, payment tracking, and user management, making parking operations efficient and user-friendly.',
-		image: '/images/parkk.png',
+		image: '/images/parkk.webp',
 	},
 	{
 		id: 5,
 		title: 'NTPC - AI Safety Compliance',
 		description:
 			'Deployed an advanced AI surveillance system for workplace safety at NTPC. The system actively monitors PPE compliance, detects unconscious personnel, prevents unauthorized zone access, and ensures safety protocols during height work. This intelligent monitoring solution has significantly enhanced workplace safety through real-time detection and instant alerts.',
-		image: '/images/ntpc.png',
+		image: '/images/ntpc.webp',
 	},
 	{
 		id: 6,
 		title: 'Website Design for SCFC Canada',
 		description:
 			'Born out of a vision, a single-minded objective that puts service before anything else, Swift Clearance and Forwarding Corp. surging forth to deliver the best services in the shipping and logistics scenario. Its meteoric rise stems out of a solid foundation. The management boasts of over 20 years of rich and varied experience in the shipping and freight forwarding industry.',
-		image: '/images/caseStudy1.jpeg',
+		image: '/images/caseStudy1.webp',
 	},
 ];
 

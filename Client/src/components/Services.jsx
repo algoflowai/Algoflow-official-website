@@ -5,7 +5,7 @@ import Image from "next/image"
 
 const services = [
 	{
-		image: '/images/appdev.jpg',
+		image: '/images/appdev.webp',
 		title: 'Mobile App Development',
 		description:
 			'We create intuitive, user-friendly mobile apps that engage your audience and drive results, leveraging the latest technologies.',
@@ -13,7 +13,7 @@ const services = [
 		icon: null,
 	},
 	{
-		image: '/images/webd.jpg',
+		image: '/images/webd.webp',
 		title: 'Web Design & Development',
 		description:
 			"Your website is your number one marketing asset. We design and develop responsive websites that express your brand's identity.",
@@ -21,7 +21,7 @@ const services = [
 		icon: null,
 	},
 	{
-		image: '/images/rnd.jpg',
+		image: '/images/rnd.webp',
 		title: 'Research & Development',
 		description:
 			'We push the boundaries of innovation with cutting-edge R&D, transforming ideas into reality through strategic and technical expertise.',
@@ -29,7 +29,7 @@ const services = [
 		icon: null,
 	},
 	{
-		image: '/images/vlm.png',
+		image: '/images/vlm.webp',
 		title: 'Video Analysis with AI & Computer Vision',
 		description:
 			'Unlock insights from video data using AI and computer vision, enhancing decision-making, security, and customer experience.',

@@ -77,7 +77,7 @@ const CARDS = [
 		href: '/agentic-ai',
 	},
 	{
-		img: '/images/vision.jpeg',
+		img: '/images/vision.webp',
 		title: 'Computer Vision',
 		desc: 'Real-time detection, PPE compliance, defect checks',
 		alt: 'Computer vision development, object detection AI and real-time video analytics solutions',
@@ -85,7 +85,7 @@ const CARDS = [
 		href: '/#services',
 	},
 	{
-		img: '/images/Ai technology and human interaction _ AI-generated image_files/nlp.jpg',
+		img: '/images/Ai technology and human interaction _ AI-generated image_files/nlp.webp',
 		title: 'LLMs & NLP',
 		desc: 'Custom language models, RAG pipelines, chatbots',
 		alt: 'Large language model development, NLP development services, RAG development and AI chatbot solutions',
@@ -101,7 +101,7 @@ const CARDS = [
 		href: '/industries/manufacturing',
 	},
 	{
-		img: '/images/resources3.png',
+		img: '/images/resources3.webp',
 		title: 'Healthcare AI',
 		desc: 'ABDM / ABHA integration, clinical AI, remote care',
 		alt: 'Healthcare AI solutions, ABDM integration services, ABHA integration and clinical AI platform',
@@ -109,7 +109,7 @@ const CARDS = [
 		href: '/industries/healthcare',
 	},
 	{
-		img: '/images/Ai technology and human interaction _ AI-generated image_files/ai-data-analysis-team_23-2151977855.jpg',
+		img: '/images/Ai technology and human interaction _ AI-generated image_files/ai-data-analysis-team_23-2151977855.webp',
 		title: 'FinTech & Banking',
 		desc: 'Fraud detection, KYC, AML, transaction intelligence',
 		alt: 'FinTech AI solutions, banking AI software, AI fraud detection, KYC automation and AML monitoring system',
