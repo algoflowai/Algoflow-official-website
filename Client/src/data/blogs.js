@@ -1,11 +1,11 @@
 export const blogs = [
-  {
-    id: 7,
-    title: "United By Vision: The Journey of AlgoFlow AI",
-    image: "/images/vison.jpg",
-    excerpt:
-      "Discover how three friends turned a moment of inspiration into AlgoFlow AI, building a thriving business...",
-    content: `In the world of entrepreneurship, stories of individual brilliance often shine bright—but when college friendship becomes the foundation of business, something even more powerful emerges.
+	{
+		id: 7,
+		title: 'United By Vision: The Journey of AlgoFlow AI',
+		image: '/images/vison.webp',
+		excerpt:
+			'Discover how three friends turned a moment of inspiration into AlgoFlow AI, building a thriving business...',
+		content: `In the world of entrepreneurship, stories of individual brilliance often shine bright—but when college friendship becomes the foundation of business, something even more powerful emerges.
 
 AlgoFlow AI began its entrepreneurial journey in 2024, when three friends sitting in a restaurant were waiting for a long time for their bill to arrive. Nevertheless, the bill was paid but also flashed a thought of software development and thus the beginning of AlgoFlow AI.
 
@@ -21,15 +21,15 @@ Amidst the juggling pressure of such a fast-paced tech rise, the company is also
 
 Amid the fog of sleepless nights and mounting responsibilities, the company remained steadfast. In just one year, it evolved beyond a software firm to become a full-fledged IT consultancy, driven by deepening expertise and ambition.
 
-With the constant discipline and far-sighted vision of three friends, it will always climb higher to prove “Your Dreams, Our Responsibility”.`
-  },
-  {
-    id: 6,
-    title: "Microservices vs Monolith: What’s Winning in 2025?",
-    image: "/images/microvsmono.jpeg",
-    excerpt:
-      "Explore the evolving debate between monolithic and microservices architectures in 2025...",
-    content: `Microservices vs Monolith: What’s Winning in 2025?
+With the constant discipline and far-sighted vision of three friends, it will always climb higher to prove “Your Dreams, Our Responsibility”.`,
+	},
+	{
+		id: 6,
+		title: 'Microservices vs Monolith: What’s Winning in 2025?',
+		image: '/images/microvsmono.webp',
+		excerpt:
+			'Explore the evolving debate between monolithic and microservices architectures in 2025...',
+		content: `Microservices vs Monolith: What’s Winning in 2025?
 
 As we progress further into the decade, the debate between monolithic and microservices architectures has not ended—it has evolved. Both approaches have matured, and the decision is increasingly about aligning technology with business context rather than choosing sides.
 
@@ -42,15 +42,15 @@ On the other hand, microservices have become the architecture of choice for glob
 The Key Insight for 2025
 The architectural choice in 2025 is less about following trends and more about understanding your business needs. If your priorities are rapid development, small team collaboration, and predictable operations, a modern monolith may be the best fit. Conversely, if your focus is on scaling, modular independence, and robust fault isolation, microservices offer significant advantages.
 
-At AlgoFlow AI, we help organizations navigate these architectural decisions by blending technology expertise, strategic insight, and a forward-looking approach. Our goal is to ensure that your systems are not only robust and scalable but also aligned with your long-term business objectives.`
-  },
-  {
-    id: 1,
-    title: "AI-Powered Automation: Transforming Industries",
-    image: "/images/aiAutomation.png",
-    excerpt:
-      "Discover how AlgoFlow AI's intelligent workflow automation solutions are revolutionizing businesses",
-    content: `At AlgoFlow AI, we've witnessed firsthand how Artificial Intelligence has become the cornerstone of modern business transformation, particularly in workflow automation solutions. Companies across various industries are leveraging our AI-powered automation services to streamline operations, reduce costs, and enhance productivity through intelligent system integration.
+At AlgoFlow AI, we help organizations navigate these architectural decisions by blending technology expertise, strategic insight, and a forward-looking approach. Our goal is to ensure that your systems are not only robust and scalable but also aligned with your long-term business objectives.`,
+	},
+	{
+		id: 1,
+		title: 'AI-Powered Automation: Transforming Industries',
+		image: '/images/resources2.webp',
+		excerpt:
+			"Discover how AlgoFlow AI's intelligent workflow automation solutions are revolutionizing businesses",
+		content: `At AlgoFlow AI, we've witnessed firsthand how Artificial Intelligence has become the cornerstone of modern business transformation, particularly in workflow automation solutions. Companies across various industries are leveraging our AI-powered automation services to streamline operations, reduce costs, and enhance productivity through intelligent system integration.
 
 Our AI workflow automation solutions enable businesses to automate complex tasks that previously required significant human intervention. From advanced data processing and real-time analysis to intelligent customer service automation and strategic decision-making processes, AlgoFlow AI's systems handle intricate operations with remarkable efficiency and precision.
 
@@ -61,14 +61,13 @@ The impact of AlgoFlow AI's automation solutions is particularly evident in indu
 However, implementing AI automation requires expert guidance and strategic planning. At AlgoFlow AI, we understand the importance of factors such as data privacy, cybersecurity, and workforce integration. Our team ensures responsible AI implementation that complements human capabilities while maximizing operational efficiency.
 
 The future of AI-powered automation looks promising, with advancements in machine learning, natural language processing, and computer vision opening new possibilities for business optimization. As technology leaders, AlgoFlow AI continues to evolve our solutions, developing sophisticated AI systems that handle increasingly complex tasks while providing greater value to our clients through custom development and premium integration services.`,
-  },
-  {
-    id: 2,
-    title: "The Future of NLP & LLMs in Business",
-    image: "/images/nlp.jpeg",
-    excerpt:
-      "Transform your business communication with AlgoFlow AI's advanced NLP",
-    content: `Large Language Models (LLMs) and Natural Language Processing (NLP) technologies are revolutionizing how businesses interact with customers and process information. At AlgoFlow AI, we specialize in implementing these advanced AI systems that understand, generate, and manipulate human language with unprecedented accuracy and context awareness.
+	},
+	{
+		id: 2,
+		title: 'The Future of NLP & LLMs in Business',
+		image: '/images/nlp.webp',
+		excerpt: "Transform your business communication with AlgoFlow AI's advanced NLP",
+		content: `Large Language Models (LLMs) and Natural Language Processing (NLP) technologies are revolutionizing how businesses interact with customers and process information. At AlgoFlow AI, we specialize in implementing these advanced AI systems that understand, generate, and manipulate human language with unprecedented accuracy and context awareness.
 
 The business applications of our LLM and NLP solutions are vast and transformative. Customer service automation has been revolutionized through our intelligent chatbot development and virtual assistant integration services. These AI-powered systems understand complex queries, provide accurate contextual responses, handle multiple languages seamlessly, and escalate issues to human agents when necessary—all while maintaining brand consistency and customer satisfaction.
 
@@ -81,14 +80,14 @@ The integration of LLMs in business processes through AlgoFlow AI's solutions ha
 However, implementing LLMs and NLP in business requires expert guidance and careful consideration of ethical and practical concerns. AlgoFlow AI addresses issues such as bias mitigation in language models, data privacy protection, and human oversight integration to ensure responsible and effective use of these technologies while maintaining compliance with industry standards.
 
 The future of LLMs and NLP in business continues to evolve rapidly. As technology leaders, AlgoFlow AI stays at the forefront of innovation, developing sophisticated applications that enhance business efficiency, improve customer experience, and drive digital transformation through AI-powered solutions and premium integration services.`,
-  },
-  {
-    id: 3,
-    title: "Secure Software Development Practices",
-    image: "/images/secureapp.jpeg",
-    excerpt:
-      "Protect your digital assets with AlgoFlow AI's comprehensive secure software development services",
-    content: `In today's digital landscape, secure software development is not just a best practice—it's a critical necessity. At AlgoFlow AI, we understand that with cyber threats becoming increasingly sophisticated and the cost of security breaches rising, organizations must implement comprehensive security measures throughout the entire software development lifecycle.
+	},
+	{
+		id: 3,
+		title: 'Secure Software Development Practices',
+		image: '/images/secureapp.webp',
+		excerpt:
+			"Protect your digital assets with AlgoFlow AI's comprehensive secure software development services",
+		content: `In today's digital landscape, secure software development is not just a best practice—it's a critical necessity. At AlgoFlow AI, we understand that with cyber threats becoming increasingly sophisticated and the cost of security breaches rising, organizations must implement comprehensive security measures throughout the entire software development lifecycle.
 
 The foundation of our secure software development services begins with advanced secure coding practices. Our expert developers are trained to write code that is resistant to common vulnerabilities such as SQL injection, cross-site scripting (XSS), and buffer overflows. This includes implementing secure coding standards, robust input validation, and following the principle of least privilege across all development projects.
 
@@ -103,14 +102,14 @@ Data protection and privacy considerations are paramount in AlgoFlow AI's secure
 The deployment and maintenance phases of software development require ongoing security attention. AlgoFlow AI provides secure configuration management, regular security updates and patches, and continuous monitoring for security incidents through our comprehensive security operations and incident response services.
 
 As the threat landscape continues to evolve, AlgoFlow AI stays informed about emerging security threats and adapts our development practices accordingly. This includes staying current with security best practices, participating in cybersecurity communities, and investing in ongoing security training for our development teams to ensure your applications remain protected against the latest threats.`,
-  },
-  {
-    id: 4,
-    title: "Cloud Architecture for Million-User Apps",
-    image: "/images/cloudblog.jpeg",
-    excerpt:
-      "Scale your applications to millions of users with AlgoFlow AI's expert cloud architecture services",
-    content: `Building applications that can serve millions of users requires expert cloud architecture and scalability engineering. At AlgoFlow AI, we leverage modern cloud platforms like AWS to create highly scalable, reliable, and performant applications that grow seamlessly with your business needs.
+	},
+	{
+		id: 4,
+		title: 'Cloud Architecture for Million-User Apps',
+		image: '/images/cloudblog.webp',
+		excerpt:
+			"Scale your applications to millions of users with AlgoFlow AI's expert cloud architecture services",
+		content: `Building applications that can serve millions of users requires expert cloud architecture and scalability engineering. At AlgoFlow AI, we leverage modern cloud platforms like AWS to create highly scalable, reliable, and performant applications that grow seamlessly with your business needs.
 
 The foundation of our scalable cloud architecture services begins with well-designed systems that handle horizontal scaling efficiently. AlgoFlow AI specializes in breaking down monolithic applications into smaller, independent microservices that can be scaled independently based on demand. Our microservices architecture allows teams to develop, deploy, and scale individual components without affecting the entire system, ensuring maximum uptime and performance.
 
@@ -129,14 +128,14 @@ Security considerations for large-scale applications include implementing proper
 Cost optimization of cloud resources is also important for sustainable scaling. AlgoFlow AI implements reserved instances for predictable workloads, proper resource tagging for cost allocation, and regular reviews to optimize resource usage, ensuring maximum ROI on your cloud infrastructure investment.
 
 As applications grow, AlgoFlow AI continuously monitors and optimizes the architecture based on real-world usage patterns and performance metrics. This may involve refactoring components, adopting new technologies, or implementing additional optimization strategies to maintain peak performance at scale.`,
-  },
-  {
-    id: 5,
-    title: "Computer Vision in Retail Analytics",
-    image: "/images/vision.jpeg",
-    excerpt:
-      "Revolutionize your retail operations with AlgoFlow AI's advanced computer vision solutions",
-    content: `Computer vision technology is revolutionizing the retail industry by providing unprecedented insights into customer behavior, store operations, and inventory management. At AlgoFlow AI, we develop AI-powered video analysis solutions that help retailers understand their customers better than ever before and make data-driven decisions to improve their business performance.
+	},
+	{
+		id: 5,
+		title: 'Computer Vision in Retail Analytics',
+		image: '/images/resources5.webp',
+		excerpt:
+			"Revolutionize your retail operations with AlgoFlow AI's advanced computer vision solutions",
+		content: `Computer vision technology is revolutionizing the retail industry by providing unprecedented insights into customer behavior, store operations, and inventory management. At AlgoFlow AI, we develop AI-powered video analysis solutions that help retailers understand their customers better than ever before and make data-driven decisions to improve their business performance.
 
 One of the most significant applications of AlgoFlow AI's computer vision solutions in retail is advanced customer behavior analysis. By analyzing video feeds from security cameras using our proprietary AI algorithms, retailers can track customer movement patterns, identify high-traffic areas, and understand how customers interact with products and displays. This valuable information optimizes store layouts, improves product placement strategies, and enhances the overall shopping experience.
 
@@ -151,5 +150,110 @@ Customer analytics and personalization have been enhanced through our computer v
 The implementation of computer vision in retail requires careful consideration of privacy and ethical concerns. AlgoFlow AI ensures that all solutions comply with relevant privacy regulations and that customers are informed about how their data is being collected and used, maintaining trust and transparency.
 
 The future of computer vision in retail looks promising, with advancements in AI and machine learning enabling even more sophisticated applications. As technology leaders, AlgoFlow AI continues to evolve our solutions, developing new use cases and improved capabilities that further enhance the retail experience for both customers and businesses through cutting-edge AI integration and premium development services.`,
-  },
+	},
+	{
+		id: 8,
+		title: 'AI Trends 2026: The Rise of Agentic AI Solutions & Enterprise Automation',
+		image: '/images/secureapp.webp',
+		excerpt: 'Explore the key AI trends for 2026, centering on Agentic AI Applications, Custom AI Solutions, and Generative AI Solutions for Enterprises.',
+		content: `AI Trends 2026: The Rise of Agentic AI Solutions & Enterprise Automation
+
+As we enter 2026, the landscape of Artificial Intelligence has shifted from passive predictive models to active, self-directed agents. This evolution is driven by the demand for Custom AI Solutions and Generative AI Solutions for Enterprises that do more than just answer queries—they execute end-to-end tasks.
+
+The Era of Agentic AI Applications
+In 2026, the primary focus is on AI Agent Development. Unlike simple chatbots, these intelligent agents can plan, reason, use tools, and collaborate with other systems. As a leading AI Software Development Company, AlgoFlow AI is at the forefront of deploying Agentic AI Solutions. From managing customer service autonomously to optimizing multi-tiered supply chains, agentic workflows are defining the future of business efficiency.
+
+Enterprise AI Solutions & Intelligent Automation
+For forward-thinking businesses, Enterprise AI Automation Solutions are no longer optional. Companies are leveraging Custom AI Software Development Services to implement end-to-end AI Product Development. These systems automate complex enterprise workloads, resulting in AI-Powered Business Automation that reduces operational cost while boosting precision.
+
+The Future of Generative AI Development
+Generative AI Development has matured beyond simple content generation. Today, it forms the backbone of Enterprise AI Solutions, enabling Conversational AI Development and Custom ChatGPT Solutions that are deeply integrated with proprietary database systems. As a top AI Startup India, AlgoFlow AI is helping companies globally navigate these trends, providing premium AI Consulting and Development Services.`,
+	},
+	{
+		id: 9,
+		title: 'AI in Healthcare: Medical AI Development & Clinical AI Platforms',
+		image: '/images/resources2.webp',
+		excerpt: 'How Healthcare AI Solutions, ABDM Integration Services, and remote patient monitoring are reshaping the healthcare industry.',
+		content: `AI in Healthcare: Medical AI Development & Clinical AI Platforms
+
+The integration of Artificial Intelligence in the medical sector is driving a monumental shift in patient care and clinical operations. At AlgoFlow AI, we build cutting-edge Healthcare AI Solutions and provide Healthcare AI Software Development that empowers clinicians and improves patient outcomes.
+
+ABDM & ABHA Integration Services
+For healthcare providers in India, compliance with the National Digital Health Mission is critical. AlgoFlow AI provides comprehensive ABDM Integration Services and ABHA Integration, helping clinics, hospitals, and digital health startups seamlessly connect to the unified health locker system. Our clinical platforms ensure secure data sharing using FHIR standards.
+
+Clinical AI Platform & Hospital Management AI
+Our advanced Clinical AI Platform assists doctors in triaging, scheduling, and diagnostic workflows. Combined with intelligent Hospital Management AI, we reduce OPD queue congestion, automate administrative tasks, and optimize healthcare delivery.
+
+Remote Patient Monitoring & Healthcare Automation
+Using state-of-the-art IoT and Machine Learning, our Remote Patient Monitoring systems track patient vitals in real-time, sending predictive alerts to medical teams before emergencies occur. This intelligent Healthcare Automation ensures that high-risk patients receive immediate attention, demonstrating the true value of AI for Healthcare Industry.`,
+	},
+	{
+		id: 10,
+		title: 'AI in Banking: AI Fraud Detection Systems & Transaction Intelligence',
+		image: '/images/vison.webp',
+		excerpt: 'Explore how FinTech AI Solutions and Banking AI Solutions are securing financial networks using AI Risk Management.',
+		content: `AI in Banking: AI Fraud Detection Systems & Transaction Intelligence
+
+As digital banking transactions skyrocket, financial institutions require advanced security frameworks to protect customer assets. AlgoFlow AI, a premium FinTech AI Development Company, builds state-of-the-art FinTech AI Solutions and Banking AI Solutions that secure transactions in real-time.
+
+AI Fraud Detection Systems & AML Monitoring System
+Modern threats require modern defense. Our AI Fraud Detection systems analyze millions of transactions per second to catch anomalies instantly. By integrating our advanced AML Monitoring System and automated KYC Automation, banks can identify financial crimes, prevent money laundering, and comply with international regulations with minimal friction.
+
+Banking Automation Solutions & AI Risk Management
+From automated lending approvals to automated risk scoring, our Banking Automation Solutions optimize decision-making. Through our Transaction Intelligence Platform, we transform raw financial transaction data into structured, actionable insights, providing unparalleled support for AI Risk Management and premium Financial AI Software.`,
+	},
+	{
+		id: 11,
+		title: 'RAG Architecture Guide: Custom LLM Development Services for Enterprises',
+		image: '/images/nlp.webp',
+		excerpt: 'Learn how Retrieval-Augmented Generation (RAG) and Custom LLM Development Services prevent AI hallucinations.',
+		content: `RAG Architecture Guide: Custom LLM Development Services for Enterprises
+
+Large Language Models have revolutionized text processing, but they often struggle with hallucinations and lack access to real-time company data. The solution lies in Retrieval-Augmented Generation (RAG). At AlgoFlow AI, a premier LLM Development Company, we provide end-to-end RAG Development Services to build reliable AI tools.
+
+Understanding the RAG Architecture
+RAG works by pairing an LLM with an external vector database. When a user queries the system, a search retrieves relevant documents from the database, which are then passed to the LLM as context. This ensures that the generated answer is grounded in factual, company-approved documents.
+
+Custom LLM Development Services & NLP Development Services
+Every enterprise has unique data structures. Through our Custom LLM Development Services and NLP Development Services, we build custom embeddings, fine-tune models on domain-specific terminology, and implement Custom ChatGPT Solutions.
+
+Enterprise Chatbot Solutions & Multilingual AI Chatbots
+By combining RAG with Conversational AI Development, we create Enterprise Chatbot Solutions and Multilingual AI Chatbots that can resolve customer issues across dozens of languages. From AI Virtual Assistant Development to semantic document search, we provide scalable LLM Implementation for Enterprises.`,
+	},
+	{
+		id: 12,
+		title: 'Computer Vision Use Cases: Defect Detection & Real-Time Video Analytics',
+		image: '/images/resources5.webp',
+		excerpt: 'Discover industrial and retail Computer Vision Use Cases, from PPE Detection to Real-Time Video Analytics.',
+		content: `Computer Vision Use Cases: Defect Detection & Real-Time Video Analytics
+
+Computer Vision is transforming physical spaces, bridging the gap between digital intelligence and physical actions. As a leading Computer Vision Development provider, AlgoFlow AI delivers smart vision systems for retail, manufacturing, and security.
+
+Industrial Computer Vision & Defect Detection AI
+In manufacturing, quality control is paramount. Our Defect Detection AI inspects items on high-speed assembly lines, catching micro-level flaws that human inspectors might miss. Furthermore, our PPE Detection System monitors manufacturing plants in real-time, ensuring that workers are wearing helmets, gloves, and safety vests, thereby enhancing worker safety.
+
+Surveillance AI Solutions & Real-Time Video Analytics
+Our Surveillance AI Solutions and Video Analytics Solutions automatically analyze security feeds. Whether it is tracking crowd density, detecting intrusions, or running Retail Analytics AI to understand customer footfall, our AI Video Analysis models provide object detection, tracking, and classification.
+
+Object Detection AI & Computer Vision Development Services
+From Object Detection AI to custom retail checkout automation, our Computer Vision Development Services are designed to maximize throughput and safety. We deliver high-speed, edge-compatible models for industries globally.`,
+	},
+	{
+		id: 13,
+		title: 'Enterprise Automation Strategies: AI Workflow Automation for Businesses',
+		image: '/images/wfa.webp',
+		excerpt: 'Maximize operational efficiency through Workflow Automation Services, IPA, and Robotic Process Automation.',
+		content: `Enterprise Automation Strategies: AI Workflow Automation for Businesses
+
+Modern enterprises operate in highly competitive landscapes where speed and efficiency are key. To scale operations without linearly increasing costs, organizations must adopt robust Enterprise Automation Strategies.
+
+Workflow Automation Services & Intelligent Process Automation
+Traditional RPA (Robotic Process Automation) is excellent for rule-based tasks. However, when combined with AI, it becomes Intelligent Process Automation (IPA). At AlgoFlow AI, we provide Workflow Automation Services that integrate cognitive capabilities into business process automation.
+
+AI Workflow Automation & AI-Powered Operations
+By implementing AI Workflow Automation, companies can automatically read incoming emails, classify documents, extract key figures, and update legacy systems. This leads to AI-Powered Operations where employees focus on high-value creative tasks rather than repetitive data entry.
+
+Digital Transformation Services
+Enterprise Automation Solutions represent the core of modern Digital Transformation Services. As a top Software Development Company Bangalore, AlgoFlow AI specializes in designing, building, and deploying custom automation pipelines that integrate seamlessly with your existing cloud platforms, offering scalable Software Development Company services.`,
+	},
 ];
