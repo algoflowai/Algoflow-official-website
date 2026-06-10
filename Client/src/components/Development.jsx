@@ -101,7 +101,7 @@ export default function Development() {
 				>
 					<div className="w-10 h-10 bg-white flex items-center justify-center">
 						<Image
-							src="/icons/Trophy.webp"
+							src="/icons/Trophy.png"
 							alt="Trophy Icon"
 							width={40}
 							height={40}
