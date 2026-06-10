@@ -63,21 +63,25 @@ const ABDM_MODULES = [
 const PHR_FEATURES = [
 	{
 		img: '/images/resources4.webp',
+		alt: 'Digital patient health records and medical documents organized in a unified timeline',
 		title: 'Longitudinal Patient Records',
 		desc: 'Lifetime health record owned by the patient — aggregating discharge summaries, prescriptions, lab reports, and imaging from all providers.',
 	},
 	{
 		img: '/images/bg1.webp',
+		alt: 'Patient reviewing and managing healthcare data access permissions',
 		title: 'Patient-Controlled Consent',
 		desc: 'Fine-grained consent framework: patients grant purpose-specific, time-bound access. Full audit trail of every access event.',
 	},
 	{
 		img: '/images/Ai technology and human interaction _ AI-generated image_files/human-interact-with-ai-artificial-intelligence-brain-process-generative-ai-faas_31965-645391.webp',
+		alt: 'Healthcare systems exchanging structured medical data through interoperable standards',
 		title: 'FHIR-Based Interoperability',
 		desc: 'HL7 FHIR R4 resources for structured data. Supports MedicationRequest, DiagnosticReport, Observation, AllergyIntolerance, and Encounter resources.',
 	},
 	{
 		img: '/images/Ai technology and human interaction _ AI-generated image_files/businessman-use-ai-technology-customer-target-management-streamlines-enhances-customer-segmentation-improving-marketing-precisio.webp',
+		alt: 'Mobile health application connected to patient health records and healthcare services',
 		title: 'PHR App Integration',
 		desc: 'Integration with ABDM-certified PHR apps (Eka Care, Bajaj Health, ABHA app). Patients manage their records from mobile.',
 	},
@@ -538,7 +542,7 @@ export default function HealthcarePage() {
 								<div className="w-10 h-10 rounded-lg overflow-hidden flex-shrink-0">
 									<img
 										src={f.img}
-										alt={f.title}
+										alt={f.alt}
 										className="w-full h-full object-cover"
 									/>
 								</div>

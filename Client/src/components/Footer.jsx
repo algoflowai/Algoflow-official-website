@@ -123,7 +123,7 @@ export default function Footer() {
 						<p className="text-[var(--text-primary)] font-medium mb-1">
 							<span className="font-semibold">Email:</span>{' '}
 							<a
-								href="mailto:info@algoflow.ai"
+								href="mailto:info@algoflowai.com"
 								className="hover:underline text-green-600"
 							>
 								info@algoflowai.com
