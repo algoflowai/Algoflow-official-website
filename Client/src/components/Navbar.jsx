@@ -57,6 +57,15 @@ function TopBar({ hidden }) {
 					<span className="hidden sm:inline">+91-7452833648</span>
 					<span className="sm:hidden font-semibold text-green-500">Call Now</span>
 				</a>
+				<a
+					href="tel:+918960880615"
+					className="flex items-center gap-1.5 hover:text-green-500 transition-colors"
+					style={{ color: 'var(--text-secondary)' }}
+				>
+					<IconPhone size={12} />
+					<span className="hidden sm:inline">+91-8960880615</span>
+					<span className="sm:hidden font-semibold text-green-500">Call Now</span>
+				</a>
 				<span className="opacity-20 hidden sm:inline">|</span>
 				<a
 					href="mailto:info@algoflowai.com"
@@ -116,6 +125,8 @@ export default function Navbar() {
 	const { scrollY } = useScroll();
 	const lastY = useRef(0);
 	const dropdownRef = useRef(null);
+	// ✅ NEW: ref for the mobile drawer
+	const mobileDrawerRef = useRef(null);
 
 	// Hide on scroll down, show on scroll up
 	useMotionValueEvent(scrollY, 'change', (y) => {
@@ -154,8 +165,9 @@ export default function Navbar() {
 	// Close dropdown on outside click
 	useEffect(() => {
 		const handler = (e) => {
-			if (dropdownRef.current && !dropdownRef.current.contains(e.target))
-				setActiveDropdown(null);
+			const inDesktop = dropdownRef.current && dropdownRef.current.contains(e.target);
+			const inMobile = mobileDrawerRef.current && mobileDrawerRef.current.contains(e.target);
+			if (!inDesktop && !inMobile) setActiveDropdown(null);
 		};
 		document.addEventListener('mousedown', handler);
 		return () => document.removeEventListener('mousedown', handler);
@@ -493,8 +505,9 @@ export default function Navbar() {
 							onClick={() => setIsOpen(false)}
 						/>
 
-						{/* Drawer */}
+						{/* ✅ FIXED: ref added to mobile drawer */}
 						<motion.div
+							ref={mobileDrawerRef}
 							className="fixed top-0 right-0 bottom-0 z-50 w-[300px] lg:hidden flex flex-col"
 							style={{
 								background:

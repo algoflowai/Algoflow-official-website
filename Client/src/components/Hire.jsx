@@ -93,7 +93,7 @@ const Hire = () => {
 
 					{/* Decorative image - hidden on mobile */}
 					<motion.img
-						src="/icons/Group 40.webp"
+						src="/icons/Group 40.png"
 						alt="Decorative Icon"
 						className="absolute bottom-[-20px] right-[-20px] w-32 sm:w-40 lg:w-48 opacity-90 pointer-events-none hidden md:block"
 						animate={{ y: [0, -15, 0], rotate: [0, 5, -5, 0] }}
