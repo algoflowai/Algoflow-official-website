@@ -124,7 +124,7 @@ export default function Clients() {
 										title={`Partner since ${logo.since}`}
 									>
 										<Image
-											src="/icons/handshake.webp"
+											src="/icons/handshake.png"
 											alt="Handshake"
 											width={24}
 											height={24}
