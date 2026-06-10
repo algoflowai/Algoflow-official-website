@@ -1,0 +1,7 @@
+# Ignore Next.js build outputs and generated artifacts
+/Client/.next/
+/Client/out/
+/Client/node_modules/
+
+# System files
+.DS_Store
