@@ -14,6 +14,7 @@ import TechStack from '@/components/TechStack';
 import Development from '@/components/Development';
 import AboutUs from '@/components/AboutUs';
 import Recognitions from '@/components/Recognitions';
+import FAQ from '@/components/FAQ';
 
 export const metadata = {
 	title: 'AlgoFlow AI — Custom AI Solutions & Software Development Company',
@@ -91,6 +92,9 @@ export default function Home() {
 
 				<section id="global-presence">
 					<GlobalPresence />
+				</section>
+				<section id="FAQ">
+					<FAQ/>
 				</section>
 				<section id="resources">
 					<FeaturedResources />
