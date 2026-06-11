@@ -77,20 +77,20 @@ export default function Footer() {
 								</Link>
 							</li>
 							<li>
-								<a
-									href="#"
+								<Link
+									href={'/help-center'}
 									className="text-[var(--text-secondary)] hover:text-green-600 transition"
 								>
 									Help Center
-								</a>
+								</Link>
 							</li>
 							<li>
-								<a
-									href="#"
+								<Link
+									href={'/privacy-policy'}
 									className="text-[var(--text-secondary)] hover:text-green-600 transition"
 								>
 									Privacy Policy
-								</a>
+								</Link>
 							</li>
 							<li>
 								<a
