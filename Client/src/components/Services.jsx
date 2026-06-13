@@ -29,7 +29,7 @@ const services = [
 		icon: null,
 	},
 	{
-		image: '/images/vlm.webp',
+		image: '/images/image-14-1024x538.webp',
 		title: 'Video Analysis with AI & Computer Vision',
 		description:
 			'Unlock insights from video data using AI and computer vision, enhancing decision-making, security, and customer experience.',

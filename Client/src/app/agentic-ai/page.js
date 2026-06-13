@@ -6,6 +6,7 @@ import Footer from '../../components/Footer';
 import ContactPopup from '../../components/ContactPopup';
 import Link from 'next/link';
 import Image from 'next/image';
+import Script from 'next/script';
 
 const WORKFLOW = [
 	{
@@ -176,6 +177,18 @@ const fade = { hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0 } };
 export default function AgenticAIPage() {
 	const [isModalOpen, setIsModalOpen] = useState(false);
 
+	const openVoiceAgent = () => {
+		if (typeof window === 'undefined') return;
+		// Try common widget open APIs
+		if (window.VoiceAgent?.open) { window.VoiceAgent.open(); return; }
+		if (window.SvarnAgent?.open) { window.SvarnAgent.open(); return; }
+		// Fallback: find and click the widget's own trigger button in the DOM
+		const btn = document.querySelector(
+			'#voice-agent-root button, #svarn-root button, [data-svarn] button, [id*="svarn"] button, [class*="voice-agent"] button'
+		) || document.querySelector('body > div:last-child button');
+		if (btn) btn.click();
+	};
+
 	return (
 		<div style={{ background: '#020b14', minHeight: '100vh' }}>
 			<Navbar />
@@ -258,18 +271,18 @@ export default function AgenticAIPage() {
 						>
 							Deploy an Agent
 						</motion.button>
-						<Link href="/#agentic-ai">
-							<motion.div
-								className="px-8 py-3.5 rounded-xl font-semibold text-gray-300 text-base border cursor-pointer"
-								style={{
-									borderColor: 'rgba(255,255,255,0.12)',
-									background: 'rgba(255,255,255,0.04)',
-								}}
-								whileHover={{ borderColor: 'rgba(139,92,246,0.4)', color: '#fff' }}
-							>
-								See Live Demo
-							</motion.div>
-						</Link>
+						<motion.div
+							onClick={openVoiceAgent}
+							className="px-8 py-3.5 rounded-xl font-semibold text-gray-300 text-base border cursor-pointer text-center"
+							style={{
+								borderColor: 'rgba(255,255,255,0.12)',
+								background: 'rgba(255,255,255,0.04)',
+							}}
+							whileHover={{ borderColor: 'rgba(139,92,246,0.4)', color: '#fff' }}
+							whileTap={{ scale: 0.97 }}
+						>
+							See Live Demo
+						</motion.div>
 					</motion.div>
 				</div>
 			</section>
@@ -569,6 +582,17 @@ export default function AgenticAIPage() {
 			</section>
 
 			<Footer />
+
+			{/* Voice Agent Scripts */}
+			<Script id="voice-agent-config" strategy="afterInteractive">{`
+				window.VoiceAgentConfig = {
+					svarnId:   "svarn_45bdb11cede77710",
+					serverUrl: "https://agent.algoflowai.com",
+					title:     "Algoflow AI Assistance",
+					position:  "bottom-right"
+				};
+			`}</Script>
+			<Script src="https://agent.algoflowai.com/widget.js" strategy="afterInteractive" />
 		</div>
 	);
 }

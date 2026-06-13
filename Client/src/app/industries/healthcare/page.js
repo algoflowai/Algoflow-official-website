@@ -93,7 +93,7 @@ const CLINICAL_AI = [
 		title: 'Symptom-Based Patient Routing',
 		desc: 'NLP models analyze patient-reported symptoms and route to appropriate specialists, departments, or urgency levels — reducing triage time from 15 min to under 2 min.',
 		result: '75% faster triage',
-		color: '#ec4899',
+		color: '#06b6d4',
 	},
 	{
 		img: '/images/Ai technology and human interaction _ AI-generated image_files/human-interact-with-ai-artificial-intelligence-brain-processor-generative-ai-nlp_31965-312784.webp',
@@ -228,7 +228,7 @@ export default function HealthcarePage() {
 					className="absolute inset-0 pointer-events-none"
 					style={{
 						backgroundImage:
-							'linear-gradient(rgba(236,72,153,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(236,72,153,0.02) 1px,transparent 1px)',
+							'linear-gradient(rgba(6,182,212,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(6,182,212,0.02) 1px,transparent 1px)',
 						backgroundSize: '60px 60px',
 					}}
 				/>
@@ -236,7 +236,7 @@ export default function HealthcarePage() {
 					className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full pointer-events-none"
 					style={{
 						background:
-							'radial-gradient(circle,rgba(236,72,153,0.07) 0%,transparent 65%)',
+							'radial-gradient(circle,rgba(6,182,212,0.07) 0%,transparent 65%)',
 					}}
 				/>
 				<div
@@ -257,12 +257,12 @@ export default function HealthcarePage() {
 								<span
 									className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold border mb-6"
 									style={{
-										background: 'rgba(236,72,153,0.1)',
-										borderColor: 'rgba(236,72,153,0.3)',
-										color: '#f472b6',
+										background: 'rgba(6,182,212,0.1)',
+										borderColor: 'rgba(6,182,212,0.3)',
+										color: '#22d3ee',
 									}}
 								>
-									<span className="w-1.5 h-1.5 rounded-full bg-pink-400 animate-pulse" />
+									<span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
 									Healthcare AI · ABDM · Digital Health
 								</span>
 							</motion.div>
@@ -277,7 +277,7 @@ export default function HealthcarePage() {
 									className="text-transparent bg-clip-text"
 									style={{
 										backgroundImage:
-											'linear-gradient(90deg,#ec4899,#f472b6,#fbcfe8)',
+											'linear-gradient(90deg,#06b6d4,#22d3ee,#cffafe)',
 									}}
 								>
 									& ABDM
@@ -305,8 +305,8 @@ export default function HealthcarePage() {
 									onClick={() => setIsModalOpen(true)}
 									className="px-7 py-3.5 rounded-xl font-bold text-white"
 									style={{
-										background: 'linear-gradient(135deg,#ec4899,#db2777)',
-										boxShadow: '0 0 28px rgba(236,72,153,0.25)',
+										background: 'linear-gradient(135deg,#06b6d4,#0891b2)',
+										boxShadow: '0 0 28px rgba(6,182,212,0.25)',
 									}}
 									whileHover={{ scale: 1.04 }}
 									whileTap={{ scale: 0.97 }}
@@ -321,7 +321,7 @@ export default function HealthcarePage() {
 											background: 'rgba(255,255,255,0.04)',
 										}}
 										whileHover={{
-											borderColor: 'rgba(236,72,153,0.4)',
+											borderColor: 'rgba(6,182,212,0.4)',
 											color: '#fff',
 										}}
 									>
@@ -331,47 +331,236 @@ export default function HealthcarePage() {
 							</motion.div>
 						</div>
 
-						{/* Stats */}
+						{/* ABDM Hero Image */}
 						<motion.div
-							className="grid grid-cols-2 gap-4"
+							className="relative rounded-2xl overflow-hidden"
 							initial={{ opacity: 0, x: 40 }}
 							animate={{ opacity: 1, x: 0 }}
 							transition={{ delay: 0.3 }}
+							style={{ boxShadow: '0 0 50px rgba(6,182,212,0.18), 0 20px 60px rgba(0,0,0,0.5)' }}
 						>
-							{[
-								{ v: '40%', l: 'OPD Wait Reduction', c: '#ec4899' },
-								{ v: '60–70%', l: 'Earlier Disease Detection', c: '#22c55e' },
-								{ v: '85%', l: 'Fewer Dispensing Errors', c: '#3b82f6' },
-								{ v: 'ABDM', l: 'Certified Integration', c: '#8b5cf6' },
-							].map((s, i) => (
-								<motion.div
-									key={s.l}
-									className="p-5 rounded-2xl border text-center"
-									style={{
-										background: 'rgba(255,255,255,0.03)',
-										borderColor: 'rgba(255,255,255,0.07)',
-									}}
-									initial={{ opacity: 0, y: 20 }}
-									animate={{ opacity: 1, y: 0 }}
-									transition={{ delay: 0.4 + i * 0.08 }}
-									whileHover={{ scale: 1.04, borderColor: `${s.c}40` }}
-								>
-									<div
-										className="text-2xl font-extrabold text-transparent bg-clip-text"
-										style={{
-											backgroundImage: `linear-gradient(135deg,${s.c},${s.c}cc)`,
-										}}
-									>
-										{s.v}
-									</div>
-									<div className="text-xs text-gray-400 mt-1 leading-tight">
-										{s.l}
-									</div>
-								</motion.div>
-							))}
+							<img
+								src="/images/abdm-hero.jpg"
+								alt="ABDM Digital Health Mission — NHA architecture and ABHA ecosystem"
+								className="w-full h-auto rounded-2xl"
+								style={{ maxHeight: '400px', objectFit: 'cover', display: 'block' }}
+							/>
+							<div
+								className="absolute inset-0 rounded-2xl pointer-events-none"
+								style={{ background: 'linear-gradient(to top, rgba(2,11,20,0.5) 0%, transparent 60%)' }}
+							/>
 						</motion.div>
 					</div>
 				</div>
+			</section>
+
+			{/* ABDM Compliance Urgency */}
+			<section className="w-[90%] mx-auto py-20">
+				{/* 2026 Deadline Banner */}
+				<motion.div
+					className="rounded-2xl border p-6 md:p-8 mb-14 relative overflow-hidden"
+					style={{
+						background: 'linear-gradient(135deg, rgba(220,38,38,0.08) 0%, rgba(6,182,212,0.06) 100%)',
+						borderColor: 'rgba(220,38,38,0.35)',
+					}}
+					initial={{ opacity: 0, y: 20 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true }}
+				>
+					<div className="absolute -top-10 -right-10 w-48 h-48 rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(220,38,38,0.1) 0%, transparent 70%)' }} />
+					<div className="flex flex-col md:flex-row items-start md:items-center gap-6">
+						<div className="flex-shrink-0">
+							<div className="w-14 h-14 rounded-xl flex items-center justify-center text-2xl font-black text-white" style={{ background: 'linear-gradient(135deg, #dc2626, #b91c1c)', boxShadow: '0 0 24px rgba(220,38,38,0.4)' }}>!</div>
+						</div>
+						<div className="flex-1">
+							<div className="flex items-center gap-3 mb-2 flex-wrap">
+								<span className="text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wider" style={{ background: 'rgba(220,38,38,0.2)', color: '#f87171', border: '1px solid rgba(220,38,38,0.4)' }}>
+									Enforcement Active — 2026
+								</span>
+								<span className="text-xs text-gray-400">Bihar directive issued · More states following</span>
+							</div>
+							<h3 className="text-xl md:text-2xl font-extrabold text-white mb-2">
+								ABDM Compliance is No Longer Optional for AB-PMJAY Hospitals
+							</h3>
+							<p className="text-gray-400 text-sm leading-relaxed max-w-3xl">
+								State health authorities have begun issuing directives to all 36,229 empanelled hospitals. Non-compliant facilities face financial penalties, temporary suspension from the AB-PMJAY network, and permanent de-empanelment. Compliance takes <strong className="text-white">3–12 months</strong> — the window to act is narrowing.
+							</p>
+						</div>
+						<div className="flex-shrink-0">
+							<div className="grid grid-cols-2 gap-3 text-center">
+								{[
+									{ v: '36,229', l: 'Empanelled Hospitals' },
+									{ v: '770M+', l: 'ABHA Accounts' },
+									{ v: '530M+', l: 'Records Digitised' },
+									{ v: '₹1,600Cr', l: 'Govt. Allocated' },
+								].map(s => (
+									<div key={s.l} className="p-3 rounded-xl" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.07)' }}>
+										<div className="text-lg font-extrabold text-red-400">{s.v}</div>
+										<div className="text-[10px] text-gray-500 mt-0.5 leading-tight">{s.l}</div>
+									</div>
+								))}
+							</div>
+						</div>
+					</div>
+				</motion.div>
+
+				{/* M1 M2 M3 Importance */}
+				<motion.div
+					className="mb-14"
+					initial="hidden"
+					whileInView="visible"
+					viewport={{ once: true }}
+					variants={fade}
+				>
+					<div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold border mb-4" style={{ background: 'rgba(6,182,212,0.08)', borderColor: 'rgba(6,182,212,0.25)', color: '#22d3ee' }}>
+						Three Mandatory Milestones
+					</div>
+					<h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-3">
+						What ABHA Compliance Means for Your Hospital
+					</h2>
+					<p className="text-gray-400 max-w-2xl mb-10">
+						ABDM compliance is structured across three milestones — each building on the previous. Every empanelled hospital must achieve all three to remain in the national health network.
+					</p>
+					<div className="grid md:grid-cols-3 gap-5">
+						{[
+							{
+								id: 'M1',
+								label: 'Milestone 1',
+								title: 'Patient Identity',
+								color: '#22c55e',
+								what: 'Every patient gets a 14-digit ABHA number — a universal health ID linked to Aadhaar, mobile, or driving license.',
+								why: 'No ABHA creation = no valid patient record in the national ecosystem. Patients cannot share records across providers without M1.',
+								outcome: 'Universal patient ID, QR-based check-in, consent-ready profile',
+							},
+							{
+								id: 'M2',
+								label: 'Milestone 2',
+								title: 'Health Record Exchange',
+								color: '#3b82f6',
+								what: 'Your HMS becomes a Health Information Provider (HIP) — sharing FHIR R4 structured records via the ABDM gateway with patient consent.',
+								why: 'Without M2, patient records are siloed. Insurance claims, referrals, and continuity of care break down. M2 is the core of the digital health mission.',
+								outcome: 'FHIR R4 records, consent artefacts, HIP/HIU integration, ABDM gateway',
+							},
+							{
+								id: 'M3',
+								label: 'Milestone 3',
+								title: 'Provider Registration',
+								color: '#8b5cf6',
+								what: 'Every doctor gets an HPRID and your facility registers on HFR — creating verified, discoverable identities in the national health directory.',
+								why: 'M3 enables patient-to-doctor discovery, telemedicine legitimacy, and auto-verified prescription credentials. Required for full network participation.',
+								outcome: 'HPRID for doctors, HFR facility ID, prescription verification, telemedicine compliance',
+							},
+						].map((m, i) => (
+							<motion.div
+								key={m.id}
+								className="p-6 rounded-2xl border flex flex-col gap-4"
+								style={{ background: `${m.color}08`, borderColor: `${m.color}25` }}
+								initial={{ opacity: 0, y: 24 }}
+								whileInView={{ opacity: 1, y: 0 }}
+								viewport={{ once: true }}
+								transition={{ delay: i * 0.1 }}
+								whileHover={{ borderColor: `${m.color}50`, y: -4 }}
+							>
+								<div className="flex items-center gap-3">
+									<div className="w-10 h-10 rounded-xl flex items-center justify-center font-black text-sm" style={{ background: `${m.color}18`, color: m.color, border: `1px solid ${m.color}35` }}>{m.id}</div>
+									<div>
+										<div className="text-[10px] font-semibold uppercase tracking-widest" style={{ color: m.color }}>{m.label}</div>
+										<div className="font-extrabold text-white text-base">{m.title}</div>
+									</div>
+								</div>
+								<p className="text-sm text-gray-300 leading-relaxed">{m.what}</p>
+								<div className="p-3 rounded-xl text-xs text-gray-400 leading-relaxed" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)' }}>
+									<span className="font-semibold" style={{ color: m.color }}>Why it matters: </span>{m.why}
+								</div>
+								<div className="text-xs font-medium mt-auto" style={{ color: `${m.color}cc` }}>{m.outcome}</div>
+							</motion.div>
+						))}
+					</div>
+				</motion.div>
+
+				{/* How AlgoFlow Helps */}
+				<motion.div
+					initial="hidden"
+					whileInView="visible"
+					viewport={{ once: true }}
+					variants={fade}
+				>
+					<div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold border mb-4" style={{ background: 'rgba(34,197,94,0.08)', borderColor: 'rgba(34,197,94,0.25)', color: '#4ade80' }}>
+						AlgoFlow for ABDM-Compliant HIMS
+					</div>
+					<h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-3">
+						We Make ABDM Compliance Fast & Reliable
+					</h2>
+					<p className="text-gray-400 max-w-2xl mb-10">
+						Whether you're building from scratch or have an existing HMS, AlgoFlow gives you three paths to full ABDM compliance — without disrupting your current operations.
+					</p>
+					<div className="grid md:grid-cols-3 gap-5">
+						{[
+							{
+								num: '01',
+								title: 'Build an ABDM-Compliant Platform from the Ground Up',
+								desc: 'We architect and deliver a fully ABDM-compliant Hospital Information Management System — covering M1 (ABHA), M2 (HIP/HIU/FHIR), and M3 (HPR/HFR) from day one. Designed for NHA certification with zero technical debt.',
+								tags: ['Full HIMS', 'NHA Certified', 'FHIR R4', 'Greenfield'],
+								color: '#22c55e',
+							},
+							{
+								num: '02',
+								title: 'Enable Your Existing Software with ABDM Plug & Play',
+								desc: "Don't replace your current HMS — extend it. We build modular ABDM connectors that integrate seamlessly with your existing software, adding ABHA generation, consent management, and FHIR record exchange as plug-in layers.",
+								tags: ['Plug & Play', 'Zero Disruption', 'Retrofit', 'Modular APIs'],
+								color: '#3b82f6',
+							},
+							{
+								num: '03',
+								title: 'API Integration Support & Latest Documentation',
+								desc: 'ABDM APIs change frequently. Our team stays current with every NHA sandbox update, gateway spec change, and new FHIR profile. We provide hands-on integration support, code reviews, and implementation guidance backed by the latest official documentation.',
+								tags: ['NHA Sandbox', 'ABDM Gateway', 'Docs Support', 'Ongoing Updates'],
+								color: '#8b5cf6',
+							},
+						].map((item, i) => (
+							<motion.div
+								key={item.num}
+								className="p-7 rounded-2xl border flex flex-col gap-4 relative overflow-hidden"
+								style={{ background: 'rgba(255,255,255,0.025)', borderColor: 'rgba(255,255,255,0.08)' }}
+								initial={{ opacity: 0, y: 24 }}
+								whileInView={{ opacity: 1, y: 0 }}
+								viewport={{ once: true }}
+								transition={{ delay: i * 0.1 }}
+								whileHover={{ borderColor: `${item.color}45`, y: -4 }}
+							>
+								<div className="absolute top-4 right-5 text-5xl font-black select-none pointer-events-none" style={{ color: `${item.color}12` }}>{item.num}</div>
+								<div className="w-10 h-10 rounded-xl flex items-center justify-center font-black text-lg" style={{ background: `${item.color}18`, color: item.color, border: `1px solid ${item.color}35` }}>{item.num}</div>
+								<h3 className="font-extrabold text-white text-base leading-snug">{item.title}</h3>
+								<p className="text-sm text-gray-400 leading-relaxed flex-1">{item.desc}</p>
+								<div className="flex flex-wrap gap-2 mt-2">
+									{item.tags.map(t => (
+										<span key={t} className="text-[10px] px-2 py-0.5 rounded font-semibold" style={{ background: `${item.color}12`, color: item.color, border: `1px solid ${item.color}25` }}>{t}</span>
+									))}
+								</div>
+							</motion.div>
+						))}
+					</div>
+					<div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
+						<motion.button
+							onClick={() => setIsModalOpen(true)}
+							className="px-8 py-3.5 rounded-xl font-bold text-white text-sm"
+							style={{ background: 'linear-gradient(135deg,#22c55e,#16a34a)', boxShadow: '0 0 28px rgba(34,197,94,0.25)' }}
+							whileHover={{ scale: 1.04 }}
+							whileTap={{ scale: 0.97 }}
+						>
+							Get Your Free ABDM Compliance Assessment
+						</motion.button>
+						<motion.button
+							onClick={() => setIsModalOpen(true)}
+							className="px-8 py-3.5 rounded-xl font-semibold text-gray-300 border text-sm"
+							style={{ borderColor: 'rgba(255,255,255,0.12)', background: 'rgba(255,255,255,0.04)' }}
+							whileHover={{ borderColor: 'rgba(34,197,94,0.4)', color: '#fff' }}
+							whileTap={{ scale: 0.97 }}
+						>
+							Talk to an ABDM Expert
+						</motion.button>
+					</div>
+				</motion.div>
 			</section>
 
 			{/* ABDM Modules */}
@@ -394,12 +583,10 @@ export default function HealthcarePage() {
 						Ayushman Bharat Digital Mission
 					</div>
 					<h2 className="text-3xl sm:text-4xl font-extrabold text-white">
-						ABDM Integration — M1, M2, M3
+						Deep Dive — ABDM Technical Modules
 					</h2>
 					<p className="text-gray-400 mt-3 max-w-2xl">
-						India's national digital health ecosystem, built on three foundational
-						pillars. AlgoFlow has deep expertise in integrating healthcare software with
-						all three ABDM modules.
+						Explore the technical architecture behind each ABDM module. AlgoFlow has production-grade implementations for all three.
 					</p>
 				</motion.div>
 
@@ -749,14 +936,14 @@ export default function HealthcarePage() {
 							viewport={{ once: true }}
 							transition={{ delay: i * 0.1 }}
 						>
-							<div className="text-xs text-pink-400 font-semibold mb-1">
+							<div className="text-xs text-cyan-400 font-semibold mb-1">
 								{cs.industry}
 							</div>
 							<h3 className="text-base font-bold text-white mb-1">{cs.company}</h3>
 							<div
 								className="text-lg font-extrabold text-transparent bg-clip-text mb-3"
 								style={{
-									backgroundImage: 'linear-gradient(135deg,#ec4899,#fbcfe8)',
+									backgroundImage: 'linear-gradient(135deg,#06b6d4,#cffafe)',
 								}}
 							>
 								{cs.result}
@@ -854,8 +1041,8 @@ export default function HealthcarePage() {
 							onClick={() => setIsModalOpen(true)}
 							className="px-8 py-3.5 rounded-xl font-bold text-white"
 							style={{
-								background: 'linear-gradient(135deg,#ec4899,#db2777)',
-								boxShadow: '0 0 28px rgba(236,72,153,0.25)',
+								background: 'linear-gradient(135deg,#06b6d4,#0891b2)',
+								boxShadow: '0 0 28px rgba(6,182,212,0.25)',
 							}}
 							whileHover={{ scale: 1.04 }}
 							whileTap={{ scale: 0.97 }}
@@ -869,7 +1056,7 @@ export default function HealthcarePage() {
 									borderColor: 'rgba(255,255,255,0.12)',
 									background: 'rgba(255,255,255,0.04)',
 								}}
-								whileHover={{ borderColor: 'rgba(236,72,153,0.4)', color: '#fff' }}
+								whileHover={{ borderColor: 'rgba(6,182,212,0.4)', color: '#fff' }}
 							>
 								info@algoflowai.com
 							</motion.div>

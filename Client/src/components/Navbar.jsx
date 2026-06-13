@@ -2,17 +2,6 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion';
-import {
-	IconBrandLinkedin,
-	IconBrandTwitter,
-	IconBrandInstagram,
-	IconX,
-	IconMenu2,
-	IconChevronDown,
-	IconPhone,
-	IconMail,
-	IconStar,
-} from '@tabler/icons-react';
 import ContactPopup from './ContactPopup';
 import Link from 'next/link';
 import { useTheme } from '@/context/ThemeContext';
@@ -22,7 +11,7 @@ function TopBar({ hidden }) {
 	const { theme } = useTheme();
 	return (
 		<motion.div
-			className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 md:px-8 h-9 text-[11px] font-medium"
+			className="fixed top-0 left-0 right-0 z-50 h-9 text-[11px] font-medium"
 			animate={{ y: hidden ? -40 : 0 }}
 			transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
 			style={{
@@ -33,48 +22,38 @@ function TopBar({ hidden }) {
 				borderBottom: '1px solid rgba(34,197,94,0.15)',
 			}}
 		>
-			{/* Left: trust badge */}
-			<div
-				className="hidden md:flex items-center gap-1.5"
-				style={{ color: 'var(--text-muted)' }}
-			>
-				<IconStar size={11} className="text-yellow-400 fill-yellow-400" />
-				<span>
-					Trusted by{' '}
-					<strong style={{ color: 'var(--text-primary)' }}>50+ companies</strong>{' '}
-					worldwide
-				</span>
-			</div>
+			<div className="w-[90%] mx-auto h-full flex items-center justify-between">
+				{/* Left: trust badge */}
+				<div
+					className="hidden md:flex items-center gap-1.5"
+					style={{ color: 'var(--text-muted)' }}
+				>
+					<span>
+						Trusted by{' '}
+						<strong style={{ color: 'var(--text-primary)' }}>50+ companies</strong>{' '}
+						worldwide
+					</span>
+				</div>
 
-			{/* Right: contact links */}
-			<div className="flex items-center gap-4 ml-auto">
-				<a
-					href="tel:+917452833648"
-					className="flex items-center gap-1.5 hover:text-green-500 transition-colors"
-					style={{ color: 'var(--text-secondary)' }}
-				>
-					<IconPhone size={12} />
-					<span className="hidden sm:inline">+91-7452833648</span>
-					<span className="sm:hidden font-semibold text-green-500">Call Now</span>
-				</a>
-				<a
-					href="tel:+918960880615"
-					className="flex items-center gap-1.5 hover:text-green-500 transition-colors"
-					style={{ color: 'var(--text-secondary)' }}
-				>
-					<IconPhone size={12} />
-					<span className="hidden sm:inline">+91-8960880615</span>
-					<span className="sm:hidden font-semibold text-green-500">Call Now</span>
-				</a>
-				<span className="opacity-20 hidden sm:inline">|</span>
-				<a
-					href="mailto:info@algoflowai.com"
-					className="hidden sm:flex items-center gap-1.5 hover:text-green-500 transition-colors"
-					style={{ color: 'var(--text-secondary)' }}
-				>
-					<IconMail size={12} />
-					info@algoflowai.com
-				</a>
+				{/* Right: contact links */}
+				<div className="flex items-center gap-4 ml-auto">
+					<a
+						href="tel:+917452833648"
+						className="flex items-center gap-1.5 hover:text-green-500 transition-colors"
+						style={{ color: 'var(--text-secondary)' }}
+					>
+						<span className="hidden sm:inline">+91-7452833648</span>
+						<span className="sm:hidden font-semibold text-green-500">Call Now</span>
+					</a>
+					<span className="opacity-20 hidden sm:inline">|</span>
+					<a
+						href="mailto:info@algoflowai.com"
+						className="hidden sm:flex items-center gap-1.5 hover:text-green-500 transition-colors"
+						style={{ color: 'var(--text-secondary)' }}
+					>
+						info@algoflowai.com
+					</a>
+				</div>
 			</div>
 		</motion.div>
 	);
@@ -87,27 +66,23 @@ const navLinks = [
 		label: 'Services',
 		href: '/#services',
 		dropdown: [
-			{ label: 'Mobile App Development', href: '/#services', icon: 'M' },
-			{ label: 'Web Design & Development', href: '/#services', icon: 'W' },
-			{ label: 'AI & Computer Vision', href: '/#services', icon: 'A' },
-			{ label: 'NLP & LLMs', href: '/#services', icon: 'N' },
-			{ label: 'Workflow Automation', href: '/#services', icon: 'W' },
-			{ label: 'Agentic AI', href: '/agentic-ai', icon: 'G' },
+			{ label: 'Mobile App Development', href: '/#services' },
+			{ label: 'Web Design & Development', href: '/#services' },
+			{ label: 'AI & Computer Vision', href: '/#services' },
+			{ label: 'NLP & LLMs', href: '/#services' },
+			{ label: 'Workflow Automation', href: '/#services' },
+			{ label: 'Agentic AI', href: '/agentic-ai' },
 		],
 	},
 	{
 		label: 'Industries',
 		href: '/#services',
 		dropdown: [
-			{ label: 'Agentic AI', href: '/agentic-ai', icon: '🧠' },
-			{
-				label: 'Manufacturing & Industry 4.0',
-				href: '/industries/manufacturing',
-				icon: '⚙️',
-			},
-			{ label: 'Healthcare & ABDM', href: '/industries/healthcare', icon: '🏥' },
-			{ label: 'FinTech & Banking', href: '/#agentic-ai', icon: '🏦' },
-			{ label: 'Oil & Gas', href: '/industries/manufacturing#oil-gas', icon: '⛽' },
+			{ label: 'Agentic AI', href: '/agentic-ai' },
+			{ label: 'Manufacturing & Industry 4.0', href: '/industries/manufacturing' },
+			{ label: 'Healthcare & ABDM', href: '/industries/healthcare' },
+			{ label: 'FinTech & Banking', href: '/#agentic-ai' },
+			{ label: 'Oil & Gas', href: '/industries/manufacturing#oil-gas' },
 		],
 	},
 	{ label: 'Projects', href: '/projects' },
@@ -194,7 +169,7 @@ export default function Navbar() {
 				transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
 			>
 				<motion.nav
-					className="w-[90%] max-w-[1400px] flex items-center justify-between px-4 sm:px-6 h-16 rounded-2xl"
+					className="w-[90%] flex items-center justify-between px-4 sm:px-6 h-16 rounded-2xl"
 					animate={{
 						background: scrolled
 							? theme === 'dark'
@@ -210,15 +185,11 @@ export default function Navbar() {
 				>
 					{/* Logo */}
 					<Link href="/" className="flex items-center gap-2 group select-none">
-						<div
-							className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
-							style={{
-								background: 'linear-gradient(135deg, #22c55e, #16a34a)',
-								boxShadow: '0 0 12px rgba(34,197,94,0.4)',
-							}}
-						>
-							<span className="text-white font-black text-sm">A</span>
-						</div>
+						<img
+							src="/images/af_logo.jpeg"
+							alt="AlgoFlow AI logo"
+							className="w-8 h-8 rounded-lg object-contain flex-shrink-0"
+						/>
 						<div className="flex flex-col leading-none">
 							<div className="flex items-center">
 								<motion.span
@@ -268,11 +239,9 @@ export default function Navbar() {
 													rotate: activeDropdown === link.label ? 180 : 0,
 												}}
 												transition={{ duration: 0.2 }}
+												style={{ fontSize: 10 }}
 											>
-												<IconChevronDown
-													size={14}
-													className="group-hover:text-green-500 transition-colors"
-												/>
+												▾
 											</motion.span>
 										</button>
 
@@ -324,9 +293,6 @@ export default function Navbar() {
 																		'var(--text-secondary)';
 																}}
 															>
-																<span className="w-7 h-7 rounded-lg bg-green-500/10 border border-green-500/20 flex items-center justify-center text-green-500 text-xs font-bold flex-shrink-0">
-																	{item.icon}
-																</span>
 																<span className="font-medium leading-tight">
 																	{item.label}
 																</span>
@@ -370,7 +336,6 @@ export default function Navbar() {
 							whileHover={{ scale: 1.04, background: 'rgba(34,197,94,0.12)' }}
 							whileTap={{ scale: 0.97 }}
 						>
-							<IconPhone size={13} />
 							Call Now
 						</motion.a>
 						{/* Theme Toggle */}
@@ -483,7 +448,7 @@ export default function Navbar() {
 									transition={{ duration: 0.18 }}
 									className="absolute"
 								>
-									{isOpen ? <IconX size={18} /> : <IconMenu2 size={18} />}
+									{isOpen ? '✕' : '☰'}
 								</motion.span>
 							</AnimatePresence>
 						</motion.button>
@@ -532,14 +497,11 @@ export default function Navbar() {
 									onClick={() => setIsOpen(false)}
 									className="flex items-center gap-2"
 								>
-									<div
-										className="w-7 h-7 rounded-md flex items-center justify-center flex-shrink-0"
-										style={{
-											background: 'linear-gradient(135deg, #22c55e, #16a34a)',
-										}}
-									>
-										<span className="text-white font-black text-xs">A</span>
-									</div>
+									<img
+										src="/images/af_logo.jpeg"
+										alt="AlgoFlow AI logo"
+										className="w-7 h-7 rounded-md object-contain flex-shrink-0"
+									/>
 									<div>
 										<div className="flex items-center">
 											<span className="text-base font-extrabold text-green-500">
@@ -569,7 +531,7 @@ export default function Navbar() {
 									}}
 									whileTap={{ scale: 0.9 }}
 								>
-									<IconX size={16} />
+									✕
 								</motion.button>
 							</div>
 
@@ -609,8 +571,9 @@ export default function Navbar() {
 																		: 0,
 															}}
 															transition={{ duration: 0.2 }}
+															style={{ fontSize: 10 }}
 														>
-															<IconChevronDown size={14} />
+															▾
 														</motion.span>
 													</button>
 													<AnimatePresence>
@@ -665,9 +628,6 @@ export default function Navbar() {
 																					'var(--text-secondary)';
 																			}}
 																		>
-																			<span className="w-6 h-6 rounded-md bg-green-500/10 border border-green-500/20 flex items-center justify-center text-green-500 text-[10px] font-bold">
-																				{item.icon}
-																			</span>
 																			{item.label}
 																		</Link>
 																	</motion.div>
@@ -719,7 +679,7 @@ export default function Navbar() {
 										}}
 										whileTap={{ scale: 0.96 }}
 									>
-										<IconPhone size={13} /> Call Now
+										Call Now
 									</motion.a>
 									<motion.a
 										href="mailto:info@algoflowai.com"
@@ -731,7 +691,7 @@ export default function Navbar() {
 										}}
 										whileTap={{ scale: 0.96 }}
 									>
-										<IconMail size={13} /> Email Us
+										Email Us
 									</motion.a>
 								</div>
 								<motion.button
@@ -749,39 +709,30 @@ export default function Navbar() {
 								>
 									Get Free Consultation
 								</motion.button>
-								<div className="flex justify-center gap-4">
+								<div className="flex justify-center gap-3">
 									{[
-										{
-											icon: IconBrandLinkedin,
-											href: 'https://linkedin.com/company/algoflowai',
-										},
-										{
-											icon: IconBrandTwitter,
-											href: 'https://twitter.com/algoflowai',
-										},
-										{
-											icon: IconBrandInstagram,
-											href: 'https://instagram.com/algoflowai',
-										},
-									].map(({ icon: Icon, href }) => (
+										{ label: 'LinkedIn', href: 'https://linkedin.com/company/algoflowai' },
+										{ label: 'Twitter', href: 'https://twitter.com/algoflowai' },
+										{ label: 'Instagram', href: 'https://instagram.com/algoflowai' },
+									].map(({ label, href }) => (
 										<motion.a
 											key={href}
 											href={href}
 											target="_blank"
 											rel="noopener noreferrer"
-											className="w-9 h-9 rounded-xl flex items-center justify-center border transition-colors"
+											className="px-3 py-1.5 rounded-xl text-xs font-semibold border transition-colors"
 											style={{
 												borderColor: 'rgba(34,197,94,0.2)',
 												color: 'var(--text-secondary)',
 											}}
 											whileHover={{
-												scale: 1.12,
+												scale: 1.05,
 												color: '#22c55e',
 												borderColor: 'rgba(34,197,94,0.5)',
 											}}
 											whileTap={{ scale: 0.92 }}
 										>
-											<Icon size={16} />
+											{label}
 										</motion.a>
 									))}
 								</div>

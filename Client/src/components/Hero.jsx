@@ -69,7 +69,7 @@ const EDGES = [
 ];
 const CARDS = [
 	{
-		img: '/images/bgAI.webp',
+		img: '/images/agentic-ai-cover.webp',
 		title: 'Agentic AI',
 		desc: 'Autonomous agents for voice, banking & healthcare',
 		alt: 'Agentic AI development services and AI workflow automation solutions',
@@ -77,7 +77,7 @@ const CARDS = [
 		href: '/agentic-ai',
 	},
 	{
-		img: '/images/vision.webp',
+		img: '/images/image-14-1024x538.webp',
 		title: 'Computer Vision',
 		desc: 'Real-time detection, PPE compliance, defect checks',
 		alt: 'Computer vision development, object detection AI and real-time video analytics solutions',
@@ -85,10 +85,10 @@ const CARDS = [
 		href: '/#services',
 	},
 	{
-		img: '/images/Ai technology and human interaction _ AI-generated image_files/nlp.webp',
-		title: 'LLMs & NLP',
+		img: '/images/conversational-ai.jpg',
+		title: 'Conversational AI',
 		desc: 'Custom language models, RAG pipelines, chatbots',
-		alt: 'Large language model development, NLP development services, RAG development and AI chatbot solutions',
+		alt: 'Conversational AI development, large language model and NLP solutions',
 		col: '34,197,94',
 		href: '/#services',
 	},
@@ -101,7 +101,7 @@ const CARDS = [
 		href: '/industries/manufacturing',
 	},
 	{
-		img: '/images/resources3.webp',
+		img: '/images/healthcare-ai.jpg',
 		title: 'Healthcare AI',
 		desc: 'ABDM / ABHA integration, clinical AI, remote care',
 		alt: 'Healthcare AI solutions, ABDM integration services, ABHA integration and clinical AI platform',
@@ -441,7 +441,7 @@ export default function Hero() {
 										<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9a16 16 0 0 0 6.72 6.72l.82-.82a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
 									</svg>
 									<span className="text-green-400 font-semibold">
-										+91-8960880615, +91-7452833648
+										+91-7452833648
 									</span>
 								</a>
 								<span className="opacity-30">·</span>

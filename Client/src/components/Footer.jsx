@@ -117,8 +117,7 @@ export default function Footer() {
 							231304, India.
 						</p>
 						<p className="text-[var(--text-primary)] font-medium mb-1">
-							<span className="font-semibold">Phone:</span> +91-8960880615,
-							+91-7452833648
+							<span className="font-semibold">Phone:</span> +91-7452833648
 						</p>
 						<p className="text-[var(--text-primary)] font-medium mb-1">
 							<span className="font-semibold">Email:</span>{' '}
